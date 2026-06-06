@@ -36,7 +36,7 @@ public class DamageClassificationDTO {
                 new HashMap<>(categoryDistribution) : new HashMap<>();
     }
 
-    // --- Getters và Setters ---
+    // Getters và Setters
     public Long getPostId() { return postId; }
     public void setPostId(Long postId) { this.postId = postId; }
 
@@ -85,5 +85,17 @@ public class DamageClassificationDTO {
                 .max(Map.Entry.comparingByValue())
                 .map(Map.Entry::getKey)
                 .orElse(null);
+    }
+
+    @Override
+    public String toString() {
+        return "DamageClassification{" +
+                "postId=" + postId +
+                ", categories=" + categories +
+                ", categoryScores=" + categoryScores +
+                ", classifiedAt=" + classifiedAt +
+                ", categoryDistribution=" + categoryDistribution +
+                ", totalCount=" + getTotalCount() +
+                '}';
     }
 }

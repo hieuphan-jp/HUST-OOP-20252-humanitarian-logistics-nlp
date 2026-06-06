@@ -76,4 +76,16 @@ public class SentimentResultDTO {
         long count = sentimentCounts.getOrDefault(sentiment, 0L);
         return (count * 100.0) / total;
     }
+
+    @Override
+    public String toString() {
+        return "SentimentResult{" +
+                "postId=" + postId +
+                ", sentiment=" + sentiment +
+                ", confidenceScore=" + confidenceScore +
+                ", analyzedAt=" + analyzedAt +
+                ", sentimentCounts=" + sentimentCounts +
+                ", totalCount=" + getTotalCount() +
+                '}';
+    }
 }

@@ -1,6 +1,6 @@
 package com.disaster.analysis.infrastructure.persistence;
 
-import com.disaster.analysis.domain.repository.ProjectRepository;
+import com.disaster.analysis.domain.contract.repository.ProjectRepository;
 import com.disaster.analysis.domain.exception.DatabaseException;
 import com.disaster.analysis.domain.model.Project;
 import com.disaster.analysis.infrastructure.persistence.context.DbContext;

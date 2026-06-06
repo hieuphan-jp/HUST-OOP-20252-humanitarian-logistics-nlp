@@ -1,6 +1,6 @@
 package com.disaster.analysis.infrastructure.persistence;
 
-import com.disaster.analysis.domain.repository.CommentRepository;
+import com.disaster.analysis.domain.contract.repository.CommentRepository;
 import com.disaster.analysis.domain.exception.DatabaseException;
 import com.disaster.analysis.domain.model.Comment;
 import com.disaster.analysis.domain.model.enums.DamageCategory;

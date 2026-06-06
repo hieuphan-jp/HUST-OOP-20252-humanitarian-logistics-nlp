@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
  * Giúp trích xuất các phần phân tích riêng biệt và đóng gói thành một văn bản
  * báo cáo hoàn chỉnh (Đầy đủ Header - Body - Recommendation) cho từng trang biểu đồ.
  */
-public class AISummaryParser {
+public class TextParser {
 
     /**
      * Hàm lõi dùng để trích xuất nội dung nằm giữa một cặp thẻ XML giả.

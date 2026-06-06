@@ -17,7 +17,6 @@ public class Project {
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private String platforms; // Đổi từ Set<Platform> sang String để lưu thẳng vào Database (VD: "FACEBOOK,YOUTUBE")
-
     private LocalDateTime createdAt;
     private LocalDateTime lastModified;
 

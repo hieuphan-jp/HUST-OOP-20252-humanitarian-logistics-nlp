@@ -49,4 +49,19 @@ public class AISummary {
 
     public String getModel() { return model; }
     public void setModel(String model) { this.model = model; }
+
+    @Override
+    public String toString() {
+        return "AISummary{" +
+                "id=" + id +
+                ", projectId=" + projectId +
+                ", summaryText='" + (summaryText != null && summaryText.length() > 50
+                ? summaryText.substring(0, 50) + "..."
+                : summaryText) + '\'' +
+                ", generatedAt=" + generatedAt +
+                ", postsAnalyzed=" + postsAnalyzed +
+                ", commentsAnalyzed=" + commentsAnalyzed +
+                ", model='" + model + '\'' +
+                '}';
+    }
 }

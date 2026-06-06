@@ -1,4 +1,4 @@
-package com.disaster.analysis.domain.repository;
+package com.disaster.analysis.domain.contract.repository;
 
 import com.disaster.analysis.domain.model.Project;
 import java.util.List;

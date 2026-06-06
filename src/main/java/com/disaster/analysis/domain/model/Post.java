@@ -18,13 +18,8 @@ public class Post {
     private LocalDateTime publishedAt;
     private String url;
     private String preprocessedContent;
-
-    // Enum Sentiment được giữ nguyên vì JDBC có thể dễ dàng chuyển Enum thành String bằng hàm name()
-    private Sentiment sentiment;
-
-    // Lưu các danh mục thiệt hại dưới dạng chuỗi (VD: "BUILDING_DAMAGE,PEOPLE_AFFECTED")
-    private String damageCategories;
-
+    private Sentiment sentiment; // Enum Sentiment được giữ nguyên vì JDBC có thể dễ dàng chuyển Enum thành String bằng hàm name()
+    private String damageCategories; // Lưu các danh mục thiệt hại dưới dạng chuỗi (VD: "BUILDING_DAMAGE,PEOPLE_AFFECTED")
     private LocalDateTime collectedAt;
 
     public Post() {

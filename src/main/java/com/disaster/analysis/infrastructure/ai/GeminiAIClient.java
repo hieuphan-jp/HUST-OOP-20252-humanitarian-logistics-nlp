@@ -20,10 +20,10 @@ import java.time.Duration;
  */
 public class GeminiAIClient implements AIClient {
 
-//    Tách riêng Base URL và Model Name theo đúng chuẩn thiết kế API
+//    //Tách riêng Base URL và Model Name theo đúng chuẩn thiết kế API
 //    private static final String BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models/";
 //    private static final String MODEL_NAME = "gemini-2.5-flash";
-//    Tự động nối chuỗi để tạo Endpoint hoàn chỉnh
+//    //Tự động nối chuỗi để tạo Endpoint hoàn chỉnh
 //    private static final String API_ENDPOINT = BASE_URL + MODEL_NAME + ":generateContent";
 
     private static final String API_ENDPOINT =
