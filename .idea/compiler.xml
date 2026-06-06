@@ -7,7 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="disaster-social-analysis" />
+        <module name="analysis" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="disaster-social-analysis" target="21" />
+    </bytecodeTargetLevel>
   </component>
 </project>
