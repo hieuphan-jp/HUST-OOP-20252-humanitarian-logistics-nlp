@@ -174,7 +174,7 @@ public class ApplicationContext {
 
         String youtubeApiKey = dotenv.get("YOUTUBE_API_KEY", "");
 
-        if (youtubeApiKey != null && !youtubeApiKey.isEmpty()) {
+        if (!youtubeApiKey.isEmpty()) {
             dataSources.put(Platform.YOUTUBE, new YouTubeDataSource(youtubeApiKey));
             LogUtil.info("YouTube DataSource injected with real API Key.");
         } else {

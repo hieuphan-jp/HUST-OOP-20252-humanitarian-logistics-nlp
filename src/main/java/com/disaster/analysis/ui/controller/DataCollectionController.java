@@ -131,7 +131,7 @@ public class DataCollectionController implements Initializable {
 
         projectNameLabel.setText("Project: " + currentProject.getName());
 
-        String platforms = String.join(", ", currentProject.getPlatforms());
+        String platforms = currentProject.getPlatforms();
 
         // String details = String.format(
         //     "Disaster: %s | Platforms: %s | Period: %s to %s",
