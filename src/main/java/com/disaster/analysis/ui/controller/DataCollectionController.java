@@ -5,6 +5,7 @@ import com.disaster.analysis.application.dto.PostDTO;
 import com.disaster.analysis.application.dto.ProjectDTO;
 import com.disaster.analysis.application.mapper.ProjectMapper;
 import com.disaster.analysis.config.ApplicationContext;
+import com.disaster.analysis.domain.model.Project;
 import com.disaster.analysis.ui.navigation.Navigator;
 import com.disaster.analysis.application.services.DataCollectionService;
 import com.disaster.analysis.application.services.ProjectService;

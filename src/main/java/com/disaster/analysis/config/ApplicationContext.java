@@ -21,7 +21,7 @@ import com.disaster.analysis.infrastructure.analysis.*;
 import com.disaster.analysis.infrastructure.export.XlsxExporter;
 
 // Nhập các Service (Tầng ứng dụng - Application Layer) xử lý nghiệp vụ
-import com.disaster.analysis.application.service.*;
+import com.disaster.analysis.application.services.*;
 
 // Nhập các Interface Repository để thao tác với Cơ sở dữ liệu
 import com.disaster.analysis.domain.contract.repository.*;

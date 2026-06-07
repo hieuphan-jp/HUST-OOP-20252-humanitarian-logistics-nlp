@@ -1,4 +1,4 @@
-package com.disaster.analysis.application.service;
+package com.disaster.analysis.application.services;
 
 import com.disaster.analysis.domain.contract.ai.AIClient;
 import com.disaster.analysis.domain.exception.AIClientException;

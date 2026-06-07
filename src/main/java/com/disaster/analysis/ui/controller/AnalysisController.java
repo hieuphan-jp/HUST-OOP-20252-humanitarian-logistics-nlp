@@ -440,7 +440,7 @@ public class AnalysisController implements Initializable {
             // Sort categories by count (descending)
             List<Map.Entry<DamageCategory, Long>> sortedEntries = distribution.entrySet().stream()
                     .sorted(Map.Entry.<DamageCategory, Long>comparingByValue().reversed())
-                    .collect(Collectors.toList());
+                    .toList();
 
             if (damageChart.getXAxis() instanceof CategoryAxis xAxis) {
                 xAxis.getCategories().clear();
@@ -559,7 +559,7 @@ public class AnalysisController implements Initializable {
                 // Format posts for display
                 formattedItems.addAll(posts.stream()
                         .map(this::formatPostForDisplay)
-                        .collect(Collectors.toList()));
+                        .toList());
             }
 
             // Fetch and format comments if needed
@@ -579,7 +579,7 @@ public class AnalysisController implements Initializable {
                 // Format comments for display
                 formattedItems.addAll(comments.stream()
                         .map(this::formatCommentForDisplay)
-                        .collect(Collectors.toList()));
+                        .toList());
             }
 
             // Update ListView

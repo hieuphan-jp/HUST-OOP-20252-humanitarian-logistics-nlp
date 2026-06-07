@@ -2,6 +2,7 @@ package com.disaster.analysis.ui.controller;
 
 import com.disaster.analysis.config.ApplicationContext;
 import com.disaster.analysis.ui.navigation.Navigator;
+import com.disaster.analysis.ui.navigation.View;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -24,12 +25,12 @@ public class MainController implements Initializable {
     private Label statusLabel;
 
     private Navigator navigator;
-    private ApplicationContext context;
 
     private boolean darkMode = false;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        ApplicationContext context;
         // Initialize ApplicationContext
         context = ApplicationContext.getInstance();
         context.initialize();
@@ -99,10 +100,13 @@ public class MainController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("About");
         alert.setHeaderText("Disaster Social Media Analysis");
-        alert.setContentText("Version 1.0\n\n" +
-                "A Java desktop application for collecting and analyzing " +
-                "social media data related to natural disasters.\n\n" +
-                "Built with JavaFX 24 and Java 25");
+        alert.setContentText("""
+                Version 1.0
+                
+                A Java desktop application for collecting and analyzing \
+                social media data related to natural disasters.
+                
+                Built with JavaFX 24 and Java 25""");
         alert.showAndWait();
     }
 

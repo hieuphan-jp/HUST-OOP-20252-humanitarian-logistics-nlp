@@ -1,4 +1,4 @@
-package com.disaster.analysis.application.service;
+package com.disaster.analysis.application.services;
 
 import com.disaster.analysis.domain.contract.social.DataSource;
 import com.disaster.analysis.domain.exception.DataSourceException;
