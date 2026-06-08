@@ -17,7 +17,7 @@ public class ProjectDTO {
     private List<String> hashtags;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
-    private Set<String> platforms;
+    private Set<Platform> platforms;
     private LocalDateTime createdAt;
     private LocalDateTime lastModified;
 
@@ -45,8 +45,8 @@ public class ProjectDTO {
     public LocalDateTime getEndDate() { return endDate; }
     public void setEndDate(LocalDateTime endDate) { this.endDate = endDate; }
 
-    public Set<String> getPlatforms() { return platforms; }
-    public void setPlatforms(Set<String> platforms) { this.platforms = platforms; }
+    public Set<Platform> getPlatforms() { return platforms; }
+    public void setPlatforms(Set<Platform> platforms) { this.platforms = platforms; }
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
