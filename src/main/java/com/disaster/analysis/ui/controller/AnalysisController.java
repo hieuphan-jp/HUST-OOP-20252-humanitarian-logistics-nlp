@@ -770,7 +770,7 @@ public class AnalysisController implements Initializable {
             @Override
             protected Void call() throws Exception {
                 // Convert DTO to domain model for service call
-                var project = ProjectMapper.toDomain(currentProject);
+                var project = ProjectMapper.toEntity(currentProject);
                 // Call exportService.exportProject in Task.call()
                 exportService.exportProject(project, outputPath);
                 return null;

@@ -128,7 +128,4 @@ public class ProjectMapper {
     public static List<ProjectDTO> toDTOList(List<Project> entities) {
         return null;
     }
-
-    public static Object toDomain(ProjectDTO currentProject) {
-    }
 }

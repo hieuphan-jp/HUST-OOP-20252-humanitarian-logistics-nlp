@@ -3,7 +3,10 @@ package com.disaster.analysis.application.dto;
 import com.disaster.analysis.domain.model.enums.DamageCategory;
 import com.disaster.analysis.domain.model.enums.Platform;
 import com.disaster.analysis.domain.model.enums.Sentiment;
+import jdk.jfr.Category;
+
 import java.time.LocalDateTime;
+import java.util.Locale;
 import java.util.Set;
 
 /**
@@ -21,7 +24,7 @@ public class CommentDTO {
     private LocalDateTime publishedAt;
     private String preprocessedContent;
     private Sentiment sentiment;
-    private Set<DamageCategory> damageCategories;
+    private Set<Category> damageCategories;
     private LocalDateTime collectedAt;
 
     public CommentDTO() {}
@@ -57,8 +60,8 @@ public class CommentDTO {
     public Sentiment getSentiment() { return sentiment; }
     public void setSentiment(Sentiment sentiment) { this.sentiment = sentiment; }
 
-    public Set<DamageCategory> getDamageCategories() { return damageCategories; }
-    public void setDamageCategories(Set<DamageCategory> damageCategories) { this.damageCategories = damageCategories; }
+    public Set<Category> getDamageCategories() { return damageCategories; }
+    public void setDamageCategories(Set<Category> damageCategories) { this.damageCategories = damageCategories; }
 
     public LocalDateTime getCollectedAt() { return collectedAt; }
     public void setCollectedAt(LocalDateTime collectedAt) { this.collectedAt = collectedAt; }

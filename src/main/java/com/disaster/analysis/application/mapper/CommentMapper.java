@@ -31,7 +31,7 @@ public class CommentMapper {
         dto.setAuthor(entity.getAuthor());
         dto.setPublishedAt(entity.getPublishedAt());
         dto.setPreprocessedContent(entity.getPreprocessedContent());
-        dto.setSentiment(entity.getSentiment());
+        dto.setSentiment(entity.getSentiment().name());
         dto.setCollectedAt(entity.getCollectedAt());
 
         if (entity.getPlatform() != null && !entity.getPlatform().isEmpty()) {
