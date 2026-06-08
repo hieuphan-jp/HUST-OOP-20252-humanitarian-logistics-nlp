@@ -1,5 +1,7 @@
 package com.disaster.analysis.application.service;
 
+import com.disaster.analysis.application.dto.AISummaryDTO;
+import com.disaster.analysis.application.mapper.AISummaryMapper;
 import com.disaster.analysis.domain.contract.ai.AIClient;
 import com.disaster.analysis.domain.exception.AIClientException;
 import com.disaster.analysis.domain.model.AISummary;
@@ -50,14 +52,15 @@ public class AISummaryService {
     /**
      * Lấy báo cáo AI đã lưu trong Database (Nếu có).
      */
-    public Optional<AISummary> getExistingSummary(Long projectId) {
-        return summaryRepository.findByProjectId(projectId);
+    public Optional<AISummaryDTO> getExistingSummary(Long projectId) {
+        Optional<AISummary> summary = summaryRepository.findByProjectId(projectId);
+        return summary.map(AISummaryMapper::toDTO);
     }
 
     /**
      * Thu thập số liệu hiện tại của dự án và yêu cầu AI viết một bản báo cáo mới.
      */
-    public AISummary generateProjectSummary(Long projectId) {
+    public AISummaryDTO generateProjectSummary(Long projectId) {
         try {
             LogUtil.info("Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: " + projectId);
 
@@ -80,7 +83,10 @@ public class AISummaryService {
             summary.setCommentsAnalyzed(data.totalCommentsCount);
             summary.setModel(aiClient.getModelName());
 
-            return summaryRepository.save(summary);
+            // 5. Lưu vào database
+            AISummary savedSummary = summaryRepository.save(summary);
+
+            return AISummaryMapper.toDTO(savedSummary);
 
         } catch (AIClientException e) {
             LogUtil.error("Lỗi AI Client: " + e.getMessage(), e);
