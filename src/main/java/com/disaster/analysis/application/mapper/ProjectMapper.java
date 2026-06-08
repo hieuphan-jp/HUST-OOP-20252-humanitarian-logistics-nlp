@@ -54,12 +54,11 @@ public class ProjectMapper {
             dto.setHashtags(new ArrayList<>());
         }
 
-        // 3. CHUYỂN ĐỔI NỀN TẢNG: Chuỗi "YOUTUBE,FACEBOOK" → Set<Platform>
+        // 3. CHUYỂN ĐỔI NỀN TẢNG: Chuỗi "YOUTUBE,FACEBOOK" → Set<String>
         if (entity.getPlatforms() != null && !entity.getPlatforms().trim().isEmpty()) {
             dto.setPlatforms(Arrays.stream(entity.getPlatforms().split(","))
-                    .map(String::trim)
-                    .map(Platform::valueOf) // Ép chuỗi thành kiểu Enum
-                    .collect(Collectors.toSet()));
+                    .map(String::trim) // Làm sạch khoảng trắng thừa (nếu có)
+                    .collect(Collectors.toSet())); // Thu thập trực tiếp thành Set<String>
         } else {
             dto.setPlatforms(new HashSet<>());
         }
@@ -101,13 +100,12 @@ public class ProjectMapper {
             entity.setHashtags("");
         }
 
-        // 3. CHUYỂN ĐỔI NỀN TẢNG: Set<Platform> → Chuỗi "YOUTUBE,FACEBOOK"
+        // 3. CHUYỂN ĐỔI NỀN TẢNG: Set<String> → Chuỗi "YOUTUBE,FACEBOOK"
         if (dto.getPlatforms() != null && !dto.getPlatforms().isEmpty()) {
-            entity.setPlatforms(dto.getPlatforms().stream()
-                    .map(Platform::name)
-                    .collect(Collectors.joining(",")));
+            entity.setPlatforms(String.join(",", dto.getPlatforms()));
         } else {
             entity.setPlatforms("");
+
         }
 
         return entity;
