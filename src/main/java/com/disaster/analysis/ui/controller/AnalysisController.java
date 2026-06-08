@@ -4,6 +4,7 @@ import com.disaster.analysis.application.dto.AISummaryDTO;
 import com.disaster.analysis.application.dto.CommentDTO;
 import com.disaster.analysis.application.dto.PostDTO;
 import com.disaster.analysis.application.dto.ProjectDTO;
+import com.disaster.analysis.application.mapper.AISummaryMapper;
 import com.disaster.analysis.application.mapper.ProjectMapper;
 import com.disaster.analysis.application.services.AISummaryService;
 import com.disaster.analysis.application.services.DamageClassificationService;
@@ -923,7 +924,7 @@ public class AnalysisController implements Initializable {
             @Override
             protected AISummaryDTO call() throws Exception {
                 // Call the AI summary service to generate the summary
-                return aiSummaryService.generateProjectSummary(currentProject.getId());
+                return AISummaryMapper.toDTO(aiSummaryService.generateProjectSummary(currentProject.getId()));
             }
         };
 
