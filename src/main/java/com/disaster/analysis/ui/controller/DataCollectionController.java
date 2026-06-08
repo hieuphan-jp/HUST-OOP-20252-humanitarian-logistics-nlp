@@ -5,6 +5,7 @@ import com.disaster.analysis.application.dto.PostDTO;
 import com.disaster.analysis.application.dto.ProjectDTO;
 import com.disaster.analysis.application.mapper.ProjectMapper;
 import com.disaster.analysis.config.ApplicationContext;
+import com.disaster.analysis.domain.model.enums.Platform;
 import com.disaster.analysis.ui.navigation.Navigator;
 import com.disaster.analysis.application.services.DataCollectionService;
 import com.disaster.analysis.application.services.ProjectService;
@@ -130,7 +131,9 @@ public class DataCollectionController implements Initializable {
 
         projectNameLabel.setText("Project: " + currentProject.getName());
 
-        String platforms = String.join(", ", currentProject.getPlatforms());
+        String platforms = currentProject.getPlatforms().stream()
+                .map(Platform::name)
+                .collect(java.util.stream.Collectors.joining(", "));
 
         // String details = String.format(
         //     "Disaster: %s | Platforms: %s | Period: %s to %s",
@@ -248,7 +251,7 @@ public class DataCollectionController implements Initializable {
             protected Void call() throws Exception {
                 try {
                     // Convert DTO to domain model for service call
-                    var project = ProjectMapper.toDomain(currentProject);
+                    var project = ProjectMapper.toEntity(currentProject);
 
                     // Update progress callback
                     dataCollectionService.collectData(project, progress -> {

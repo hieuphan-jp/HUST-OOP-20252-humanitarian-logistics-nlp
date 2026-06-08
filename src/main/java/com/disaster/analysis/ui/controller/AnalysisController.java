@@ -12,6 +12,7 @@ import com.disaster.analysis.application.services.ExportService;
 import com.disaster.analysis.application.services.SentimentAnalysisService;
 import com.disaster.analysis.config.ApplicationContext;
 import com.disaster.analysis.domain.model.enums.DamageCategory;
+import com.disaster.analysis.domain.model.enums.Platform;
 import com.disaster.analysis.domain.model.enums.Sentiment;
 import com.disaster.analysis.domain.model.enums.TimeGranularity;
 import com.disaster.analysis.ui.navigation.Navigator;
@@ -234,7 +235,9 @@ public class AnalysisController implements Initializable {
 
         projectNameLabel.setText("Project: " + currentProject.getName());
 
-        String platforms = String.join(", ", currentProject.getPlatforms());
+        String platforms = currentProject.getPlatforms().stream()
+                .map(Platform::name)
+                .collect(java.util.stream.Collectors.joining(", "));
 
         String details = String.format(
                 "Disaster: %s | Platforms: %s | Period: %s to %s",
@@ -560,7 +563,7 @@ public class AnalysisController implements Initializable {
                 // Format posts for display
                 formattedItems.addAll(posts.stream()
                         .map(this::formatPostForDisplay)
-                        .collect(Collectors.toList()));
+                        .toList());
             }
 
             // Fetch and format comments if needed
@@ -580,7 +583,7 @@ public class AnalysisController implements Initializable {
                 // Format comments for display
                 formattedItems.addAll(comments.stream()
                         .map(this::formatCommentForDisplay)
-                        .collect(Collectors.toList()));
+                        .toList());
             }
 
             // Update ListView
@@ -615,7 +618,7 @@ public class AnalysisController implements Initializable {
                 : "Unknown";
 
         String sentiment = post.getSentiment() != null
-                ? post.getSentiment()
+                ? post.getSentiment().name()
                 : "N/A";
 
         String categories = "";
@@ -623,9 +626,9 @@ public class AnalysisController implements Initializable {
             categories = post.getDamageCategories().stream()
                     .map(cat -> {
                         try {
-                            return DamageCategory.valueOf(cat).getDisplayName();
+                            return DamageCategory.valueOf(cat.name()).getDisplayName();
                         } catch (IllegalArgumentException e) {
-                            return cat;
+                            return cat.name();
                         }
                     })
                     .collect(Collectors.joining(", "));
@@ -652,7 +655,7 @@ public class AnalysisController implements Initializable {
                 : "Unknown";
 
         String sentiment = comment.getSentiment() != null
-                ? comment.getSentiment()
+                ? comment.getSentiment().name()
                 : "N/A";
 
         String categories = "";
@@ -660,9 +663,9 @@ public class AnalysisController implements Initializable {
             categories = comment.getDamageCategories().stream()
                     .map(cat -> {
                         try {
-                            return DamageCategory.valueOf(cat).getDisplayName();
+                            return DamageCategory.valueOf(cat.name()).getDisplayName();
                         } catch (IllegalArgumentException e) {
-                            return cat;
+                            return cat.name();
                         }
                     })
                     .collect(Collectors.joining(", "));
@@ -924,7 +927,7 @@ public class AnalysisController implements Initializable {
             @Override
             protected AISummaryDTO call() throws Exception {
                 // Call the AI summary service to generate the summary
-                return AISummaryMapper.toDTO(aiSummaryService.generateProjectSummary(currentProject.getId()));
+                return aiSummaryService.generateProjectSummary(currentProject.getId());
             }
         };
 

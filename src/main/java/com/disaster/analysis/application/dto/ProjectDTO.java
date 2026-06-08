@@ -21,6 +21,16 @@ public class ProjectDTO {
     private LocalDateTime createdAt;
     private LocalDateTime lastModified;
 
+    public ProjectDTO(String name, String disasterName, List<String> keywords, List<String> hashtags, LocalDateTime startDate, LocalDateTime endDate, Set<Platform> platforms){
+        this.name = name;
+        this.disasterName = disasterName;
+        this.keywords = keywords;
+        this.hashtags = hashtags;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.platforms = platforms;
+    }
+
     public ProjectDTO() {}
 
     // Getters và Setters

@@ -220,7 +220,9 @@ public class ProjectFormController implements Initializable {
         }
 
         // Set platform checkboxes dynamically
-        Set<String> platformNames = project.getPlatforms();
+        Set<String> platformNames = project.getPlatforms().stream()
+                .map(Platform::name)
+                .collect(Collectors.toSet());
         for (Map.Entry<Platform, CheckBox> entry : platformCheckBoxes.entrySet()) {
             Platform platform = entry.getKey();
             CheckBox checkBox = entry.getValue();
@@ -258,8 +260,8 @@ public class ProjectFormController implements Initializable {
 
             if (editingProject == null) {
                 // Create new project
-                projectService.createProject(name, disasterName, keywords, hashtags,
-                        startDate, endDate, platforms);
+                projectService.createProject(new ProjectDTO(name, disasterName, keywords, hashtags,
+                        startDate, endDate, platforms));
                 DialogUtil.showInformation("Project Created",
                         "Project '" + name + "' has been created successfully.");
             } else {
@@ -271,10 +273,7 @@ public class ProjectFormController implements Initializable {
                 editingProject.setStartDate(startDate);
                 editingProject.setEndDate(endDate);
                 // Convert Platform enums to strings for DTO
-                Set<String> platformNames = platforms.stream()
-                        .map(Platform::name)
-                        .collect(Collectors.toSet());
-                editingProject.setPlatforms(platformNames);
+                editingProject.setPlatforms(platforms);
                 editingProject.setLastModified(LocalDateTime.now());
 
                 projectService.updateProject(editingProject);

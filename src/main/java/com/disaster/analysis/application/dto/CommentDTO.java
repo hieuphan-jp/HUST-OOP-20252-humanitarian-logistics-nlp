@@ -24,7 +24,7 @@ public class CommentDTO {
     private LocalDateTime publishedAt;
     private String preprocessedContent;
     private Sentiment sentiment;
-    private Set<Category> damageCategories;
+    private Set<DamageCategory> damageCategories;
     private LocalDateTime collectedAt;
 
     public CommentDTO() {}
@@ -60,8 +60,8 @@ public class CommentDTO {
     public Sentiment getSentiment() { return sentiment; }
     public void setSentiment(Sentiment sentiment) { this.sentiment = sentiment; }
 
-    public Set<Category> getDamageCategories() { return damageCategories; }
-    public void setDamageCategories(Set<Category> damageCategories) { this.damageCategories = damageCategories; }
+    public Set<DamageCategory> getDamageCategories() { return damageCategories; }
+    public void setDamageCategories(Set<DamageCategory> damageCategories) { this.damageCategories = damageCategories; }
 
     public LocalDateTime getCollectedAt() { return collectedAt; }
     public void setCollectedAt(LocalDateTime collectedAt) { this.collectedAt = collectedAt; }

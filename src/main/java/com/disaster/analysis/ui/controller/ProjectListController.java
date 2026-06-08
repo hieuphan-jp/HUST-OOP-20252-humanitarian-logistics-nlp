@@ -2,6 +2,7 @@ package com.disaster.analysis.ui.controller;
 
 import com.disaster.analysis.application.dto.ProjectDTO;
 import com.disaster.analysis.config.ApplicationContext;
+import com.disaster.analysis.domain.model.enums.Platform;
 import com.disaster.analysis.ui.navigation.Navigator;
 import com.disaster.analysis.ui.navigation.View;
 import com.disaster.analysis.application.services.ProjectService;
@@ -152,7 +153,9 @@ public class ProjectListController implements Initializable {
 
         // Platforms column
         platformsColumn.setCellValueFactory(cellData -> {
-            String platformsStr = String.join(", ", cellData.getValue().getPlatforms());
+            String platformsStr = cellData.getValue().getPlatforms().stream()
+                    .map(Platform::name)
+                    .collect(java.util.stream.Collectors.joining(", "));
             return new SimpleStringProperty(platformsStr);
         });
 
