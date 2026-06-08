@@ -1,6 +1,6 @@
 package com.disaster.analysis;
 
-import com.disaster.analysis.infrastructure.persistence.DatabaseManager;
+//import com.disaster.analysis.infrastructure.persistence.DatabaseManager;
 import com.disaster.analysis.util.LogUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -69,22 +69,23 @@ public class Main extends Application {
     public void init() throws Exception {
         super.init();
 
-        try {
+//        try {
             LogUtil.info("Initializing application...");
-
-            // Initialize DatabaseManager
-            DatabaseManager dbManager = DatabaseManager.getInstance();
-            dbManager.initialize();
-
-            LogUtil.info("Database initialized successfully");
-            System.out.println("Database initialized successfully");
-
-        } catch (SQLException e) {
-            LogUtil.error("Failed to initialize database", e);
-            System.err.println("Failed to initialize database: " + e.getMessage());
-            e.printStackTrace();
-            throw new Exception("Database initialization failed", e);
-        }
+//
+//            // Initialize DatabaseManager
+//            //Đã tạo sẵn trong .env rồi nên không tạo nữa
+////            DatabaseManager dbManager = DatabaseManager.getInstance();
+////            dbManager.initialize();
+//
+//            LogUtil.info("Database initialized successfully");
+//            System.out.println("Database initialized successfully");
+//
+//        } catch (SQLException e) {
+//            LogUtil.error("Failed to initialize database", e);
+//            System.err.println("Failed to initialize database: " + e.getMessage());
+//            e.printStackTrace();
+//            throw new Exception("Database initialization failed", e);
+//        }
     }
 
 
@@ -99,8 +100,8 @@ public class Main extends Application {
         try {
             LogUtil.info("Shutting down application...");
 
-            DatabaseManager dbManager = DatabaseManager.getInstance();
-            dbManager.close();
+//            DatabaseManager dbManager = DatabaseManager.getInstance();
+//            dbManager.close();
 
             LogUtil.info("Application shutdown complete");
             System.out.println("Application shutdown complete");
