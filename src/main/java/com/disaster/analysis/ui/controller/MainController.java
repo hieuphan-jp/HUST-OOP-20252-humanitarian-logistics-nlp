@@ -61,6 +61,7 @@ public class MainController implements Initializable {
 
     @FXML
     private void handleNewProject() {
+        System.out.println("Da bam nut New Project");
         navigator.navigateTo(View.PROJECT_FORM);
         updateStatus("Creating new project");
     }
