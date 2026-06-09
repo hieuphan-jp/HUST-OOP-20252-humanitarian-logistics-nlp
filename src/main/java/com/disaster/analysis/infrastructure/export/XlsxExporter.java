@@ -1,8 +1,8 @@
 package com.disaster.analysis.infrastructure.export;
 
-import com.disaster.analysis.domain.model.Comment;
-import com.disaster.analysis.domain.model.Post;
-import com.disaster.analysis.domain.model.Project;
+import com.disaster.analysis.domain.model.entities.Comment;
+import com.disaster.analysis.domain.model.entities.Post;
+import com.disaster.analysis.domain.model.entities.Project;
 import com.disaster.analysis.domain.model.enums.DamageCategory;
 import com.disaster.analysis.domain.model.enums.Sentiment;
 import com.disaster.analysis.domain.contract.export.Exporter;

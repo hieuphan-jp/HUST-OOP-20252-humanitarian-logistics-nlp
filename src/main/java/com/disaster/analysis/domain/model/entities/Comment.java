@@ -1,4 +1,4 @@
-package com.disaster.analysis.domain.model;
+package com.disaster.analysis.domain.model.entities;
 
 import com.disaster.analysis.domain.model.enums.Sentiment;
 import java.time.LocalDateTime;
