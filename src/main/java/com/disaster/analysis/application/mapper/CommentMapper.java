@@ -1,7 +1,7 @@
 package com.disaster.analysis.application.mapper;
 
 import com.disaster.analysis.application.dto.CommentDTO;
-import com.disaster.analysis.domain.model.Comment;
+import com.disaster.analysis.domain.model.entities.Comment;
 import com.disaster.analysis.domain.model.enums.DamageCategory;
 import com.disaster.analysis.domain.model.enums.Platform;
 

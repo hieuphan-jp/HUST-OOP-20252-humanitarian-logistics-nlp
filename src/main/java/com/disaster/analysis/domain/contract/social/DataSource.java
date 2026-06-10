@@ -1,8 +1,8 @@
 package com.disaster.analysis.domain.contract.social;
 
 import com.disaster.analysis.domain.exception.DataSourceException;
-import com.disaster.analysis.domain.model.Comment;
-import com.disaster.analysis.domain.model.Post;
+import com.disaster.analysis.domain.model.entities.Comment;
+import com.disaster.analysis.domain.model.entities.Post;
 import com.disaster.analysis.domain.model.enums.Platform;
 
 import java.time.LocalDateTime;

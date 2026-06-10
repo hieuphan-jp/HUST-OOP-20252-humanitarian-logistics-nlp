@@ -1,6 +1,6 @@
 package com.disaster.analysis.domain.contract.repository;
 
-import com.disaster.analysis.domain.model.Comment;
+import com.disaster.analysis.domain.model.entities.Comment;
 import com.disaster.analysis.domain.model.enums.DamageCategory;
 import com.disaster.analysis.domain.model.enums.Sentiment;
 

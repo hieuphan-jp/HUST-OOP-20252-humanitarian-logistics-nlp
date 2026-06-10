@@ -1,9 +1,9 @@
-package com.disaster.analysis.infrastructure.persistence;
+package com.disaster.analysis.infrastructure.repository;
 
 import com.disaster.analysis.domain.contract.repository.ProjectRepository;
 import com.disaster.analysis.domain.exception.DatabaseException;
-import com.disaster.analysis.domain.model.Project;
-import com.disaster.analysis.infrastructure.persistence.context.DbContext;
+import com.disaster.analysis.domain.model.entities.Project;
+import com.disaster.analysis.infrastructure.repository.context.DbContext;
 
 import java.sql.*;
 import java.time.LocalDateTime;

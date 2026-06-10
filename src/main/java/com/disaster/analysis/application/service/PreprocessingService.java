@@ -1,7 +1,7 @@
 package com.disaster.analysis.application.service;
 
-import com.disaster.analysis.domain.model.Comment;
-import com.disaster.analysis.domain.model.Post;
+import com.disaster.analysis.domain.model.entities.Comment;
+import com.disaster.analysis.domain.model.entities.Post;
 import com.disaster.analysis.domain.contract.preprocessing.TextPreprocessor;
 import com.disaster.analysis.domain.contract.repository.CommentRepository;
 import com.disaster.analysis.domain.contract.repository.PostRepository;

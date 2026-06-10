@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 
-import com.disaster.analysis.domain.model.Comment;
-import com.disaster.analysis.domain.model.Post;
-import com.disaster.analysis.domain.model.Project;
+import com.disaster.analysis.domain.model.entities.Comment;
+import com.disaster.analysis.domain.model.entities.Post;
+import com.disaster.analysis.domain.model.entities.Project;
 
 /**
  * Bản hợp đồng định nghĩa công cụ xuất dữ liệu của hệ thống ra các file bên ngoài (PDF, Excel, CSV...).
