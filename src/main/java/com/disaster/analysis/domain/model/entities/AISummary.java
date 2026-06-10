@@ -1,4 +1,4 @@
-package com.disaster.analysis.domain.model;
+package com.disaster.analysis.domain.model.entities;
 
 import java.time.LocalDateTime;
 

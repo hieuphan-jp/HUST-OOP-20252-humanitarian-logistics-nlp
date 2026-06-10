@@ -1,6 +1,6 @@
 package com.disaster.analysis.domain.contract.repository;
 
-import com.disaster.analysis.domain.model.Project;
+import com.disaster.analysis.domain.model.entities.Project;
 import java.util.List;
 import java.util.Optional;
 

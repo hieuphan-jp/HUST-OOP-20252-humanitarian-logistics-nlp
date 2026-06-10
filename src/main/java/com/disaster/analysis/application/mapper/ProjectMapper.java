@@ -1,7 +1,7 @@
 package com.disaster.analysis.application.mapper;
 
 import com.disaster.analysis.application.dto.ProjectDTO;
-import com.disaster.analysis.domain.model.Project;
+import com.disaster.analysis.domain.model.entities.Project;
 import com.disaster.analysis.domain.model.enums.Platform;
 
 import java.util.ArrayList;

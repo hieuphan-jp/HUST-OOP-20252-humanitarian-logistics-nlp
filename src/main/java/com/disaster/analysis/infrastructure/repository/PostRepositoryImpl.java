@@ -1,11 +1,11 @@
-package com.disaster.analysis.infrastructure.persistence;
+package com.disaster.analysis.infrastructure.repository;
 
 import com.disaster.analysis.domain.contract.repository.PostRepository;
 import com.disaster.analysis.domain.exception.DatabaseException;
-import com.disaster.analysis.domain.model.Post;
+import com.disaster.analysis.domain.model.entities.Post;
 import com.disaster.analysis.domain.model.enums.DamageCategory;
 import com.disaster.analysis.domain.model.enums.Sentiment;
-import com.disaster.analysis.infrastructure.persistence.context.DbContext;
+import com.disaster.analysis.infrastructure.repository.context.DbContext;
 
 
 import java.sql.*;

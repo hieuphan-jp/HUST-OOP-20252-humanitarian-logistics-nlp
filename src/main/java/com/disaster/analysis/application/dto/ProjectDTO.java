@@ -33,6 +33,17 @@ public class ProjectDTO {
 
     public ProjectDTO() {}
 
+    public ProjectDTO(String name, String disasterName, List<String> keywords, List<String> hashtags, LocalDateTime startDate, LocalDateTime endDate, Set<Platform> platforms) {
+        this.name = name;
+        this.disasterName = disasterName;
+        this.keywords = keywords;
+        this.hashtags = hashtags;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.platforms = platforms;
+    }
+
+
     // Getters và Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
