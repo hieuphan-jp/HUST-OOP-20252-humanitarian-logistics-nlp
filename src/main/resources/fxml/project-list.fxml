@@ -4,47 +4,108 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.disaster.analysis.ui.controller.ProjectListController"
-      spacing="15" styleClass="content-container">
+<!-- KHUNG BAO NGOÀI CÙNG (Root Container): Sử dụng BorderPane để chia các vùng Left, Center -->
+<BorderPane xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.disaster.analysis.ui.controller.ProjectListController"
+            style="-fx-background-color: #020617; -fx-font-family: 'Segoe UI', Helvetica, Arial, sans-serif;">
 
-    <!-- Header -->
-    <HBox alignment="CENTER" spacing="10">
-        <Label text="Projects" styleClass="header"/>
-        <Region HBox.hgrow="ALWAYS"/>
-    </HBox>
+    <!-- PHẦN BÊN TRÁI (LEFT): Thanh Menu điều hướng và thông số hệ thống (Sidebar) -->
+    <left>
+        <VBox spacing="25" prefWidth="260" minWidth="260"
+              style="-fx-background-color: #0f172a; -fx-padding: 30 20 30 20; -fx-border-color: #1e293b; -fx-border-width: 0 1 0 0;">
 
-    <!-- Action Buttons -->
-    <HBox spacing="10" alignment="CENTER_LEFT">
-        <Button fx:id="newButton" text="New" onAction="#handleNewProject" styleClass="success"/>
-        <!--<Button fx:id="openButton" text="Open" onAction="#handleOpenProject" disable="true"/>-->
-        <Button fx:id="deleteButton" text="Delete" onAction="#handleDeleteProject" styleClass="danger" disable="true"/>
-        <!-- <Button fx:id="refreshButton" text="Refresh" onAction="#handleRefresh" styleClass="secondary"/> -->
-    </HBox>
-
-    <!-- Projects Table -->
-    <TableView fx:id="projectTable" VBox.vgrow="ALWAYS">
-        <columns>
-            <TableColumn fx:id="nameColumn" text="Name" prefWidth="200" minWidth="150"/>
-            <TableColumn fx:id="disasterColumn" text="Disaster" prefWidth="200" minWidth="150"/>
-            <TableColumn fx:id="dateColumn" text="Date Range" prefWidth="250" minWidth="200"/>
-            <TableColumn fx:id="platformsColumn" text="Platforms" prefWidth="200" minWidth="150"/>
-            <TableColumn fx:id="createdColumn" text="Created" prefWidth="180" minWidth="150"/>
-            <TableColumn fx:id="modifiedColumn" text="Last Modified" prefWidth="180" minWidth="150"/>
-        </columns>
-
-        <placeholder>
-            <VBox alignment="CENTER" spacing="10" styleClass="empty-state">
-                <Label text="No projects found" styleClass="subheader"/>
-                <Label text="Click 'New' to create your first project" styleClass="secondary"/>
+            <!-- Nhãn hiệu ứng dụng (Branding) -->
+            <VBox spacing="5">
+                <Label text="DISASTER SOCIAL MEDIA" style="-fx-text-fill: #38bdf8; -fx-font-size: 11px; -fx-font-weight: bold; -fx-letter-spacing: 1px;"/>
+                <Label text="Analysis Portal" style="-fx-text-fill: #ffffff; -fx-font-size: 20px; -fx-font-weight: bold;"/>
             </VBox>
-        </placeholder>
-    </TableView>
 
-    <!-- Footer with project count -->
-    <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 5 0 0 0;">
-        <Label fx:id="projectCountLabel" text="0 projects" styleClass="secondary"/>
-        <Button fx:id="refreshButton" text="Refresh" onAction="#handleRefresh" styleClass="secondary" />
-    </HBox>
+            <Separator style="-fx-opacity: 0.1;"/>
 
-</VBox>
+            <!-- Khung hiển thị tổng số Project đang chạy (Quick Stats) -->
+            <VBox spacing="8" style="-fx-background-color: #1e293b; -fx-padding: 15; -fx-background-radius: 10;">
+                <Label text="TOTAL PROJECTS RUNNING" style="-fx-text-fill: #94a3b8; -fx-font-size: 10px; -fx-font-weight: bold;"/>
+                <Label fx:id="projectCountLabel" text="1 project" style="-fx-text-fill: #34d399; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+            </VBox>
+
+            <!-- Nhóm các nút quản lý (Management Actions) -->
+            <VBox spacing="12" VBox.vgrow="ALWAYS">
+                <Label text="MANAGEMENT" style="-fx-text-fill: #64748b; -fx-font-size: 10px; -fx-font-weight: bold; -fx-padding: 0 0 5 0;"/>
+
+                <!-- Nút tạo Project mới -->
+                <Button fx:id="newButton" text="➕ New Project" onAction="#handleNewProject" maxWidth="1.7976931348623157E308" prefHeight="42"
+                        style="-fx-cursor: hand; -fx-font-weight: bold; -fx-background-radius: 8; -fx-alignment: CENTER_LEFT; -fx-padding: 0 0 0 15; -fx-background-color: #059669; -fx-text-fill: white;"/>
+
+                <!-- Nút làm mới dữ liệu bảng -->
+                <Button fx:id="refreshButton" text="🔄 Refresh" onAction="#handleRefresh" maxWidth="1.7976931348623157E308" prefHeight="42"
+                        style="-fx-cursor: hand; -fx-font-weight: bold; -fx-background-radius: 8; -fx-alignment: CENTER_LEFT; -fx-padding: 0 0 0 15; -fx-background-color: #334155; -fx-text-fill: white;"/>
+
+                <!-- Nút xóa Project được chọn -->
+                <Button fx:id="deleteButton" text="🗑 Delete" onAction="#handleDeleteProject" disable="false" maxWidth="1.7976931348623157E308" prefHeight="42"
+                        style="-fx-cursor: hand; -fx-font-weight: bold; -fx-background-radius: 8; -fx-alignment: CENTER_LEFT; -fx-padding: 0 0 0 15; -fx-background-color: #b91c1c; -fx-text-fill: white;"/>
+            </VBox>
+
+            <!-- Trạng thái kết nối hệ thống (Footer Sidebar) -->
+            <HBox alignment="CENTER_LEFT" spacing="6" style="-fx-opacity: 0.6;">
+                <Label text="● System Connected" style="-fx-text-fill: #10b981; -fx-font-size: 11px; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </left>
+
+    <!-- PHẦN TRUNG TÂM (CENTER): Khu vực hiển thị bảng dữ liệu chính -->
+    <center>
+        <VBox style="-fx-padding: 30; -fx-background-color: #020617;">
+            <!-- Thẻ nền trắng đục (Card) chứa bảng dữ liệu -->
+            <VBox VBox.vgrow="ALWAYS" style="-fx-background-color: #1e293b; -fx-background-radius: 16; -fx-padding: 25;">
+
+                <!-- Tiêu đề bảng và nhãn "Live Monitor" -->
+                <HBox alignment="CENTER_LEFT" style="-fx-padding: 0 0 20 0; -fx-border-color: #334155; -fx-border-width: 0 0 1 0;">
+                    <VBox spacing="4">
+                        <Label text="Active Data Streams" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #f8fafc;"/>
+                        <Label text="Overview of monitored disaster events and platform statistics." style="-fx-font-size: 12px; -fx-text-fill: #94a3b8;"/>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label text="LIVE MONITOR" style="-fx-text-fill: #38bdf8; -fx-font-size: 11px; -fx-font-weight: bold; -fx-background-color: #0c4a6e; -fx-padding: 5 12 5 12; -fx-background-radius: 6;"/>
+                </HBox>
+
+                <!-- BẢNG DỮ LIỆU (TableView): Hiển thị thông tin dự án -->
+                <TableView fx:id="projectTable" VBox.vgrow="ALWAYS"
+                           style="-fx-background-color: transparent;
+                                  -fx-control-inner-background: #1e293b;
+                                  -fx-table-cell-border-color: #334155;
+                                  -fx-font-size: 13px;">
+                    <columns>
+                        <!-- Cột: Tên dự án -->
+                        <TableColumn fx:id="nameColumn" text="Project Name" prefWidth="200"
+                                     style="-fx-text-fill: #10b981; -fx-font-weight: bold;"/>
+
+                        <!-- Cột: Tên thiên tai -->
+                        <TableColumn fx:id="disasterColumn" text="Disaster" prefWidth="150"
+                                     style="-fx-text-fill: #10b981;" />
+
+                        <!-- Cột: Khoảng thời gian khảo sát -->
+                        <TableColumn fx:id="dateColumn" text="Monitoring Period" prefWidth="400"
+                                     style="-fx-text-fill: #10b981;" />
+
+                        <!-- Cột: Các nền tảng MXH -->
+                        <TableColumn fx:id="platformsColumn" text="Platforms" prefWidth="300"
+                                     style="-fx-text-fill: #10b981;" />
+
+                        <!-- Cột: Ngày tạo -->
+                        <TableColumn fx:id="createdColumn" text="Created" prefWidth="180"
+                                     style="-fx-text-fill: #10b981;" />
+
+                        <!-- Cột: Lần cập nhật cuối -->
+                        <TableColumn fx:id="modifiedColumn" text="Last Modified" prefWidth="180"
+                                     style="-fx-text-fill: #10b981;" />
+                    </columns>
+
+                    <!-- UNCONSTRAINED giúp hiện đầy đủ nội dung và kích hoạt thanh cuộn ngang -->
+                    <columnResizePolicy>
+                        <TableView fx:constant="UNCONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>
