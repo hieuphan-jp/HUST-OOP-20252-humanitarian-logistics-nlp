@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.disaster.analysis.ui.controller.ProjectFormController"
+      spacing="20" styleClass="content-container">
+
+    <!-- Header -->
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label fx:id="formTitleLabel" text="New Project" styleClass="header"/>
+    </HBox>
+
+    <!-- Form Content -->
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+        <VBox spacing="15" style="-fx-padding: 10;">
+
+            <!-- Project Name -->
+            <VBox spacing="5">
+                <Label text="Project Name *" styleClass="section-title"/>
+                <TextField fx:id="nameField" promptText="Enter project name"/>
+                <Label fx:id="nameErrorLabel" styleClass="error" visible="false" managed="false"/>
+            </VBox>
+
+            <!-- Disaster Name -->
+            <VBox spacing="5">
+                <Label text="Disaster Name *" styleClass="section-title"/>
+                <TextField fx:id="disasterNameField" promptText="e.g., Typhoon Yagi, Hurricane Katrina"/>
+                <Label fx:id="disasterNameErrorLabel" styleClass="error" visible="false" managed="false"/>
+            </VBox>
+
+            <!-- Keywords -->
+            <VBox spacing="5">
+                <Label text="Keywords *" styleClass="section-title"/>
+                <TextArea fx:id="keywordsArea" promptText="Enter keywords separated by commas (e.g., flood, damage, rescue)"
+                          wrapText="true" prefRowCount="3"/>
+                <Label text="Separate multiple keywords with commas" styleClass="secondary"/>
+                <Label fx:id="keywordsErrorLabel" styleClass="error" visible="false" managed="false"/>
+            </VBox>
+
+            <!-- Hashtags -->
+            <VBox spacing="5">
+                <Label text="Hashtags" styleClass="section-title"/>
+                <TextArea fx:id="hashtagsArea" promptText="Enter hashtags separated by commas (e.g., #typhoon, #disaster, #relief)"
+                          wrapText="true" prefRowCount="3"/>
+                <Label text="Separate multiple hashtags with commas (# symbol optional)" styleClass="secondary"/>
+            </VBox>
+
+            <!-- Date Range -->
+            <VBox spacing="5">
+                <Label text="Date Range (Optional)" styleClass="section-title"/>
+                <Label text="Leave empty to auto-update from collected data" styleClass="secondary"/>
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <VBox spacing="5" HBox.hgrow="ALWAYS">
+                        <Label text="Start Date"/>
+                        <DatePicker fx:id="startDatePicker" promptText="Select start date" maxWidth="Infinity"/>
+                    </VBox>
+                    <VBox spacing="5" HBox.hgrow="ALWAYS">
+                        <Label text="End Date"/>
+                        <DatePicker fx:id="endDatePicker" promptText="Select end date" maxWidth="Infinity"/>
+                    </VBox>
+                </HBox>
+                <Label fx:id="dateErrorLabel" styleClass="error" visible="false" managed="false"/>
+            </VBox>
+
+            <!-- Platform Selection -->
+            <VBox spacing="5">
+                <Label text="Platforms *" styleClass="section-title"/>
+                <Label text="Select at least one platform to collect data from" styleClass="secondary"/>
+                <!-- Dynamic platform checkboxes container -->
+                <VBox fx:id="platformsContainer" spacing="8" styleClass="card">
+                    <!-- Checkboxes will be generated dynamically from Platform enum -->
+                </VBox>
+                <Label fx:id="platformsErrorLabel" styleClass="error" visible="false" managed="false"/>
+            </VBox>
+
+            <!-- Required Fields Note -->
+            <Label text="* Required fields" styleClass="secondary" style="-fx-font-style: italic;"/>
+
+        </VBox>
+    </ScrollPane>
+
+    <!-- Action Buttons -->
+    <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+        <Button fx:id="cancelButton" text="Cancel" onAction="#handleCancel" styleClass="secondary"/>
+        <Button fx:id="saveButton" text="Save" onAction="#handleSave" styleClass="success"/>
+    </HBox>
+
+</VBox>

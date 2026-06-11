@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.disaster.analysis.ui.controller.ProjectListController"
+      spacing="15" styleClass="content-container">
+
+    <!-- Header -->
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="Projects" styleClass="header"/>
+        <Region HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <!-- Action Buttons -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button fx:id="newButton" text="New" onAction="#handleNewProject" styleClass="success"/>
+        <!--<Button fx:id="openButton" text="Open" onAction="#handleOpenProject" disable="true"/>-->
+        <Button fx:id="deleteButton" text="Delete" onAction="#handleDeleteProject" styleClass="danger" disable="true"/>
+        <!-- <Button fx:id="refreshButton" text="Refresh" onAction="#handleRefresh" styleClass="secondary"/> -->
+    </HBox>
+
+    <!-- Projects Table -->
+    <TableView fx:id="projectTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Name" prefWidth="200" minWidth="150"/>
+            <TableColumn fx:id="disasterColumn" text="Disaster" prefWidth="200" minWidth="150"/>
+            <TableColumn fx:id="dateColumn" text="Date Range" prefWidth="250" minWidth="200"/>
+            <TableColumn fx:id="platformsColumn" text="Platforms" prefWidth="200" minWidth="150"/>
+            <TableColumn fx:id="createdColumn" text="Created" prefWidth="180" minWidth="150"/>
+            <TableColumn fx:id="modifiedColumn" text="Last Modified" prefWidth="180" minWidth="150"/>
+        </columns>
+
+        <placeholder>
+            <VBox alignment="CENTER" spacing="10" styleClass="empty-state">
+                <Label text="No projects found" styleClass="subheader"/>
+                <Label text="Click 'New' to create your first project" styleClass="secondary"/>
+            </VBox>
+        </placeholder>
+    </TableView>
+
+    <!-- Footer with project count -->
+    <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 5 0 0 0;">
+        <Label fx:id="projectCountLabel" text="0 projects" styleClass="secondary"/>
+        <Button fx:id="refreshButton" text="Refresh" onAction="#handleRefresh" styleClass="secondary" />
+    </HBox>
+
+</VBox>
