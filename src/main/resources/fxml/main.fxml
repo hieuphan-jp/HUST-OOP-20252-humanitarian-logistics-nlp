@@ -3,42 +3,42 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
+<?import java.net.URL?>
 
 <BorderPane fx:id="mainPane" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.disaster.analysis.ui.controller.MainController"
-            prefHeight="700.0" prefWidth="1200.0"
-            style="-fx-background-color: #020617;">
+            prefHeight="700.0" prefWidth="1200.0">
+    <stylesheets>
+        <URL value="@../css/styles.css" />
+    </stylesheets>
 
     <top>
-        <!-- Nhấn Exit là thoát -->
-        <HBox alignment="CENTER_LEFT" prefHeight="40.0"
-              style="-fx-background-color: #0f172a; -fx-border-color: #1e293b; -fx-border-width: 0 0 1 0;">
+        <HBox alignment="CENTER_LEFT" prefHeight="40.0" styleClass="header-bar">
             <padding>
                 <Insets left="10" />
             </padding>
             <children>
-                <Button mnemonicParsing="false" onAction="#handleExit" text="Exit"
-                        style="-fx-background-color: transparent; -fx-text-fill: #f8fafc; -fx-font-size: 13px; -fx-cursor: hand; -fx-padding: 5 15 5 15; -fx-font-weight: bold;" />
+                <Button mnemonicParsing="false" onAction="#handleExit" text="Exit" styleClass="btn-transparent-exit" />
             </children>
         </HBox>
     </top>
 
     <center>
-        <BorderPane fx:id="contentArea" style="-fx-background-color: #020617;">
+        <BorderPane fx:id="contentArea" styleClass="main-content-area">
             <center>
-                <Label text="Welcome to Disaster Social Media Analysis"
-                       style="-fx-font-size: 24px; -fx-text-fill: #475569;"/>
+                <Label text="Welcome to Disaster Social Media Analysis" styleClass="welcome-text"/>
             </center>
         </BorderPane>
     </center>
 
     <bottom>
-        <HBox fx:id="statusBar" alignment="CENTER_LEFT" spacing="10"
-              style="-fx-padding: 8 15 8 15; -fx-background-color: #0f172a; -fx-border-color: #1e293b; -fx-border-width: 1 0 0 0;">
+        <HBox fx:id="statusBar" alignment="CENTER_LEFT" spacing="10" styleClass="footer-bar">
+            <padding>
+                <Insets top="8" right="15" bottom="8" left="15" />
+            </padding>
             <children>
-                <Label fx:id="statusLabel" text="Ready" style="-fx-font-size: 11px; -fx-text-fill: #94a3b8; -fx-font-weight: bold;"/>
+                <Label fx:id="statusLabel" text="Ready" styleClass="label-caption-muted"/>
             </children>
         </HBox>
     </bottom>
-
 </BorderPane>

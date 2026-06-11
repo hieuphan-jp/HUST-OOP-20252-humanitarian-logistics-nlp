@@ -25,6 +25,7 @@ public class DbContext {
             rootUrl = dotenv.get("DB_URL");
             dbName = dotenv.get("DB_NAME");
             dbUser = dotenv.get("DB_USERNAME");
+            dbUser = dotenv.get("DB_USERNAME");
             dbPassword = dotenv.get("DB_PASSWORD");
 
             if (rootUrl != null && dbName != null && !rootUrl.contains("databaseName")) {
@@ -40,6 +41,7 @@ public class DbContext {
     }
 
     /**
+     *
      * Dành cho Repository: Trả về kết nối đích đã nhúng sẵn tên Database.
      */
     public static Connection getConnection() throws SQLException {
