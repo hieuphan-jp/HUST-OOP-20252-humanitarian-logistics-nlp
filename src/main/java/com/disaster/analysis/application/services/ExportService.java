@@ -1,4 +1,4 @@
-package com.disaster.analysis.application.service;
+package com.disaster.analysis.application.services;
 
 import com.disaster.analysis.domain.model.entities.Comment;
 import com.disaster.analysis.domain.model.entities.Post;

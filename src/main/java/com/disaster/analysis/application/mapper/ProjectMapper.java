@@ -120,18 +120,12 @@ public class ProjectMapper {
      * danh sách trước khi trả về cho tầng Giao diện (UI).
      *
      * @param entities Danh sách các đối tượng {@link Project} (được lấy từ cơ sở dữ liệu).
-     * Có thể là {@code null} hoặc danh sách rỗng.
+     *                 Có thể là {@code null} hoặc danh sách rỗng.
      * @return Một {@link List} chứa các đối tượng {@link ProjectDTO}.
      * Luôn trả về một danh sách (khởi tạo sẵn) để tránh lỗi {@link NullPointerException},
      * ngay cả khi tham số đầu vào là null.
      */
     public static List<ProjectDTO> toDTOList(List<Project> entities) {
-        if (entities == null || entities.isEmpty()) {
-            return new java.util.ArrayList<>();
-        }
-
-        return entities.stream()
-                .map(ProjectMapper::toDTO)
-                .collect(java.util.stream.Collectors.toList());
+        return null;
     }
 }
