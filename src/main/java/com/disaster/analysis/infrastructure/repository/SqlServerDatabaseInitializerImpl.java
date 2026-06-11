@@ -16,6 +16,7 @@ import java.sql.Statement;
  */
 public class SqlServerDatabaseInitializerImpl implements DatabaseInitializer{
 
+    @Override
     public void initialize() {
         LogUtil.info("Database startup and verification sequence initiated.");
 

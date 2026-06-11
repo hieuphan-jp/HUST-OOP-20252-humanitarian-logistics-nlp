@@ -4,7 +4,7 @@ package com.disaster.analysis.domain.exception;
  * Lớp ngoại lệ gốc (Base Exception) cho toàn bộ lỗi nghiệp vụ của hệ thống.
  * Kế thừa RuntimeException để code không bị ép buộc phải try-catch ở mọi nơi.
  */
-public class DomainException extends RuntimeException {
+    public class DomainException extends RuntimeException {
 
     /**
      * Khởi tạo ngoại lệ chỉ với câu thông báo lỗi.

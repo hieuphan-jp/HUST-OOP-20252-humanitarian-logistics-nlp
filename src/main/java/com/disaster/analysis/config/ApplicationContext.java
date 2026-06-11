@@ -186,7 +186,6 @@ public class ApplicationContext {
             LogUtil.warn("YouTube API Key missing. Falling back to MockDataSource.");
         }
 
-        dataSources.put(Platform.REDDIT, new RedditDataSource());
         dataSources.put(Platform.NEWS, new NewsDataSource());
 
         return dataSources;
