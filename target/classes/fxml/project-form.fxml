@@ -4,88 +4,103 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<!-- KHUNG CHÍNH: Nền xanh đen -->
 <VBox xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.disaster.analysis.ui.controller.ProjectFormController"
-      spacing="20" styleClass="content-container">
+      spacing="0" style="-fx-background-color: #020617; -fx-font-family: 'Segoe UI', Arial, sans-serif;">
 
-    <!-- Header -->
-    <HBox alignment="CENTER_LEFT" spacing="10">
-        <Label fx:id="formTitleLabel" text="New Project" styleClass="header"/>
+    <!-- HEADER: Tiêu đề Form với màu xanh Cyan -->
+    <HBox alignment="CENTER_LEFT" prefHeight="70.0" style="-fx-padding: 0 30 0 30; -fx-background-color: #0f172a; -fx-border-color: #1e293b; -fx-border-width: 0 0 1 0;">
+        <children>
+            <VBox alignment="CENTER_LEFT">
+                <Label fx:id="formTitleLabel" text="NEW PROJECT" style="-fx-text-fill: #38bdf8; -fx-font-size: 20px; -fx-font-weight: bold; -fx-letter-spacing: 2px;"/>
+            </VBox>
+        </children>
     </HBox>
 
-    <!-- Form Content -->
-    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
-        <VBox spacing="15" style="-fx-padding: 10;">
+    <!-- NỘI DUNG CHÍNH (Scrollable Area) -->
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+                style="-fx-background-color: transparent; -fx-background: transparent; -fx-border-color: transparent;">
+        <content>
+            <VBox spacing="25" style="-fx-padding: 30;">
 
-            <!-- Project Name -->
-            <VBox spacing="5">
-                <Label text="Project Name *" styleClass="section-title"/>
-                <TextField fx:id="nameField" promptText="Enter project name"/>
-                <Label fx:id="nameErrorLabel" styleClass="error" visible="false" managed="false"/>
-            </VBox>
+                <!-- THẺ CHỨA FORM (Card Style) -->
+                <VBox spacing="20" style="-fx-background-color: #1e293b; -fx-padding: 30; -fx-background-radius: 16; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 20, 0, 0, 8);">
 
-            <!-- Disaster Name -->
-            <VBox spacing="5">
-                <Label text="Disaster Name *" styleClass="section-title"/>
-                <TextField fx:id="disasterNameField" promptText="e.g., Typhoon Yagi, Hurricane Katrina"/>
-                <Label fx:id="disasterNameErrorLabel" styleClass="error" visible="false" managed="false"/>
-            </VBox>
+                    <!-- Thông tin cơ bản: Tên dự án & Tên thiên tai -->
+                    <HBox spacing="20">
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="Project Name *" style="-fx-text-fill: #94a3b8; -fx-font-weight: bold; -fx-font-size: 12px;"/>
+                            <TextField fx:id="nameField" promptText="Enter project name"
+                                       style="-fx-background-color: #0f172a; -fx-text-fill: white; -fx-border-color: #334155; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 10;"/>
+                            <Label fx:id="nameErrorLabel" style="-fx-text-fill: #ef4444; -fx-font-size: 11px;" visible="false" managed="false"/>
+                        </VBox>
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="Disaster Name *" style="-fx-text-fill: #94a3b8; -fx-font-weight: bold; -fx-font-size: 12px;"/>
+                            <TextField fx:id="disasterNameField" promptText="e.g., Typhoon Yagi"
+                                       style="-fx-background-color: #0f172a; -fx-text-fill: white; -fx-border-color: #334155; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 10;"/>
+                            <Label fx:id="disasterNameErrorLabel" style="-fx-text-fill: #ef4444; -fx-font-size: 11px;" visible="false" managed="false"/>
+                        </VBox>
+                    </HBox>
 
-            <!-- Keywords -->
-            <VBox spacing="5">
-                <Label text="Keywords *" styleClass="section-title"/>
-                <TextArea fx:id="keywordsArea" promptText="Enter keywords separated by commas (e.g., flood, damage, rescue)"
-                          wrapText="true" prefRowCount="3"/>
-                <Label text="Separate multiple keywords with commas" styleClass="secondary"/>
-                <Label fx:id="keywordsErrorLabel" styleClass="error" visible="false" managed="false"/>
-            </VBox>
-
-            <!-- Hashtags -->
-            <VBox spacing="5">
-                <Label text="Hashtags" styleClass="section-title"/>
-                <TextArea fx:id="hashtagsArea" promptText="Enter hashtags separated by commas (e.g., #typhoon, #disaster, #relief)"
-                          wrapText="true" prefRowCount="3"/>
-                <Label text="Separate multiple hashtags with commas (# symbol optional)" styleClass="secondary"/>
-            </VBox>
-
-            <!-- Date Range -->
-            <VBox spacing="5">
-                <Label text="Date Range (Optional)" styleClass="section-title"/>
-                <Label text="Leave empty to auto-update from collected data" styleClass="secondary"/>
-                <HBox spacing="15" alignment="CENTER_LEFT">
-                    <VBox spacing="5" HBox.hgrow="ALWAYS">
-                        <Label text="Start Date"/>
-                        <DatePicker fx:id="startDatePicker" promptText="Select start date" maxWidth="Infinity"/>
+                    <!-- Keywords -->
+                    <VBox spacing="8">
+                        <Label text="Keywords *" style="-fx-text-fill: #94a3b8; -fx-font-weight: bold; -fx-font-size: 12px;"/>
+                        <TextArea fx:id="keywordsArea" promptText="Enter keywords separated by commas..."
+                                  wrapText="true" prefRowCount="3"
+                                  style="-fx-control-inner-background: #0f172a; -fx-text-fill: white; -fx-border-color: #334155; -fx-border-radius: 8; -fx-background-radius: 8;"/>
+                        <Label text="Separate multiple keywords with commas" style="-fx-text-fill: #64748b; -fx-font-size: 11px;"/>
+                        <Label fx:id="keywordsErrorLabel" style="-fx-text-fill: #ef4444; -fx-font-size: 11px;" visible="false" managed="false"/>
                     </VBox>
-                    <VBox spacing="5" HBox.hgrow="ALWAYS">
-                        <Label text="End Date"/>
-                        <DatePicker fx:id="endDatePicker" promptText="Select end date" maxWidth="Infinity"/>
-                    </VBox>
-                </HBox>
-                <Label fx:id="dateErrorLabel" styleClass="error" visible="false" managed="false"/>
-            </VBox>
 
-            <!-- Platform Selection -->
-            <VBox spacing="5">
-                <Label text="Platforms *" styleClass="section-title"/>
-                <Label text="Select at least one platform to collect data from" styleClass="secondary"/>
-                <!-- Dynamic platform checkboxes container -->
-                <VBox fx:id="platformsContainer" spacing="8" styleClass="card">
-                    <!-- Checkboxes will be generated dynamically from Platform enum -->
+                    <!-- Hashtags -->
+                    <VBox spacing="8">
+                        <Label text="Hashtags" style="-fx-text-fill: #94a3b8; -fx-font-weight: bold; -fx-font-size: 12px;"/>
+                        <TextArea fx:id="hashtagsArea" promptText="e.g., #typhoon, #relief"
+                                  wrapText="true" prefRowCount="2"
+                                  style="-fx-control-inner-background: #0f172a; -fx-text-fill: white; -fx-border-color: #334155; -fx-border-radius: 8; -fx-background-radius: 8;"/>
+                    </VBox>
+
+                    <!-- Date Range -->
+                    <VBox spacing="10" style="-fx-background-color: #0f172a; -fx-padding: 20; -fx-background-radius: 12; -fx-border-color: #334155; -fx-border-radius: 12;">
+                        <Label text="Monitoring Period (Optional)" style="-fx-text-fill: #38bdf8; -fx-font-weight: bold;"/>
+                        <HBox spacing="15">
+                            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                <Label text="Start Date" style="-fx-text-fill: #94a3b8; -fx-font-size: 11px;"/>
+                                <DatePicker fx:id="startDatePicker" maxWidth="Infinity" style="-fx-control-inner-background: #1e293b;"/>
+                            </VBox>
+                            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                <Label text="End Date" style="-fx-text-fill: #94a3b8; -fx-font-size: 11px;"/>
+                                <DatePicker fx:id="endDatePicker" maxWidth="Infinity" style="-fx-control-inner-background: #1e293b;"/>
+                            </VBox>
+                        </HBox>
+                        <Label fx:id="dateErrorLabel" style="-fx-text-fill: #ef4444; -fx-font-size: 11px;" visible="false" managed="false"/>
+                    </VBox>
+
+                    <!-- Platform Selection -->
+                    <VBox spacing="12">
+                        <Label text="Data Sources *" style="-fx-text-fill: #94a3b8; -fx-font-weight: bold; -fx-font-size: 12px;"/>
+                        <VBox fx:id="platformsContainer" spacing="10" style="-fx-padding: 5 0 0 10;">
+                            <!-- Checkbox sẽ được thêm từ code Java -->
+                        </VBox>
+                        <Label fx:id="platformsErrorLabel" style="-fx-text-fill: #ef4444; -fx-font-size: 11px;" visible="false" managed="false"/>
+                    </VBox>
+
                 </VBox>
-                <Label fx:id="platformsErrorLabel" styleClass="error" visible="false" managed="false"/>
+
+                <Label text="* Mandatory information for data stream analysis" style="-fx-text-fill: #475569; -fx-font-style: italic; -fx-font-size: 12px;"/>
             </VBox>
-
-            <!-- Required Fields Note -->
-            <Label text="* Required fields" styleClass="secondary" style="-fx-font-style: italic;"/>
-
-        </VBox>
+        </content>
     </ScrollPane>
 
-    <!-- Action Buttons -->
-    <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
-        <Button fx:id="cancelButton" text="Cancel" onAction="#handleCancel" styleClass="secondary"/>
-        <Button fx:id="saveButton" text="Save" onAction="#handleSave" styleClass="success"/>
+    <!-- FOOTER: Các nút hành động -->
+    <HBox spacing="15" alignment="CENTER_RIGHT" prefHeight="80.0" style="-fx-padding: 0 30 0 30; -fx-background-color: #0f172a; -fx-border-color: #1e293b; -fx-border-width: 1 0 0 0;">
+        <children>
+            <Button fx:id="cancelButton" text="Cancel" onAction="#handleCancel" prefWidth="100" prefHeight="38"
+                    style="-fx-background-color: #334155; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-background-radius: 8;"/>
+            <Button fx:id="saveButton" text="Create Project" onAction="#handleSave" prefWidth="140" prefHeight="38"
+                    style="-fx-background-color: #059669; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(5, 150, 105, 0.3), 10, 0, 0, 0);"/>
+        </children>
     </HBox>
 
 </VBox>

@@ -122,3 +122,203 @@ Stack trace:
 [2026-06-10 23:47:46.744] [INFO] Application shutdown complete
 [2026-06-10 23:47:46.774] [INFO] Shutting down application...
 [2026-06-10 23:47:46.777] [INFO] Application shutdown complete
+[2026-06-11 18:21:51.274] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-11 18:21:51.276] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-11 18:21:51.277] [INFO] Starting application with Java version: 26.0.1
+[2026-06-11 18:21:51.280] [INFO] Initializing application...
+[2026-06-11 18:21:51.300] [INFO] Starting application...
+[2026-06-11 18:21:51.760] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-11 18:21:51.783] [INFO] Database startup and verification sequence initiated.
+[2026-06-11 18:22:21.752] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: getsockopt. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:231)
+  at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:282)
+  at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2578)
+  at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:719)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3523)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3172)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3014)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1836)
+  at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1246)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+  at com.disaster.analysis.infrastructure.repository.context.DbContext.getRootConnection(DbContext.java:55)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:31)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:36)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-11 18:22:21.899] [INFO] PreprocessingService initialized.
+[2026-06-11 18:22:21.946] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-11 18:22:22.433] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-11 18:22:22.454] [INFO] Initialized API clients for 3 platforms
+[2026-06-11 18:22:23.402] [INFO] SentimentAnalysisService initialized.
+[2026-06-11 18:22:23.419] [INFO] DamageClassificationService initialized.
+[2026-06-11 18:22:23.502] [INFO] ExportService initialized successfully.
+[2026-06-11 18:22:23.503] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-11 18:22:53.475] [ERROR] Load Error: An error occurred while loading projects: Lỗi lấy danh sách dự án: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: getsockopt. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+[2026-06-11 18:23:05.654] [INFO] Application started successfully
+[2026-06-11 18:23:12.253] [INFO] Shutting down application...
+[2026-06-11 18:23:12.253] [INFO] Application shutdown complete
+[2026-06-11 18:23:12.272] [INFO] Shutting down application...
+[2026-06-11 18:23:12.272] [INFO] Application shutdown complete
+[2026-06-11 18:33:04.433] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-11 18:33:04.435] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-11 18:33:04.435] [INFO] Starting application with Java version: 26.0.1
+[2026-06-11 18:33:04.442] [INFO] Initializing application...
+[2026-06-11 18:33:04.458] [INFO] Starting application...
+[2026-06-11 18:33:04.694] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-11 18:33:04.696] [INFO] Database startup and verification sequence initiated.
+[2026-06-11 18:33:34.781] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: getsockopt. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:231)
+  at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:282)
+  at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2578)
+  at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:719)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3523)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3172)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3014)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1836)
+  at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1246)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+  at com.disaster.analysis.infrastructure.repository.context.DbContext.getRootConnection(DbContext.java:55)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:31)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:36)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-11 18:33:34.800] [INFO] PreprocessingService initialized.
+[2026-06-11 18:33:34.808] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-11 18:33:35.183] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-11 18:33:35.185] [INFO] Initialized API clients for 3 platforms
+[2026-06-11 18:33:35.987] [INFO] SentimentAnalysisService initialized.
+[2026-06-11 18:33:35.989] [INFO] DamageClassificationService initialized.
+[2026-06-11 18:33:35.994] [INFO] ExportService initialized successfully.
+[2026-06-11 18:33:35.995] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-11 18:34:05.882] [ERROR] Load Error: An error occurred while loading projects: Lỗi lấy danh sách dự án: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: getsockopt. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+[2026-06-11 18:34:19.932] [INFO] Application started successfully
+[2026-06-11 18:34:32.455] [INFO] Shutting down application...
+[2026-06-11 18:34:32.456] [INFO] Application shutdown complete
+[2026-06-11 18:34:32.476] [INFO] Shutting down application...
+[2026-06-11 18:34:32.476] [INFO] Application shutdown complete
+[2026-06-11 19:21:38.195] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-11 19:21:38.197] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-11 19:21:38.197] [INFO] Starting application with Java version: 26.0.1
+[2026-06-11 19:21:38.202] [INFO] Initializing application...
+[2026-06-11 19:21:38.222] [INFO] Starting application...
+[2026-06-11 19:21:38.618] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-11 19:21:38.640] [INFO] Database startup and verification sequence initiated.
+[2026-06-11 19:22:08.688] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: getsockopt. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:231)
+  at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:282)
+  at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2578)
+  at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:719)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3523)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3172)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3014)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1836)
+  at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1246)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+  at com.disaster.analysis.infrastructure.repository.context.DbContext.getRootConnection(DbContext.java:55)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:31)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:36)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-11 19:22:08.804] [INFO] PreprocessingService initialized.
+[2026-06-11 19:22:08.833] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-11 19:22:09.365] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-11 19:22:09.381] [INFO] Initialized API clients for 3 platforms
+[2026-06-11 19:22:10.340] [INFO] SentimentAnalysisService initialized.
+[2026-06-11 19:22:10.356] [INFO] DamageClassificationService initialized.
+[2026-06-11 19:22:10.393] [INFO] ExportService initialized successfully.
+[2026-06-11 19:22:10.394] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-11 19:22:40.247] [ERROR] Load Error: An error occurred while loading projects: Lỗi lấy danh sách dự án: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: getsockopt. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+[2026-06-11 19:22:56.600] [INFO] Application started successfully
+[2026-06-11 19:50:35.332] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-11 19:50:35.337] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-11 19:50:35.337] [INFO] Starting application with Java version: 26.0.1
+[2026-06-11 19:50:35.342] [INFO] Initializing application...
+[2026-06-11 19:50:35.358] [INFO] Starting application...
+[2026-06-11 19:50:35.617] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-11 19:50:35.619] [INFO] Database startup and verification sequence initiated.
+[2026-06-11 19:51:04.955] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: getsockopt. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:231)
+  at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:282)
+  at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2578)
+  at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:719)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3523)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3172)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3014)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1836)
+  at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1246)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+  at com.disaster.analysis.infrastructure.repository.context.DbContext.getRootConnection(DbContext.java:55)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:31)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:36)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-11 19:51:04.995] [INFO] PreprocessingService initialized.
+[2026-06-11 19:51:05.004] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-11 19:51:05.673] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-11 19:51:05.675] [INFO] Initialized API clients for 3 platforms
+[2026-06-11 19:51:06.691] [INFO] SentimentAnalysisService initialized.
+[2026-06-11 19:51:06.696] [INFO] DamageClassificationService initialized.
+[2026-06-11 19:51:06.710] [INFO] ExportService initialized successfully.
+[2026-06-11 19:51:06.712] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-11 19:51:36.618] [ERROR] Load Error: An error occurred while loading projects: Lỗi lấy danh sách dự án: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: getsockopt. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+[2026-06-11 19:51:41.372] [INFO] Application started successfully
