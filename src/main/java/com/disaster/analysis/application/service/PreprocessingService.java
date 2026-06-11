@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
  * Service đảm nhiệm việc tiền xử lý văn bản (làm sạch, chuẩn hóa) và lọc dữ liệu.
  * Đóng vai trò như một màng lọc trước khi dữ liệu được đưa vào AI phân tích.
  */
-public class PreprocessingService {
+    public class PreprocessingService {
 
     private final TextPreprocessor textPreprocessor;
     private final PostRepository postRepository;
