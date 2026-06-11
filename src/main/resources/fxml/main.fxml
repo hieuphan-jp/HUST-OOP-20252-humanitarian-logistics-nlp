@@ -15,11 +15,9 @@
     <top>
         <HBox alignment="CENTER_LEFT" prefHeight="40.0" styleClass="header-bar">
             <padding>
-                <Insets left="10" />
+                <Insets left="10"/>
             </padding>
-            <children>
-                <Button mnemonicParsing="false" onAction="#handleExit" text="Exit" styleClass="btn-transparent-exit" />
-            </children>
+            <Button mnemonicParsing="false" onAction="#handleExit" text="Exit" styleClass="btn-transparent-exit"/>
         </HBox>
     </top>
 
@@ -32,13 +30,11 @@
     </center>
 
     <bottom>
-        <HBox fx:id="statusBar" alignment="CENTER_LEFT" spacing="10" styleClass="footer-bar">
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="footer-bar">
             <padding>
-                <Insets top="8" right="15" bottom="8" left="15" />
+                <Insets top="8" right="15" bottom="8" left="15"/>
             </padding>
-            <children>
-                <Label fx:id="statusLabel" text="Ready" styleClass="label-caption-muted"/>
-            </children>
+            <Label fx:id="statusLabel" text="Pending" styleClass="label-caption-muted"/>
         </HBox>
     </bottom>
 </BorderPane>

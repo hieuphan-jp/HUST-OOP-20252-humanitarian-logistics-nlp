@@ -4,76 +4,73 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.chart.*?>
+<?import java.net.URL?>
 
-<!-- KHUNG CHÍNH: Nền tối -->
 <VBox xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.disaster.analysis.ui.controller.AnalysisController"
-      spacing="0" style="-fx-background-color: #020617; -fx-font-family: 'Segoe UI', Arial, sans-serif;">
+      spacing="0">
+    <stylesheets>
+        <URL value="@../css/styles.css" />
+    </stylesheets>
 
-    <!-- HEADER: Tiêu đề và Thông tin dự án -->
-    <HBox alignment="CENTER_LEFT" prefHeight="80.0" style="-fx-padding: 0 30 0 30; -fx-background-color: #0f172a; -fx-border-color: #1e293b; -fx-border-width: 0 0 1 0;">
+    <HBox alignment="CENTER_LEFT" prefHeight="80.0" styleClass="header-bar">
         <children>
             <VBox alignment="CENTER_LEFT" spacing="5">
-                <Label text="ANALYTICS DASHBOARD" style="-fx-text-fill: #38bdf8; -fx-font-size: 11px; -fx-font-weight: bold; -fx-letter-spacing: 2px;"/>
+                <Label text="ANALYTICS DASHBOARD" styleClass="label-title-cyan"/>
                 <HBox spacing="10" alignment="BASELINE_LEFT">
-                    <Label fx:id="projectNameLabel" text="Project: Loading..." style="-fx-text-fill: #ffffff; -fx-font-size: 20px; -fx-font-weight: bold;"/>
-                    <Label fx:id="projectDetailsLabel" text="Details..." style="-fx-text-fill: #94a3b8; -fx-font-size: 12px;"/>
+                    <Label fx:id="projectNameLabel" text="Project: Loading..." styleClass="label-header-white"/>
+                    <Label fx:id="projectDetailsLabel" text="Details..." styleClass="label-sub-gray"/>
                 </HBox>
             </VBox>
         </children>
     </HBox>
 
-    <!-- NỘI DUNG CHÍNH: Chia làm 2 phần chính (TabPane và Log) -->
-    <SplitPane orientation="VERTICAL" VBox.vgrow="ALWAYS" dividerPositions="0.8" style="-fx-background-color: transparent; -fx-padding: 20;">
+    <SplitPane orientation="VERTICAL" VBox.vgrow="ALWAYS" dividerPositions="0.8" styleClass="split-pane-custom">
         <items>
-
-            <!-- VÙNG PHÂN TÍCH (TabPane) -->
-            <TabPane fx:id="analysisTabPane" tabClosingPolicy="UNAVAILABLE" style="-fx-background-color: transparent;">
+            <TabPane fx:id="analysisTabPane" tabClosingPolicy="UNAVAILABLE" styleClass="tab-pane-custom">
                 <tabs>
-                    <!-- SENTIMENT ANALYSIS -->
                     <Tab text="Sentiment Analysis">
-                        <HBox spacing="20" style="-fx-padding: 20;">
-                            <!-- Bên trái: Biểu đồ và Stats -->
-                            <VBox spacing="15" HBox.hgrow="ALWAYS" style="-fx-background-color: #1e293b; -fx-padding: 20; -fx-background-radius: 16;">
+                        <HBox spacing="20">
+                            <padding>
+                                <Insets top="20" right="20" bottom="20" left="20"/>
+                            </padding>
+                            <VBox spacing="15" HBox.hgrow="ALWAYS" styleClass="card-dark">
                                 <HBox spacing="15" alignment="CENTER_LEFT">
-                                    <Label text="Time Granularity:" style="-fx-text-fill: #94a3b8; -fx-font-weight: bold;"/>
-                                    <ComboBox fx:id="timeGranularityComboBox" prefWidth="120" style="-fx-background-color: #0f172a; -fx-text-fill: white;"/>
+                                    <Label text="Time Granularity:" styleClass="label-field-title"/>
+                                    <ComboBox fx:id="timeGranularityComboBox" prefWidth="120" styleClass="combo-box-dark"/>
                                     <Region HBox.hgrow="ALWAYS" />
-                                    <Button fx:id="runSentimentButton" text="⚡ Run Analysis" onAction="#handleRunSentimentAnalysis"
-                                            style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;"/>
+                                    <Button fx:id="runSentimentButton" text="⚡ Run Analysis" onAction="#handleRunSentimentAnalysis" styleClass="btn-primary-blue"/>
                                 </HBox>
-                                <LineChart fx:id="sentimentChart" VBox.vgrow="ALWAYS" animated="true" style="-fx-text-fill: white;">
+                                <LineChart fx:id="sentimentChart" VBox.vgrow="ALWAYS" animated="true">
                                     <xAxis><CategoryAxis side="BOTTOM" tickLabelFill="#94a3b8" /></xAxis>
                                     <yAxis><NumberAxis side="LEFT" tickLabelFill="#94a3b8" /></yAxis>
                                 </LineChart>
-                                <HBox spacing="30" alignment="CENTER" prefHeight="60" style="-fx-background-color: #0f172a; -fx-background-radius: 12;">
-                                    <VBox alignment="CENTER"><Label text="Positive" style="-fx-text-fill: #94a3b8; -fx-font-size: 10px;"/><Label fx:id="positiveCountLabel" text="0" style="-fx-text-fill: #10b981; -fx-font-size: 18px; -fx-font-weight: bold;"/></VBox>
-                                    <VBox alignment="CENTER"><Label text="Neutral" style="-fx-text-fill: #94a3b8; -fx-font-size: 10px;"/><Label fx:id="neutralCountLabel" text="0" style="-fx-text-fill: #64748b; -fx-font-size: 18px; -fx-font-weight: bold;"/></VBox>
-                                    <VBox alignment="CENTER"><Label text="Negative" style="-fx-text-fill: #94a3b8; -fx-font-size: 10px;"/><Label fx:id="negativeCountLabel" text="0" style="-fx-text-fill: #ef4444; -fx-font-size: 18px; -fx-font-weight: bold;"/></VBox>
+                                <HBox spacing="30" alignment="CENTER" prefHeight="60" styleClass="inner-box-dark">
+                                    <VBox alignment="CENTER"><Label text="Positive" styleClass="stat-title"/><Label fx:id="positiveCountLabel" text="0" styleClass="stat-val-pos"/></VBox>
+                                    <VBox alignment="CENTER"><Label text="Neutral" styleClass="stat-title"/><Label fx:id="neutralCountLabel" text="0" styleClass="stat-val-neu"/></VBox>
+                                    <VBox alignment="CENTER"><Label text="Negative" styleClass="stat-title"/><Label fx:id="negativeCountLabel" text="0" styleClass="stat-val-neg"/></VBox>
                                 </HBox>
                             </VBox>
 
-                            <!-- Bên phải: AI Summary (Cho Sentiment) -->
-                            <VBox spacing="10" prefWidth="350" style="-fx-background-color: #0f172a; -fx-padding: 20; -fx-background-radius: 16; -fx-border-color: #1e293b; -fx-border-radius: 16;">
-                                <Label text="AI SENTIMENT SUMMARY" style="-fx-text-fill: #38bdf8; -fx-font-weight: bold; -fx-font-size: 11px;"/>
-                                <TextArea fx:id="summaryTextArea" VBox.vgrow="ALWAYS" editable="false" wrapText="true" promptText="Summary will appear here..."
-                                          style="-fx-control-inner-background: #1e293b; -fx-text-fill: #f8fafc; -fx-border-color: transparent;"/>
-                                <Button fx:id="generateSummaryButton" onAction="#handleGenerateSummary" text="✨ Generate Summary" maxWidth="Infinity" style="-fx-background-color: #059669; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                            <VBox spacing="10" prefWidth="350" styleClass="ai-summary-box">
+                                <Label text="AI SENTIMENT SUMMARY" styleClass="label-title-cyan"/>
+                                <TextArea fx:id="summaryTextArea" VBox.vgrow="ALWAYS" editable="false" wrapText="true" promptText="Summary will appear here..." styleClass="text-area-summary"/>
+                                <Button fx:id="generateSummaryButton" onAction="#handleGenerateSummary" text="✨ Generate Summary" maxWidth="Infinity" styleClass="btn-success-green"/>
                             </VBox>
                         </HBox>
                     </Tab>
 
-                    <!-- DAMAGE CLASSIFICATION -->
                     <Tab text="Damage Classification">
-                        <HBox spacing="20" style="-fx-padding: 20;">
-                            <!-- Bên trái: Biểu đồ Damage -->
-                            <VBox spacing="15" HBox.hgrow="ALWAYS" style="-fx-background-color: #1e293b; -fx-padding: 20; -fx-background-radius: 16;">
+                        <HBox spacing="20">
+                            <padding>
+                                <Insets top="20" right="20" bottom="20" left="20"/>
+                            </padding>
+                            <VBox spacing="15" HBox.hgrow="ALWAYS" styleClass="card-dark">
                                 <HBox spacing="10" alignment="CENTER_LEFT">
                                     <ComboBox fx:id="categoryFilterComboBox" promptText="Category" prefWidth="150"/>
                                     <ComboBox fx:id="contentTypeFilterComboBox" promptText="Type" prefWidth="100"/>
                                     <Region HBox.hgrow="ALWAYS" />
-                                    <Button fx:id="runDamageButton" text="🔍 Run Damage Analysis" onAction="#handleRunDamageAnalysis"
-                                            style="-fx-background-color: #f59e0b; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;"/>
+                                    <Button fx:id="runDamageButton" text="🔍 Run Damage Analysis" onAction="#handleRunDamageAnalysis" styleClass="btn-warning-orange"/>
                                 </HBox>
                                 <BarChart fx:id="damageChart" VBox.vgrow="ALWAYS" legendVisible="false">
                                     <xAxis><CategoryAxis side="BOTTOM" tickLabelFill="#94a3b8" /></xAxis>
@@ -81,40 +78,31 @@
                                 </BarChart>
                             </VBox>
 
-                            <!-- Bên phải: AI Summary (Của Damage dùng chung ID hoặc bạn có thể gán ID khác) -->
-                            <VBox spacing="10" prefWidth="350" style="-fx-background-color: #0f172a; -fx-padding: 20; -fx-background-radius: 16; -fx-border-color: #1e293b; -fx-border-radius: 16;">
-                                <Label text="AI DAMAGE INSIGHTS" style="-fx-text-fill: #f59e0b; -fx-font-weight: bold; -fx-font-size: 11px;"/>
-                                <TextArea fx:id="damageSummaryTextArea" VBox.vgrow="ALWAYS" editable="false" wrapText="true"
-                                          style="-fx-control-inner-background: #1e293b; -fx-text-fill: #f8fafc;"/>
-                                <Button text="📋 Copy Insights" onAction="#handleCopySummary" maxWidth="Infinity" style="-fx-background-color: #334155; -fx-text-fill: white;"/>
+                            <VBox spacing="10" prefWidth="350" styleClass="ai-summary-box">
+                                <Label text="AI DAMAGE INSIGHTS" styleClass="label-title-orange"/>
+                                <TextArea fx:id="damageSummaryTextArea" VBox.vgrow="ALWAYS" editable="false" wrapText="true" styleClass="text-area-summary"/>
+                                <Button text="📋 Copy Insights" onAction="#handleCopySummary" maxWidth="Infinity" styleClass="btn-secondary-slate"/>
                             </VBox>
                         </HBox>
                     </Tab>
                 </tabs>
             </TabPane>
 
-            <!--  CỬA SỔ LOG (Bottom Window) -->
-            <VBox spacing="8" style="-fx-background-color: #0f172a; -fx-padding: 15; -fx-border-color: #1e293b; -fx-border-width: 1 0 0 0;">
+            <VBox spacing="8" styleClass="log-box-container">
                 <HBox alignment="CENTER_LEFT">
-                    <Label text="ANALYSIS LOGS" style="-fx-text-fill: #64748b; -fx-font-size: 10px; -fx-font-weight: bold;"/>
+                    <Label text="ANALYSIS LOGS" styleClass="label-caption-muted"/>
                     <Region HBox.hgrow="ALWAYS" />
-                    <Label text="SYSTEM ACTIVE" style="-fx-text-fill: #10b981; -fx-font-size: 9px;"/>
+                    <Label text="SYSTEM ACTIVE" styleClass="status-text-green"/>
                 </HBox>
-                <!-- Log màu chữ đen nền trắng giống Collection -->
-                <ListView fx:id="analysisLogListView" prefHeight="120"
-                          style="-fx-control-inner-background: white; -fx-text-fill: black; -fx-font-family: 'Consolas', monospace; -fx-font-size: 11px;"/>
+                <ListView fx:id="analysisLogListView" prefHeight="120" styleClass="list-view-light"/>
             </VBox>
         </items>
     </SplitPane>
 
-    <!-- FOOTER -->
-    <HBox spacing="15" alignment="CENTER_RIGHT" prefHeight="70.0" style="-fx-padding: 0 30 0 30; -fx-background-color: #0f172a; -fx-border-color: #1e293b; -fx-border-width: 1 0 0 0;">
+    <HBox spacing="15" alignment="CENTER_RIGHT" prefHeight="70.0" styleClass="footer-bar">
         <children>
-            <Button fx:id="backButton" text="← Back to Projects" onAction="#handleBack" prefHeight="35"
-                    style="-fx-background-color: #334155; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;"/>
-            <Button fx:id="exportButton" text="📥 Export Analysis Results" onAction="#handleExport" prefHeight="35"
-                    style="-fx-background-color: #059669; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;"/>
+            <Button fx:id="backButton" text="← Back to Projects" onAction="#handleBack" prefHeight="35" styleClass="btn-secondary-slate"/>
+            <Button fx:id="exportButton" text="📥 Export Analysis Results" onAction="#handleExport" prefHeight="35" styleClass="btn-success-green"/>
         </children>
     </HBox>
-
 </VBox>

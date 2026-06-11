@@ -113,19 +113,13 @@ public class ProjectMapper {
         return entity;
     }
 
-    /**
-     * Chuyển đổi một danh sách các thực thể (Entity/Model) Project thành
-     * một danh sách các đối tượng truyền dữ liệu (DTO) tương ứng.
-     * Hàm này được sử dụng chủ yếu ở tầng Service để chuẩn bị dữ liệu
-     * danh sách trước khi trả về cho tầng Giao diện (UI).
-     *
-     * @param entities Danh sách các đối tượng {@link Project} (được lấy từ cơ sở dữ liệu).
-     *                 Có thể là {@code null} hoặc danh sách rỗng.
-     * @return Một {@link List} chứa các đối tượng {@link ProjectDTO}.
-     * Luôn trả về một danh sách (khởi tạo sẵn) để tránh lỗi {@link NullPointerException},
-     * ngay cả khi tham số đầu vào là null.
-     */
-    public static List<ProjectDTO> toDTOList(List<Project> entities) {
-        return null;
+    public static List<ProjectDTO> toDTOList(List<Project> projects) {
+        if (projects == null) {
+            return null;
+        }
+
+        return projects.stream()
+                .map(ProjectMapper::toDTO)
+                .collect(Collectors.toList());
     }
 }

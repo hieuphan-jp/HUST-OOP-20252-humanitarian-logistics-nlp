@@ -13,81 +13,80 @@
     </stylesheets>
 
     <HBox alignment="CENTER_LEFT" prefHeight="70.0" styleClass="header-bar">
-        <children>
-            <VBox alignment="CENTER_LEFT">
-                <Label fx:id="formTitleLabel" text="NEW PROJECT" styleClass="label-title-cyan"/>
-            </VBox>
-        </children>
+        <VBox alignment="CENTER_LEFT">
+            <Label fx:id="formTitleLabel" text="NEW PROJECT" styleClass="label-title-cyan"/>
+        </VBox>
     </HBox>
 
     <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="scroll-pane-transparent">
-        <content>
-            <VBox spacing="25">
-                <padding>
-                    <Insets top="30" right="30" bottom="30" left="30"/>
-                </padding>
+        <VBox spacing="25">
+            <padding>
+                <Insets top="30" right="30" bottom="30" left="30"/>
+            </padding>
 
-                <VBox spacing="20" styleClass="card-form">
-                    <HBox spacing="20">
-                        <VBox spacing="8" HBox.hgrow="ALWAYS">
-                            <Label text="Project Name *" styleClass="label-field-title"/>
-                            <TextField fx:id="nameField" promptText="Enter project name" styleClass="text-field-custom"/>
-                            <Label fx:id="nameErrorLabel" styleClass="label-error" visible="false" managed="false"/>
-                        </VBox>
-                        <VBox spacing="8" HBox.hgrow="ALWAYS">
-                            <Label text="Disaster Name *" styleClass="label-field-title"/>
-                            <TextField fx:id="disasterNameField" promptText="e.g., Typhoon Yagi" styleClass="text-field-custom"/>
-                            <Label fx:id="disasterNameErrorLabel" styleClass="label-error" visible="false" managed="false"/>
-                        </VBox>
-                    </HBox>
-
-                    <VBox spacing="8">
-                        <Label text="Keywords *" styleClass="label-field-title"/>
-                        <TextArea fx:id="keywordsArea" promptText="Enter keywords separated by commas..." wrapText="true" prefRowCount="3" styleClass="text-area-custom"/>
-                        <Label text="Separate multiple keywords with commas" styleClass="label-info-muted"/>
-                        <Label fx:id="keywordsErrorLabel" styleClass="label-error" visible="false" managed="false"/>
+            <VBox spacing="20" styleClass="card-form">
+                <HBox spacing="20">
+                    <VBox spacing="8" HBox.hgrow="ALWAYS">
+                        <Label text="Project Name *" styleClass="label-field-title"/>
+                        <TextField fx:id="nameField" promptText="Enter project name" styleClass="text-field-custom"/>
+                        <Label fx:id="nameErrorLabel" styleClass="label-error" visible="false" managed="false"/>
                     </VBox>
-
-                    <VBox spacing="8">
-                        <Label text="Hashtags" styleClass="label-field-title"/>
-                        <TextArea fx:id="hashtagsArea" promptText="e.g., #typhoon, #relief" wrapText="true" prefRowCount="2" styleClass="text-area-custom"/>
+                    <VBox spacing="8" HBox.hgrow="ALWAYS">
+                        <Label text="Disaster Name *" styleClass="label-field-title"/>
+                        <TextField fx:id="disasterNameField" promptText="e.g., Typhoon Yagi"
+                                   styleClass="text-field-custom"/>
+                        <Label fx:id="disasterNameErrorLabel" styleClass="label-error" visible="false" managed="false"/>
                     </VBox>
+                </HBox>
 
-                    <VBox spacing="10" styleClass="inner-box-dark">
-                        <Label text="Monitoring Period (Optional)" styleClass="label-title-cyan"/>
-                        <HBox spacing="15">
-                            <VBox spacing="5" HBox.hgrow="ALWAYS">
-                                <Label text="Start Date" styleClass="label-info-muted"/>
-                                <DatePicker fx:id="startDatePicker" maxWidth="Infinity" styleClass="date-picker-custom"/>
-                            </VBox>
-                            <VBox spacing="5" HBox.hgrow="ALWAYS">
-                                <Label text="End Date" styleClass="label-info-muted"/>
-                                <DatePicker fx:id="endDatePicker" maxWidth="Infinity" styleClass="date-picker-custom"/>
-                            </VBox>
-                        </HBox>
-                        <Label fx:id="dateErrorLabel" styleClass="label-error" visible="false" managed="false"/>
-                    </VBox>
-
-                    <VBox spacing="12">
-                        <Label text="Data Sources *" styleClass="label-field-title"/>
-                        <VBox fx:id="platformsContainer" spacing="10">
-                            <padding>
-                                <Insets top="5" right="0" bottom="0" left="10"/>
-                            </padding>
-                        </VBox>
-                        <Label fx:id="platformsErrorLabel" styleClass="label-error" visible="false" managed="false"/>
-                    </VBox>
+                <VBox spacing="8">
+                    <Label text="Keywords *" styleClass="label-field-title"/>
+                    <TextArea fx:id="keywordsArea" promptText="Enter keywords separated by commas..." wrapText="true"
+                              prefRowCount="3" styleClass="text-area-custom"/>
+                    <Label text="Separate multiple keywords with commas" styleClass="label-info-muted"/>
+                    <Label fx:id="keywordsErrorLabel" styleClass="label-error" visible="false" managed="false"/>
                 </VBox>
 
-                <Label text="* Mandatory information for data stream analysis" styleClass="label-italic-footer"/>
+                <VBox spacing="8">
+                    <Label text="Hashtags" styleClass="label-field-title"/>
+                    <TextArea fx:id="hashtagsArea" promptText="e.g., #typhoon, #relief" wrapText="true" prefRowCount="2"
+                              styleClass="text-area-custom"/>
+                </VBox>
+
+                <VBox spacing="10" styleClass="inner-box-dark">
+                    <Label text="Monitoring Period (Optional)" styleClass="label-title-cyan"/>
+                    <HBox spacing="15">
+                        <VBox spacing="5" HBox.hgrow="ALWAYS">
+                            <Label text="Start Date" styleClass="label-info-muted"/>
+                            <DatePicker fx:id="startDatePicker" maxWidth="Infinity" styleClass="date-picker-custom"/>
+                        </VBox>
+                        <VBox spacing="5" HBox.hgrow="ALWAYS">
+                            <Label text="End Date" styleClass="label-info-muted"/>
+                            <DatePicker fx:id="endDatePicker" maxWidth="Infinity" styleClass="date-picker-custom"/>
+                        </VBox>
+                    </HBox>
+                    <Label fx:id="dateErrorLabel" styleClass="label-error" visible="false" managed="false"/>
+                </VBox>
+
+                <VBox spacing="12">
+                    <Label text="Data Sources *" styleClass="label-field-title"/>
+                    <VBox fx:id="platformsContainer" spacing="10">
+                        <padding>
+                            <Insets top="5" left="10"/>
+                        </padding>
+                    </VBox>
+                    <Label fx:id="platformsErrorLabel" styleClass="label-error" visible="false" managed="false"/>
+                </VBox>
             </VBox>
-        </content>
+
+            <Label text="* Mandatory information for data stream analysis" styleClass="label-italic-footer"/>
+        </VBox>
     </ScrollPane>
 
     <HBox spacing="15" alignment="CENTER_RIGHT" prefHeight="80.0" styleClass="footer-bar">
-        <children>
-            <Button fx:id="cancelButton" text="Cancel" onAction="#handleCancel" prefWidth="100" prefHeight="38" styleClass="btn-secondary-slate"/>
-            <Button fx:id="saveButton" text="Create Project" onAction="#handleSave" prefWidth="140" prefHeight="38" styleClass="btn-success-shadow"/>
-        </children>
+        <Button fx:id="cancelButton" text="Cancel" onAction="#handleCancel" prefWidth="100" prefHeight="38"
+                styleClass="btn-secondary-slate"/>
+        <Button fx:id="saveButton" text="Create Project" onAction="#handleSave" prefWidth="140" prefHeight="38"
+                styleClass="btn-success-shadow"/>
     </HBox>
 </VBox>

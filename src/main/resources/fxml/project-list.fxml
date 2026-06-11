@@ -19,7 +19,7 @@
 
             <Separator style="-fx-opacity: 0.1;"/> <VBox spacing="8" styleClass="sidebar-card">
             <Label text="TOTAL PROJECTS RUNNING" styleClass="label-caption-muted"/>
-            <Label fx:id="projectCountLabel" text="1 project" styleClass="stat-val-total"/>
+            <Label fx:id="projectCountLabel" text="0 project" styleClass="stat-val-total"/>
         </VBox>
 
             <VBox spacing="12" VBox.vgrow="ALWAYS">
@@ -33,10 +33,6 @@
                 <Button fx:id="refreshButton" text="🔄 Refresh" onAction="#handleRefresh" maxWidth="1.7976931348623157E308" prefHeight="42" styleClass="btn-secondary-slate, btn-sidebar-nav"/>
                 <Button fx:id="deleteButton" text="🗑 Delete" onAction="#handleDeleteProject" disable="false" maxWidth="1.7976931348623157E308" prefHeight="42" styleClass="btn-danger-red, btn-sidebar-nav"/>
             </VBox>
-
-            <HBox alignment="CENTER_LEFT" spacing="6" style="-fx-opacity: 0.6;">
-                <Label text="● System Connected" styleClass="status-text-green"/>
-            </HBox>
         </VBox>
     </left>
 

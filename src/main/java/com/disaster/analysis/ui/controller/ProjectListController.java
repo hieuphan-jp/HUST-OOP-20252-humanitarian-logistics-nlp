@@ -91,7 +91,6 @@ public class ProjectListController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         // Configure table columns with cell value factories
         setupTableColumns();
-
         // Bind the projects list to the table
         projectTable.setItems(projects);
 
@@ -101,6 +100,7 @@ public class ProjectListController implements Initializable {
         );
 
         setupRowDoubleClick();
+        updateProjectCount();
 
         // Note: loadProjects() is called in setApplicationContext() after dependencies are injected
     }
