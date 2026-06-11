@@ -2,10 +2,9 @@ package com.disaster.analysis.infrastructure.social;
 
 import com.disaster.analysis.domain.contract.social.DataSource;
 import com.disaster.analysis.domain.exception.DataSourceException;
-import com.disaster.analysis.domain.model.Comment;
-import com.disaster.analysis.domain.model.Post;
+import com.disaster.analysis.domain.model.entities.Comment;
+import com.disaster.analysis.domain.model.entities.Post;
 import com.disaster.analysis.domain.model.enums.Platform;
-import com.disaster.analysis.util.LogUtil;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -23,24 +22,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Lớp thực thi kết nối và thu thập dữ liệu từ nền tảng Reddit.
- * Sử dụng cơ chế gọi HTTP công khai tới các endpoint JSON của Reddit để lấy bài viết và bình luận.
- * Đã được tối ưu hóa User-Agent chuẩn API Reddit để tránh lỗi 403 và 429.
+ * Lớp thực thi kết nối và thu thập dữ liệu từ nền tảng Reddit
  */
 public class RedditDataSource implements DataSource {
-
-    private static final String BASE_URL = "https://www.reddit.com";
-    private static final int PAGE_SIZE = 30; // Số lượng bài viết tối đa mỗi trang
-    private static final int COMMENT_DEPTH = 2; // Độ sâu đệ quy tối đa khi lấy bình luận lồng nhau
+    private static final String BASE_URL = "https://www.reddit.com";// Hằng số URL gốc của Reddit
+    private static final int PAGE_SIZE = 30;
+    private static final int COMMENT_DEPTH = 2;// Độ sâu tối đa khi lấy reply lồng nhau
 
     private final HttpClient httpClient = HttpClient.newHttpClient();
     private final ObjectMapper mapper = new ObjectMapper();
 
-    // Bộ đếm xử lý lỗi gọi API quá nhanh
     private int rateLimitCounter = 0;
 
     public RedditDataSource() {
-        LogUtil.info("RedditDataSource initialized successfully.");
     }
 
     @Override
@@ -50,52 +44,43 @@ public class RedditDataSource implements DataSource {
             LocalDateTime endDate,
             int maxResults
     ) throws DataSourceException {
-
-        LogUtil.info("Starting Reddit search scan for query: '" + query + "'");
         List<Post> results = new ArrayList<>();
         String after = null;
-
         try {
-            while (results.size() < maxResults) {
-
+            while (results.size() < maxResults) { // Tiếp tục lấy trang mới chừng nào chưa đủ số bài. Vòng lặp kết thúc khi: đủ bài, hết trang, hoặc lỗi
                 String url = buildUrl(query, after);
-                HttpRequest request = HttpRequest.newBuilder()
+                HttpRequest request = HttpRequest.newBuilder() //Xây request theo builder pattern
                         .uri(URI.create(url))
-                        // 1. Khai báo User-Agent chuẩn xác như Reddit yêu cầu để tránh lỗi 403 Forbidden
-                        .header("User-Agent", "java:disaster-analysis-tool:v1.0.0 (by /u/academic_researcher)")
-                        // 2. Yêu cầu định dạng JSON
-                        .header("Accept", "application/json")
+                        .header("User-Agent", "disaster-analysis-app/1.0 (by u/academic-research)")
                         .GET()
                         .build();
-
-                HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-
+                HttpResponse<String> response =
+                        httpClient.send(request, HttpResponse.BodyHandlers.ofString());
                 if (response.statusCode() == 429) {
                     if (rateLimitCounter < 5) {
                         rateLimitCounter++;
-                        LogUtil.warn("Reddit API rate limit hit (429). Backing off and retrying in 3 seconds... Attempt: " + rateLimitCounter);
                         Thread.sleep(3000);
                         continue; // Thử lại
                     } else {
-                        LogUtil.error("Reddit rate limit exceeded maximum retry threshold.");
-                        throw new DataSourceException(getPlatform(), "Too many requests (Rate limit exceeded) on Reddit API.");
+                        throw new DataSourceException(
+                                getPlatform(),
+                                "Vượt quá giới hạn số lượng yêu cầu (Rate limit) của Reddit"
+                        );
                     }
-                } else if (response.statusCode() != 200) {
-                    LogUtil.error("HTTP connection error from Reddit with status code: " + response.statusCode());
-                    throw new DataSourceException(getPlatform(), "HTTP connection error from Reddit, status code: " + response.statusCode());
+                }else if (response.statusCode() != 200) {
+                    throw new DataSourceException(
+                            getPlatform(),
+                            "Lỗi kết nối HTTP từ Reddit, mã phản hồi: " + response.statusCode()
+                    );
                 }
-
-                rateLimitCounter = 0;
 
                 JsonNode root = mapper.readTree(response.body());
                 JsonNode data = root.path("data");
                 JsonNode children = data.path("children");
 
-                if (!children.isArray() || children.isEmpty()) {
-                    LogUtil.info("No more articles found on Reddit search list.");
-                    break;
-                }
+                if (!children.isArray() || children.isEmpty()) break;
 
+                // Duyệt từng bài viết trong trang hiện tại
                 for (JsonNode child : children) {
                     JsonNode postData = child.path("data");
 
@@ -105,42 +90,43 @@ public class RedditDataSource implements DataSource {
                             ZoneId.systemDefault()
                     );
 
-                    if (startDate != null && publishedAt.isBefore(startDate)) continue;
-                    if (endDate != null && publishedAt.isAfter(endDate)) continue;
+                    if (startDate != null && publishedAt.isBefore(startDate)) {
+                        continue;
+                    }
 
-                    Post post = new Post();
-                    // ĐỒNG BỘ: Sử dụng chuỗi String để phù hợp với bảng Database
+                    if (endDate != null && publishedAt.isAfter(endDate)) {
+                        continue;
+                    }
+
+                    Post post = new Post();// Tạo Post entity và set từng field. platformId có prefix "reddit_" để phân biệt với ID từ YouTube hay News khi lưu vào cùng DB
                     post.setPlatform(getPlatform().name());
                     post.setPlatformId("reddit_" + postData.path("id").asText());
                     post.setCollectedAt(LocalDateTime.now());
                     post.setPublishedAt(publishedAt);
                     post.setAuthor(postData.path("author").asText("unknown"));
-                    post.setUrl(BASE_URL + postData.path("permalink").asText());
+                    post.setUrl("https://www.reddit.com" + postData.path("permalink").asText());
 
                     String title = postData.path("title").asText("");
                     String body = postData.path("selftext").asText("");
 
-                    post.setContent(title + "\n\n" + body);
+                    post.setContent(title + "\n\n" + body);// Gộp cả hai thành content để phân tích sentiment trên toàn bộ văn bản
                     results.add(post);
 
                     if (results.size() >= maxResults) break;
                 }
 
                 after = data.path("after").isNull() ? null : data.path("after").asText();
-                if (after == null) {
-                    LogUtil.info("Reached the end of Reddit search pagination.");
-                    break;
-                }
-
-                LogUtil.info("Moving to next Reddit result page using pagination token: " + after);
+                if (after == null) break;
             }
 
-            LogUtil.info("Reddit post fetching process completed. Total posts retrieved: " + results.size());
             return results;
 
-        } catch (IOException | InterruptedException e) {
-            LogUtil.error("Failed to fetch posts from Reddit due to system exception: " + e.getMessage());
-            throw new DataSourceException(getPlatform(), "Reddit data collection failed: " + e.getMessage(), e);
+        } catch(IOException | InterruptedException e) {
+            throw new DataSourceException(
+                    getPlatform(),
+                    "Lấy dữ liệu từ Reddit thất bại: " + e.getMessage(),
+                    e
+            );
         }
     }
 
@@ -149,14 +135,12 @@ public class RedditDataSource implements DataSource {
         List<Comment> results = new ArrayList<>();
 
         try {
+            // Trích xuất ID bài đăng từ URL hoặc platformId
             String postId = extractPostId(post);
             if (postId == null) {
-                LogUtil.warn("Skipping comment fetch: Unable to extract valid Reddit post ID.");
                 return results;
             }
-
-            LogUtil.info("Fetching comments for Reddit post ID: " + postId);
-
+            // Xây dựng đường dẫn để lấy danh sách các bình luận (comments) của một bài viết cụ thể trên Reddit
             String commentsUrl = BASE_URL + "/comments/" + postId + ".json"
                     + "?depth=" + COMMENT_DEPTH
                     + "&limit=" + maxResults
@@ -164,35 +148,38 @@ public class RedditDataSource implements DataSource {
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(commentsUrl))
-                    .header("User-Agent", "java:disaster-analysis-tool:v1.0.0 (by /u/academic_researcher)")
-                    .header("Accept", "application/json")
+                    .header("User-Agent", "disaster-analysis-app/1.0 (by u/academic-research)")
                     .GET()
                     .build();
 
-            HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+            HttpResponse<String> response =
+                    httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
             if (response.statusCode() == 429) {
                 if (rateLimitCounter < 5) {
                     rateLimitCounter++;
-                    LogUtil.warn("Reddit Comment API rate limit hit. Retrying in 3 seconds...");
                     Thread.sleep(3000);
-                    return fetchComments(post, maxResults);
+                    return fetchComments(post, maxResults); // Thử lại
                 } else {
-                    LogUtil.error("Reddit comment limit retry threshold exceeded.");
-                    throw new DataSourceException(getPlatform(), "Rate limit exceeded during comment collection.");
+                    throw new DataSourceException(
+                            getPlatform(),
+                            "Đã vượt quá giới hạn số lượng bình luận trên Reddit"
+                    );
                 }
             } else if (response.statusCode() != 200) {
-                LogUtil.error("HTTP connection error during Reddit comment fetch, status: " + response.statusCode());
-                throw new DataSourceException(getPlatform(), "HTTP connection error during comment download, status: " + response.statusCode());
+                throw new DataSourceException(
+                        getPlatform(),
+                        "Lỗi kết nối HTTP khi tải bình luận từ Reddit, mã phản hồi: " + response.statusCode()
+                );
             }
 
-            rateLimitCounter = 0;
-
+            // Phân tích phản hồi - Reddit trả về một mảng gồm [thông tin bài viết, danh sách bình luận]
             JsonNode root = mapper.readTree(response.body());
+
             if (!root.isArray() || root.size() < 2) {
                 return results;
             }
-
+            // Phần tử thứ hai chứa các bình luận
             JsonNode commentsListing = root.get(1);
             JsonNode commentsData = commentsListing.path("data");
             JsonNode children = commentsData.path("children");
@@ -201,24 +188,23 @@ public class RedditDataSource implements DataSource {
                 return results;
             }
 
+            // Trích xuất bình luận một cách đệ quy (bao gồm cả các phản hồi lồng nhau)
             extractComments(children, post, results, maxResults, 0);
 
-            LogUtil.info("Successfully processed " + results.size() + " comments for post ID: " + post.getId());
             return results;
-
         } catch (IOException | InterruptedException e) {
-            LogUtil.error("Error occurred while parsing Reddit comments payload: " + e.getMessage());
-            throw new DataSourceException(getPlatform(), "Comment scraping execution failed: " + e.getMessage(), e);
+            throw new DataSourceException(
+                    getPlatform(),
+                    "Lỗi cào dữ liệu bình luận: " + e.getMessage(),
+                    e
+            );
         }
     }
 
-    /**
-     * Hàm đệ quy bóc tách chuỗi bình luận từ cây dữ liệu JSON của Reddit.
-     */
-    private void extractComments(JsonNode children, Post post, List<Comment> results,
-                                 int maxResults, int depth) {
+
+    private void extractComments(JsonNode children, Post post, List<Comment> results, int maxResults, int depth) {
         if (results.size() >= maxResults || depth > COMMENT_DEPTH) {
-            return;
+            return; // Dừng nếu đã đủ bình luận hoặc quá sâu
         }
 
         for (JsonNode child : children) {
@@ -228,20 +214,22 @@ public class RedditDataSource implements DataSource {
 
             String kind = child.path("kind").asText();
 
+            // "more" là object phân trang, không phải comment thật => Bỏ qua, không xử lý.
             if ("more".equals(kind)) {
                 continue;
             }
 
+            // Xử lý bình luận (kind = "t1")
             if ("t1".equals(kind)) {
                 JsonNode commentData = child.path("data");
 
+                // Lọc comment không có giá trị: rỗng, bị xóa bởi user, bị xóa bởi mod
                 String body = commentData.path("body").asText("");
                 if (body.isEmpty() || "[deleted]".equals(body) || "[removed]".equals(body)) {
                     continue;
                 }
 
                 Comment comment = new Comment();
-                // ĐỒNG BỘ: Sử dụng .name() để đưa về chuẩn String
                 comment.setPlatform(getPlatform().name());
                 comment.setPlatformId("reddit_comment_" + commentData.path("id").asText());
                 comment.setPostId(post.getId());
@@ -258,6 +246,7 @@ public class RedditDataSource implements DataSource {
 
                 results.add(comment);
 
+                // Xử lý các bình luận lồng nhau
                 JsonNode replies = commentData.path("replies");
                 if (replies.isObject()) {
                     JsonNode repliesData = replies.path("data");
@@ -271,11 +260,13 @@ public class RedditDataSource implements DataSource {
     }
 
     private String extractPostId(Post post) {
+        // Cách 1: Lấy ID từ platformId đã được lưu khi fetch (format: "reddit_xxxxx")
         String platformId = post.getPlatformId();
         if (platformId != null && platformId.startsWith("reddit_")) {
-            return platformId.substring(7);
+            return platformId.substring(7); // Xóa tiền tố "reddit_"
         }
 
+        // Cách 2: Trích xuất từ URL (format: https://www.reddit.com/r/subreddit/comments/xxxxx/...)
         String url = post.getUrl();
         if (url != null && url.contains("/comments/")) {
             String[] parts = url.split("/comments/");
@@ -289,7 +280,6 @@ public class RedditDataSource implements DataSource {
 
         return null;
     }
-
     @Override
     public Platform getPlatform() {
         return Platform.REDDIT;

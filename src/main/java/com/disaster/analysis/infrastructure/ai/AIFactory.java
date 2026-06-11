@@ -35,10 +35,10 @@ public class AIFactory {
         }
     }
 
-//    /**
-//     * Hàm kiểm thử độc lập (Test) luồng hoạt động của AI.
-//     * Cho phép người dùng nhập văn bản, tự động đóng gói JSON gửi lên API và in kết quả trả về.
-//     */
+    /**
+     * Hàm kiểm thử độc lập (Test) luồng hoạt động của AI.
+     * Cho phép người dùng nhập văn bản, tự động đóng gói JSON gửi lên API và in kết quả trả về.
+     */
 //    public static void main(String[] args) {
 //        System.out.println("=== HỆ THỐNG KIỂM THỬ AI CLIENT ===");
 //        AIClient client = getActiveClient();

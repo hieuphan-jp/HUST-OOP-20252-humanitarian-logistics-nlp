@@ -14,9 +14,9 @@ import com.disaster.analysis.domain.contract.ai.AIClient;
 
 // Nhập các lớp thực thi (Implementation) nằm ở tầng Hạ tầng (Infrastructure)
 import com.disaster.analysis.infrastructure.preprocessing.TextPreprocessorImpl;
+import com.disaster.analysis.infrastructure.repository.*;
 import com.disaster.analysis.infrastructure.social.*;
 import com.disaster.analysis.infrastructure.ai.*;
-import com.disaster.analysis.infrastructure.persistence.*;
 import com.disaster.analysis.infrastructure.analysis.*;
 import com.disaster.analysis.infrastructure.export.XlsxExporter;
 
@@ -82,6 +82,10 @@ public class ApplicationContext {
         LogUtil.info("Starting ApplicationContext initialization pipeline...");
 
         // BƯỚC 1: KHỞI TẠO TẦNG LƯU TRỮ (REPOSITORIES)
+
+        SqlServerDatabaseInitializerImpl dbInitializer = new SqlServerDatabaseInitializerImpl();
+        dbInitializer.initialize();
+
         ProjectRepository projectRepository = new ProjectRepositoryImpl();
         PostRepository postRepository = new PostRepositoryImpl();
         CommentRepository commentRepository = new CommentRepositoryImpl();

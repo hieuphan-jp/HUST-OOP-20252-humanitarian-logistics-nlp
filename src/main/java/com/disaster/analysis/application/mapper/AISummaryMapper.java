@@ -1,7 +1,7 @@
 package com.disaster.analysis.application.mapper;
 
 import com.disaster.analysis.application.dto.AISummaryDTO;
-import com.disaster.analysis.domain.model.AISummary;
+import com.disaster.analysis.domain.model.entities.AISummary;
 
 /**
  * Lớp xử lý chuyển đổi dữ liệu giữa Thực thể lưu trữ báo cáo AI (AISummary) và AISummaryDTO.
