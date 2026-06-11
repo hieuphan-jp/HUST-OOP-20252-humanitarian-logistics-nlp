@@ -116,9 +116,5 @@
                     style="-fx-background-color: #059669; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;"/>
         </children>
     </HBox>
-<<<<<<< HEAD
-</VBox>
-=======
 
 </VBox>
->>>>>>> main

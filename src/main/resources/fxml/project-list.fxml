@@ -22,7 +22,6 @@
 
             <Separator style="-fx-opacity: 0.1;"/>
 
-<<<<<<< HEAD
             <!-- Khung hiển thị tổng số Project đang chạy (Quick Stats) -->
             <VBox spacing="8" style="-fx-background-color: #1e293b; -fx-padding: 15; -fx-background-radius: 10;">
                 <Label text="TOTAL PROJECTS RUNNING" style="-fx-text-fill: #94a3b8; -fx-font-size: 10px; -fx-font-weight: bold;"/>
@@ -110,6 +109,3 @@
         </VBox>
     </center>
 </BorderPane>
-=======
-</VBox>
->>>>>>> main
