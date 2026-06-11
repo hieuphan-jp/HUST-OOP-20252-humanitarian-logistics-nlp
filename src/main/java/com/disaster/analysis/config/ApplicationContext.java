@@ -21,7 +21,7 @@ import com.disaster.analysis.infrastructure.analysis.*;
 import com.disaster.analysis.infrastructure.export.XlsxExporter;
 
 // Nhập các Service (Tầng ứng dụng - Application Layer) xử lý nghiệp vụ
-import com.disaster.analysis.application.service.*;
+import com.disaster.analysis.application.services.*;
 
 // Nhập các Interface Repository để thao tác với Cơ sở dữ liệu
 import com.disaster.analysis.domain.contract.repository.*;
@@ -178,7 +178,7 @@ public class ApplicationContext {
 
         String youtubeApiKey = dotenv.get("YOUTUBE_API_KEY", "");
 
-        if (youtubeApiKey != null && !youtubeApiKey.isEmpty()) {
+        if (!youtubeApiKey.isEmpty()) {
             dataSources.put(Platform.YOUTUBE, new YouTubeDataSource(youtubeApiKey));
             LogUtil.info("YouTube DataSource injected with real API Key.");
         } else {

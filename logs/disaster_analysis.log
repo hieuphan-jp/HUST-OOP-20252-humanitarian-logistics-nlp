@@ -1,0 +1,124 @@
+[2026-06-08 23:26:47.698] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-08 23:26:47.700] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-08 23:26:47.701] [INFO] Starting application with Java version: 26.0.1
+[2026-06-08 23:26:47.709] [INFO] Initializing application...
+[2026-06-08 23:26:47.730] [INFO] Starting application...
+[2026-06-08 23:26:48.538] [INFO] Application started successfully
+[2026-06-08 23:27:45.808] [ERROR] Navigation Error: Navigator not set. Cannot navigate to project form.
+[2026-06-08 23:27:51.820] [ERROR] Load Error: An error occurred while loading projects: Cannot invoke "com.disaster.analysis.application.services.ProjectService.getAllProjects()" because "this.projectService" is null
+[2026-06-08 23:27:55.778] [ERROR] Navigation Error: Navigator not set. Cannot navigate to project form.
+[2026-06-08 23:28:00.336] [INFO] Shutting down application...
+[2026-06-08 23:28:00.337] [INFO] Application shutdown complete
+[2026-06-08 23:28:00.360] [INFO] Shutting down application...
+[2026-06-08 23:28:00.361] [INFO] Application shutdown complete
+[2026-06-08 23:31:50.845] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-08 23:31:50.846] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-08 23:31:50.847] [INFO] Starting application with Java version: 26.0.1
+[2026-06-08 23:31:50.850] [INFO] Initializing application...
+[2026-06-08 23:31:50.868] [INFO] Starting application...
+[2026-06-08 23:31:51.511] [INFO] Application started successfully
+[2026-06-08 23:32:56.998] [INFO] Shutting down application...
+[2026-06-08 23:32:57.000] [INFO] Application shutdown complete
+[2026-06-08 23:32:57.022] [INFO] Shutting down application...
+[2026-06-08 23:32:57.022] [INFO] Application shutdown complete
+[2026-06-08 23:40:16.141] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-08 23:40:16.143] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-08 23:40:16.144] [INFO] Starting application with Java version: 26.0.1
+[2026-06-08 23:40:16.148] [INFO] Initializing application...
+[2026-06-08 23:40:16.163] [INFO] Starting application...
+[2026-06-08 23:40:16.952] [INFO] Application started successfully
+[2026-06-08 23:40:18.889] [ERROR] Navigation Error: Navigator not set. Cannot navigate to project form.
+[2026-06-08 23:40:30.146] [INFO] Shutting down application...
+[2026-06-08 23:40:30.148] [INFO] Application shutdown complete
+[2026-06-08 23:40:30.172] [INFO] Shutting down application...
+[2026-06-08 23:40:30.172] [INFO] Application shutdown complete
+[2026-06-08 23:45:08.544] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-08 23:45:08.546] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-08 23:45:08.546] [INFO] Starting application with Java version: 26.0.1
+[2026-06-08 23:45:08.551] [INFO] Initializing application...
+[2026-06-08 23:45:08.566] [INFO] Starting application...
+[2026-06-08 23:45:08.927] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-08 23:45:09.091] [INFO] PreprocessingService initialized.
+[2026-06-08 23:45:09.177] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-08 23:45:09.567] [INFO] RedditDataSource initialized successfully.
+[2026-06-08 23:45:09.591] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-08 23:45:09.607] [INFO] Initialized API clients for 3 platforms
+[2026-06-08 23:45:10.445] [INFO] SentimentAnalysisService initialized.
+[2026-06-08 23:45:10.465] [INFO] DamageClassificationService initialized.
+[2026-06-08 23:45:10.541] [INFO] ExportService initialized successfully.
+[2026-06-08 23:45:10.542] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-08 23:45:40.597] [ERROR] Load Error: An error occurred while loading projects: Thất bại khi kết nối tới hệ quản trị cơ sở dữ liệu. Hãy đảm bảo thông tin tài khoản chính xác và dịch vụ đã được khởi động.
+[2026-06-08 23:45:47.354] [INFO] Application started successfully
+[2026-06-08 23:47:26.966] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-08 23:47:26.967] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-08 23:47:26.968] [INFO] Starting application with Java version: 26.0.1
+[2026-06-08 23:47:26.975] [INFO] Initializing application...
+[2026-06-08 23:47:26.989] [INFO] Starting application...
+[2026-06-08 23:47:27.210] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-08 23:47:27.229] [INFO] PreprocessingService initialized.
+[2026-06-08 23:47:27.265] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-08 23:47:27.633] [INFO] RedditDataSource initialized successfully.
+[2026-06-08 23:47:27.635] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-08 23:47:27.636] [INFO] Initialized API clients for 3 platforms
+[2026-06-08 23:47:28.474] [INFO] SentimentAnalysisService initialized.
+[2026-06-08 23:47:28.476] [INFO] DamageClassificationService initialized.
+[2026-06-08 23:47:28.481] [INFO] ExportService initialized successfully.
+[2026-06-08 23:47:28.482] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-08 23:47:58.485] [ERROR] Load Error: An error occurred while loading projects: Thất bại khi kết nối tới hệ quản trị cơ sở dữ liệu. Hãy đảm bảo thông tin tài khoản chính xác và dịch vụ đã được khởi động.
+[2026-06-08 23:48:06.529] [INFO] Application started successfully
+[2026-06-08 23:48:08.017] [INFO] Shutting down application...
+[2026-06-08 23:48:08.018] [INFO] Application shutdown complete
+[2026-06-08 23:48:08.044] [INFO] Shutting down application...
+[2026-06-08 23:48:08.044] [INFO] Application shutdown complete
+[2026-06-10 23:45:30.410] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-10 23:45:30.410] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-10 23:45:30.411] [INFO] Starting application with Java version: 26.0.1
+[2026-06-10 23:45:30.416] [INFO] Initializing application...
+[2026-06-10 23:45:30.430] [INFO] Starting application...
+[2026-06-10 23:45:30.867] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-10 23:45:30.887] [INFO] Database startup and verification sequence initiated.
+[2026-06-10 23:46:00.909] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: getsockopt. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:231)
+  at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:282)
+  at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2578)
+  at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:719)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3523)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3172)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3014)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1836)
+  at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1246)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+  at com.disaster.analysis.infrastructure.repository.context.DbContext.getRootConnection(DbContext.java:55)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:31)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:36)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-10 23:46:01.109] [INFO] PreprocessingService initialized.
+[2026-06-10 23:46:01.173] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-10 23:46:01.691] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-10 23:46:01.712] [INFO] Initialized API clients for 3 platforms
+[2026-06-10 23:46:02.749] [INFO] SentimentAnalysisService initialized.
+[2026-06-10 23:46:02.763] [INFO] DamageClassificationService initialized.
+[2026-06-10 23:46:02.825] [INFO] ExportService initialized successfully.
+[2026-06-10 23:46:02.826] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-10 23:46:32.755] [ERROR] Load Error: An error occurred while loading projects: Lỗi lấy danh sách dự án: The TCP/IP connection to the host localhost, port 1433 has failed. Error: "Connection refused: getsockopt. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+[2026-06-10 23:47:34.191] [INFO] Application started successfully
+[2026-06-10 23:47:46.742] [INFO] Shutting down application...
+[2026-06-10 23:47:46.744] [INFO] Application shutdown complete
+[2026-06-10 23:47:46.774] [INFO] Shutting down application...
+[2026-06-10 23:47:46.777] [INFO] Application shutdown complete

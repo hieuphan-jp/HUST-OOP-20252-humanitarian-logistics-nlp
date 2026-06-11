@@ -3,7 +3,10 @@ package com.disaster.analysis.application.dto;
 import com.disaster.analysis.domain.model.enums.DamageCategory;
 import com.disaster.analysis.domain.model.enums.Platform;
 import com.disaster.analysis.domain.model.enums.Sentiment;
+import jdk.jfr.Category;
+
 import java.time.LocalDateTime;
+import java.util.Locale;
 import java.util.Set;
 
 /**

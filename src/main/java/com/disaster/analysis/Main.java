@@ -70,7 +70,7 @@ public class Main extends Application {
         super.init();
 
 //        try {
-        LogUtil.info("Initializing application...");
+            LogUtil.info("Initializing application...");
 //
 //            // Initialize DatabaseManager
 //            //Đã tạo sẵn trong .env rồi nên không tạo nữa
