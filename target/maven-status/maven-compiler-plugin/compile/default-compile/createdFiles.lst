@@ -17,7 +17,6 @@ com\disaster\analysis\application\services\AISummaryService$ProjectData.class
 com\disaster\analysis\domain\model\entities\AISummary.class
 com\disaster\analysis\domain\contract\repository\DatabaseInitializer.class
 com\disaster\analysis\util\LogUtil$LogLevel.class
-com\disaster\analysis\infrastructure\social\RedditDataSource.class
 com\disaster\analysis\ui\navigation\Navigator$NavigationException.class
 com\disaster\analysis\infrastructure\repository\ProjectRepositoryImpl.class
 com\disaster\analysis\domain\contract\ai\AIClient.class

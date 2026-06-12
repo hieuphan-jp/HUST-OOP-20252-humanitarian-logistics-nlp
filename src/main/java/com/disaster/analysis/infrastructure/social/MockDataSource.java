@@ -6,7 +6,7 @@ import com.disaster.analysis.domain.exception.DataSourceException; // Lớp bắ
 import com.disaster.analysis.domain.model.entities.Comment; // Thực thể lưu trữ dữ liệu bình luận
 import com.disaster.analysis.domain.model.entities.Post; // Thực thể lưu trữ dữ liệu bài đăng mạng xã hội
 import com.disaster.analysis.domain.model.enums.DamageCategory; // Enum định nghĩa các loại thiệt hại (Ví dụ: Sập nhà, thương vong)
-import com.disaster.analysis.domain.model.enums.Platform; // Enum định nghĩa các mạng xã hội (YOUTUBE, NEWS, REDDIT...)
+import com.disaster.analysis.domain.model.enums.Platform; // Enum định nghĩa các mạng xã hội (YOUTUBE, NEWS...)
 import com.disaster.analysis.domain.model.enums.Sentiment; // Enum định nghĩa thang điểm cảm xúc (Tích cực, Tiêu cực, Trung lập)
 
 // Nhập các thư viện tiện ích chuẩn của Java phục vụ tính toán thời gian, mảng và ép chuỗi

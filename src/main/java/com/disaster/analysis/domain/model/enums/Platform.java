@@ -5,7 +5,8 @@ package com.disaster.analysis.domain.model.enums;
  */
 public enum Platform {
     YOUTUBE("YouTube"),
-    NEWS("News Sites");
+    NEWS("News Sites"),
+    REDDIT("Reddit");
 
     private final String displayName;
 
