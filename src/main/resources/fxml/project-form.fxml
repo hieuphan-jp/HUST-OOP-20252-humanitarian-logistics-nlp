@@ -41,16 +41,10 @@
 
                 <VBox spacing="8">
                     <Label text="Keywords *" styleClass="label-field-title"/>
-                    <TextArea fx:id="keywordsArea" promptText="Enter keywords separated by commas..." wrapText="true"
+                    <TextArea fx:id="keywordsArea" promptText="e.g., typhoon, flood, emergency, rescue" wrapText="true"
                               prefRowCount="3" styleClass="text-area-custom"/>
                     <Label text="Separate multiple keywords with commas" styleClass="label-info-muted"/>
                     <Label fx:id="keywordsErrorLabel" styleClass="label-error" visible="false" managed="false"/>
-                </VBox>
-
-                <VBox spacing="8">
-                    <Label text="Hashtags" styleClass="label-field-title"/>
-                    <TextArea fx:id="hashtagsArea" promptText="e.g., #typhoon, #relief" wrapText="true" prefRowCount="2"
-                              styleClass="text-area-custom"/>
                 </VBox>
 
                 <VBox spacing="10" styleClass="inner-box-dark">
