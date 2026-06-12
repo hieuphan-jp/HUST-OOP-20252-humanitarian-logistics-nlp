@@ -1325,3 +1325,390 @@ This action cannot be undone. All collected data will be permanently deleted. - 
 [2026-06-12 01:04:14.977] [INFO] Starting sentiment analysis for 1559 comments in project 4
 [2026-06-12 01:05:26.813] [INFO] Shutting down application...
 [2026-06-12 01:05:26.814] [INFO] Application shutdown complete
+[2026-06-12 20:39:01.455] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-12 20:39:01.457] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-12 20:39:01.458] [INFO] Starting application with Java version: 21.0.11
+[2026-06-12 20:39:01.462] [INFO] Initializing application...
+[2026-06-12 20:39:01.481] [INFO] Starting application...
+[2026-06-12 20:39:01.908] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-12 20:39:01.936] [INFO] Database startup and verification sequence initiated.
+[2026-06-12 20:39:02.829] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: Login failed for user 'sa'. ClientConnectionId:e1b91c8d-2417-415d-893e-cbd8ca5db677
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.TDSTokenHandler.onEOF(tdsparser.java:304)
+  at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:137)
+  at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:42)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.sendLogon(SQLServerConnection.java:6612)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.logon(SQLServerConnection.java:5154)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection$LogonCommand.doExecute(SQLServerConnection.java:5087)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3583)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3172)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3014)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1836)
+  at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1246)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+  at com.disaster.analysis.infrastructure.repository.context.DbContext.getRootConnection(DbContext.java:57)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:31)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+  at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:190)
+  at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[2026-06-12 20:39:02.960] [INFO] PreprocessingService initialized.
+[2026-06-12 20:39:02.999] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-12 20:39:03.443] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-12 20:39:03.456] [INFO] Initialized API clients for 3 platforms
+[2026-06-12 20:39:04.289] [INFO] SentimentAnalysisService initialized.
+[2026-06-12 20:39:04.331] [INFO] DamageClassificationService initialized.
+[2026-06-12 20:39:04.524] [INFO] ExportService initialized successfully.
+[2026-06-12 20:39:04.524] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-12 20:39:05.053] [ERROR] Load Error: An error occurred while loading projects: Lỗi lấy danh sách dự án: Login failed for user 'sa'. ClientConnectionId:cf1995f8-bc38-4e4f-8229-29cd24b2c7f6
+[2026-06-12 20:39:11.876] [INFO] Application started successfully
+[2026-06-12 20:39:19.263] [INFO] Shutting down application...
+[2026-06-12 20:39:19.264] [INFO] Application shutdown complete
+[2026-06-12 20:39:19.291] [INFO] Shutting down application...
+[2026-06-12 20:39:19.292] [INFO] Application shutdown complete
+[2026-06-12 20:39:38.657] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-12 20:39:38.658] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-12 20:39:38.661] [INFO] Starting application with Java version: 21.0.11
+[2026-06-12 20:39:38.675] [INFO] Initializing application...
+[2026-06-12 20:39:38.697] [INFO] Starting application...
+[2026-06-12 20:39:38.942] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-12 20:39:38.946] [INFO] Database startup and verification sequence initiated.
+[2026-06-12 20:39:40.153] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-12 20:39:40.413] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-12 20:39:40.452] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:69)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+  at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:190)
+  at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[2026-06-12 20:39:40.461] [INFO] PreprocessingService initialized.
+[2026-06-12 20:39:40.466] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-12 20:39:40.848] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-12 20:39:40.849] [INFO] Initialized API clients for 3 platforms
+[2026-06-12 20:39:41.598] [INFO] SentimentAnalysisService initialized.
+[2026-06-12 20:39:41.600] [INFO] DamageClassificationService initialized.
+[2026-06-12 20:39:41.605] [INFO] ExportService initialized successfully.
+[2026-06-12 20:39:41.605] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-12 20:39:42.441] [INFO] Application started successfully
+[2026-06-12 20:40:43.482] [INFO] Project Created: Project 'test' has been created successfully.
+[2026-06-12 20:41:14.321] [INFO] DataCollectionController initialize ...
+[2026-06-12 20:41:14.324] [INFO] Loading collected posts and comments for project ID: 1
+[2026-06-12 20:41:20.794] [INFO] Starting data collection for project: test
+[2026-06-12 20:41:20.796] [INFO] Search query constructed: typhoon damage #yagi
+[2026-06-12 20:41:20.798] [INFO] Async thread started collection from: REDDIT
+[2026-06-12 20:41:20.798] [INFO] Async thread started collection from: YOUTUBE
+[2026-06-12 20:41:20.798] [INFO] Async thread started collection from: NEWS
+[2026-06-12 20:41:20.799] [INFO] Fetching detailed news articles for query: 'typhoon damage #yagi'
+[2026-06-12 20:41:20.800] [INFO] --------------------------------------------------
+[2026-06-12 20:41:20.801] [INFO] Source [VnExpress]: Starting extraction...
+[2026-06-12 20:41:20.840] [INFO] Collected 38 posts from YOUTUBE
+[2026-06-12 20:41:21.512] [WARN]    -> Warning: No article links found on the search page.
+[2026-06-12 20:41:21.513] [INFO] Source [VnExpress]: Finished. Extracted 0 full articles.
+[2026-06-12 20:41:21.513] [INFO] --------------------------------------------------
+[2026-06-12 20:41:21.513] [INFO] Source [Tuổi Trẻ]: Starting extraction...
+[2026-06-12 20:41:21.672] [WARN]    -> Warning: No article links found on the search page.
+[2026-06-12 20:41:21.673] [INFO] Source [Tuổi Trẻ]: Finished. Extracted 0 full articles.
+[2026-06-12 20:41:21.673] [INFO] --------------------------------------------------
+[2026-06-12 20:41:21.673] [INFO] Source [Thanh Niên]: Starting extraction...
+[2026-06-12 20:41:22.025] [WARN]    -> Warning: No article links found on the search page.
+[2026-06-12 20:41:22.026] [INFO] Source [Thanh Niên]: Finished. Extracted 0 full articles.
+[2026-06-12 20:41:22.026] [INFO] --------------------------------------------------
+[2026-06-12 20:41:22.026] [INFO] Source [Dân Trí]: Starting extraction...
+[2026-06-12 20:41:22.434] [WARN]    -> Warning: No article links found on the search page.
+[2026-06-12 20:41:22.435] [INFO] Source [Dân Trí]: Finished. Extracted 0 full articles.
+[2026-06-12 20:41:22.436] [INFO] News scraping completed. Total full articles retrieved: 0
+[2026-06-12 20:41:22.436] [INFO] Collected 0 posts from NEWS
+[2026-06-12 20:41:22.437] [ERROR] Collection from REDDIT failed - Exception: java.util.concurrent.ExecutionException: java.lang.RuntimeException: Data fetch error on platform REDDIT: Lỗi kết nối HTTP từ Reddit, mã phản hồi: 403
+Stack trace:
+  at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+  at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:205)
+  at com.disaster.analysis.application.services.DataCollectionService.collectData(DataCollectionService.java:111)
+  at com.disaster.analysis.ui.controller.DataCollectionController$1.call(DataCollectionController.java:257)
+  at com.disaster.analysis.ui.controller.DataCollectionController$1.call(DataCollectionController.java:249)
+  at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1399)
+  at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+  at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.RuntimeException: Data fetch error on platform REDDIT: Lỗi kết nối HTTP từ Reddit, mã phản hồi: 403
+  at com.disaster.analysis.application.services.DataCollectionService.collectFromPlatform(DataCollectionService.java:241)
+  at com.disaster.analysis.application.services.DataCollectionService.lambda$collectData$0(DataCollectionService.java:94)
+  at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+  at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+  at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+  at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[2026-06-12 20:41:22.439] [INFO] Total raw posts collected: 38
+[2026-06-12 20:41:22.440] [INFO] Preprocessing 38 posts...
+[2026-06-12 20:41:22.448] [INFO] Preprocessing completed. Yielded 38 valid posts.
+[2026-06-12 20:41:22.448] [INFO] Valid posts available after preprocessing: 38
+[2026-06-12 20:41:22.860] [INFO] Saved 38 posts to database
+[2026-06-12 20:41:23.225] [INFO] Reloaded 38 posts equipped with database IDs
+[2026-06-12 20:41:23.228] [INFO] Collected 17 comments for post ID: 27
+[2026-06-12 20:41:23.229] [INFO] Collected 31 comments for post ID: 9
+[2026-06-12 20:41:23.230] [INFO] Collected 32 comments for post ID: 13
+[2026-06-12 20:41:23.231] [INFO] Collected 41 comments for post ID: 3
+[2026-06-12 20:41:23.232] [INFO] Collected 44 comments for post ID: 15
+[2026-06-12 20:41:23.233] [INFO] Collected 49 comments for post ID: 26
+[2026-06-12 20:41:23.234] [INFO] Collected 40 comments for post ID: 32
+[2026-06-12 20:41:23.234] [INFO] Collected 35 comments for post ID: 28
+[2026-06-12 20:41:23.235] [INFO] Collected 41 comments for post ID: 11
+[2026-06-12 20:41:23.235] [INFO] Collected 27 comments for post ID: 37
+[2026-06-12 20:41:23.237] [INFO] Collected 23 comments for post ID: 6
+[2026-06-12 20:41:23.238] [INFO] Collected 34 comments for post ID: 7
+[2026-06-12 20:41:23.238] [INFO] Collected 45 comments for post ID: 17
+[2026-06-12 20:41:23.239] [INFO] Collected 48 comments for post ID: 24
+[2026-06-12 20:41:23.240] [INFO] Collected 32 comments for post ID: 29
+[2026-06-12 20:41:23.240] [INFO] Collected 37 comments for post ID: 30
+[2026-06-12 20:41:23.241] [INFO] Collected 28 comments for post ID: 14
+[2026-06-12 20:41:23.242] [INFO] Collected 37 comments for post ID: 5
+[2026-06-12 20:41:23.242] [INFO] Collected 30 comments for post ID: 1
+[2026-06-12 20:41:23.243] [INFO] Collected 34 comments for post ID: 31
+[2026-06-12 20:41:23.245] [INFO] Collected 25 comments for post ID: 18
+[2026-06-12 20:41:23.246] [INFO] Collected 17 comments for post ID: 21
+[2026-06-12 20:41:23.247] [INFO] Collected 32 comments for post ID: 36
+[2026-06-12 20:41:23.248] [INFO] Collected 32 comments for post ID: 2
+[2026-06-12 20:41:23.249] [INFO] Collected 38 comments for post ID: 22
+[2026-06-12 20:41:23.250] [INFO] Collected 35 comments for post ID: 8
+[2026-06-12 20:41:23.252] [INFO] Collected 39 comments for post ID: 23
+[2026-06-12 20:41:23.253] [INFO] Collected 38 comments for post ID: 12
+[2026-06-12 20:41:23.254] [INFO] Collected 16 comments for post ID: 16
+[2026-06-12 20:41:23.255] [INFO] Collected 15 comments for post ID: 20
+[2026-06-12 20:41:23.256] [INFO] Collected 20 comments for post ID: 38
+[2026-06-12 20:41:23.257] [INFO] Collected 29 comments for post ID: 33
+[2026-06-12 20:41:23.260] [INFO] Collected 31 comments for post ID: 25
+[2026-06-12 20:41:23.261] [INFO] Collected 33 comments for post ID: 4
+[2026-06-12 20:41:23.262] [INFO] Collected 27 comments for post ID: 34
+[2026-06-12 20:41:23.263] [INFO] Collected 49 comments for post ID: 35
+[2026-06-12 20:41:23.264] [INFO] Collected 15 comments for post ID: 19
+[2026-06-12 20:41:23.265] [INFO] Collected 45 comments for post ID: 10
+[2026-06-12 20:41:23.267] [INFO] Total raw comments collected: 1241
+[2026-06-12 20:41:23.267] [INFO] Preprocessing 1241 comments...
+[2026-06-12 20:41:23.287] [INFO] Preprocessing completed. Yielded 1241 valid comments.
+[2026-06-12 20:41:23.288] [INFO] Valid comments available after preprocessing: 1241
+[2026-06-12 20:41:23.946] [INFO] Saved 1241 comments to database
+[2026-06-12 20:41:23.950] [INFO] Loading collected posts and comments for project ID: 1
+[2026-06-12 20:41:49.892] [INFO] Collection Complete: Data collection finished. Check the collected posts below.
+[2026-06-12 21:26:34.549] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-12 21:26:34.551] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-12 21:26:34.552] [INFO] Starting application with Java version: 21.0.11
+[2026-06-12 21:26:34.556] [INFO] Initializing application...
+[2026-06-12 21:26:34.569] [INFO] Starting application...
+[2026-06-12 21:26:34.784] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-12 21:26:34.787] [INFO] Database startup and verification sequence initiated.
+[2026-06-12 21:26:36.068] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-12 21:26:36.298] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-12 21:26:36.338] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:69)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+  at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:190)
+  at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[2026-06-12 21:26:36.353] [INFO] PreprocessingService initialized.
+[2026-06-12 21:26:36.358] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-12 21:26:36.680] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-12 21:26:36.683] [INFO] Initialized API clients for 3 platforms
+[2026-06-12 21:26:37.548] [INFO] SentimentAnalysisService initialized.
+[2026-06-12 21:26:37.550] [INFO] DamageClassificationService initialized.
+[2026-06-12 21:26:37.557] [INFO] ExportService initialized successfully.
+[2026-06-12 21:26:37.558] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-12 21:26:38.604] [INFO] Application started successfully
+[2026-06-12 21:26:41.585] [INFO] DataCollectionController initialize ...
+[2026-06-12 21:26:41.589] [INFO] Loading collected posts and comments for project ID: 1
+[2026-06-12 21:27:20.280] [INFO] Starting data collection for project: test
+[2026-06-12 21:27:20.285] [INFO] Search query constructed: typhoon damage #yagi
+[2026-06-12 21:27:20.287] [INFO] Async thread started collection from: YOUTUBE
+[2026-06-12 21:27:20.288] [INFO] Async thread started collection from: NEWS
+[2026-06-12 21:27:20.288] [INFO] Async thread started collection from: REDDIT
+[2026-06-12 21:27:20.289] [INFO] Fetching detailed news articles for query: 'typhoon damage #yagi'
+[2026-06-12 21:27:20.291] [INFO] --------------------------------------------------
+[2026-06-12 21:27:20.293] [INFO] Source [VnExpress]: Starting extraction...
+[2026-06-12 21:27:20.303] [INFO] Collected 43 posts from YOUTUBE
+[2026-06-12 21:27:20.997] [WARN]    -> Warning: No article links found on the search page.
+[2026-06-12 21:27:20.998] [INFO] Source [VnExpress]: Finished. Extracted 0 full articles.
+[2026-06-12 21:27:20.998] [INFO] --------------------------------------------------
+[2026-06-12 21:27:20.999] [INFO] Source [Tuổi Trẻ]: Starting extraction...
+[2026-06-12 21:27:21.289] [WARN]    -> Warning: No article links found on the search page.
+[2026-06-12 21:27:21.290] [INFO] Source [Tuổi Trẻ]: Finished. Extracted 0 full articles.
+[2026-06-12 21:27:21.291] [INFO] --------------------------------------------------
+[2026-06-12 21:27:21.291] [INFO] Source [Thanh Niên]: Starting extraction...
+[2026-06-12 21:27:21.508] [WARN]    -> Warning: No article links found on the search page.
+[2026-06-12 21:27:21.509] [INFO] Source [Thanh Niên]: Finished. Extracted 0 full articles.
+[2026-06-12 21:27:21.510] [INFO] --------------------------------------------------
+[2026-06-12 21:27:21.511] [INFO] Source [Dân Trí]: Starting extraction...
+[2026-06-12 21:27:21.555] [WARN]    -> Warning: No article links found on the search page.
+[2026-06-12 21:27:21.555] [INFO] Source [Dân Trí]: Finished. Extracted 0 full articles.
+[2026-06-12 21:27:21.556] [INFO] News scraping completed. Total full articles retrieved: 0
+[2026-06-12 21:27:21.556] [INFO] Collected 0 posts from NEWS
+[2026-06-12 21:27:21.557] [ERROR] Collection from REDDIT failed - Exception: java.util.concurrent.ExecutionException: java.lang.RuntimeException: Data fetch error on platform REDDIT: Lỗi kết nối HTTP từ Reddit, mã phản hồi: 403
+Stack trace:
+  at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+  at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:205)
+  at com.disaster.analysis.application.services.DataCollectionService.collectData(DataCollectionService.java:111)
+  at com.disaster.analysis.ui.controller.DataCollectionController$1.call(DataCollectionController.java:298)
+  at com.disaster.analysis.ui.controller.DataCollectionController$1.call(DataCollectionController.java:290)
+  at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1399)
+  at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+  at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.RuntimeException: Data fetch error on platform REDDIT: Lỗi kết nối HTTP từ Reddit, mã phản hồi: 403
+  at com.disaster.analysis.application.services.DataCollectionService.collectFromPlatform(DataCollectionService.java:241)
+  at com.disaster.analysis.application.services.DataCollectionService.lambda$collectData$0(DataCollectionService.java:94)
+  at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+  at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+  at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+  at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[2026-06-12 21:27:21.558] [INFO] Total raw posts collected: 43
+[2026-06-12 21:27:21.560] [INFO] Preprocessing 43 posts...
+[2026-06-12 21:27:21.568] [INFO] Preprocessing completed. Yielded 43 valid posts.
+[2026-06-12 21:27:21.568] [INFO] Valid posts available after preprocessing: 43
+[2026-06-12 21:27:21.967] [INFO] Saved 43 posts to database
+[2026-06-12 21:27:22.298] [INFO] Reloaded 81 posts equipped with database IDs
+[2026-06-12 21:27:22.304] [INFO] Collected 35 comments for post ID: 63
+[2026-06-12 21:27:22.305] [INFO] Collected 48 comments for post ID: 27
+[2026-06-12 21:27:22.306] [INFO] Collected 50 comments for post ID: 78
+[2026-06-12 21:27:22.307] [INFO] Collected 50 comments for post ID: 57
+[2026-06-12 21:27:22.307] [INFO] Collected 19 comments for post ID: 9
+[2026-06-12 21:27:22.310] [INFO] Collected 48 comments for post ID: 79
+[2026-06-12 21:27:22.310] [INFO] Collected 48 comments for post ID: 64
+[2026-06-12 21:27:22.312] [INFO] Collected 44 comments for post ID: 47
+[2026-06-12 21:27:22.314] [INFO] Collected 21 comments for post ID: 13
+[2026-06-12 21:27:22.316] [INFO] Collected 34 comments for post ID: 66
+[2026-06-12 21:27:22.319] [INFO] Collected 40 comments for post ID: 3
+[2026-06-12 21:27:22.320] [INFO] Collected 39 comments for post ID: 15
+[2026-06-12 21:27:22.321] [INFO] Collected 19 comments for post ID: 71
+[2026-06-12 21:27:22.322] [INFO] Collected 42 comments for post ID: 59
+[2026-06-12 21:27:22.323] [INFO] Collected 35 comments for post ID: 62
+[2026-06-12 21:27:22.326] [INFO] Collected 43 comments for post ID: 51
+[2026-06-12 21:27:22.327] [INFO] Collected 16 comments for post ID: 26
+[2026-06-12 21:27:22.328] [INFO] Collected 37 comments for post ID: 52
+[2026-06-12 21:27:22.330] [INFO] Collected 33 comments for post ID: 32
+[2026-06-12 21:27:22.330] [INFO] Collected 36 comments for post ID: 67
+[2026-06-12 21:27:22.332] [INFO] Collected 31 comments for post ID: 28
+[2026-06-12 21:27:22.333] [INFO] Collected 15 comments for post ID: 11
+[2026-06-12 21:27:22.333] [INFO] Collected 44 comments for post ID: 54
+[2026-06-12 21:27:22.334] [INFO] Collected 32 comments for post ID: 74
+[2026-06-12 21:27:22.335] [INFO] Collected 33 comments for post ID: 48
+[2026-06-12 21:27:22.336] [INFO] Collected 40 comments for post ID: 60
+[2026-06-12 21:27:22.338] [INFO] Collected 45 comments for post ID: 37
+[2026-06-12 21:27:22.339] [INFO] Collected 36 comments for post ID: 6
+[2026-06-12 21:27:22.340] [INFO] Collected 33 comments for post ID: 40
+[2026-06-12 21:27:22.340] [INFO] Collected 19 comments for post ID: 7
+[2026-06-12 21:27:22.340] [INFO] Collected 21 comments for post ID: 50
+[2026-06-12 21:27:22.341] [INFO] Collected 39 comments for post ID: 39
+[2026-06-12 21:27:22.342] [INFO] Collected 25 comments for post ID: 53
+[2026-06-12 21:27:22.343] [INFO] Collected 18 comments for post ID: 17
+[2026-06-12 21:27:22.345] [INFO] Collected 35 comments for post ID: 24
+[2026-06-12 21:27:22.346] [INFO] Collected 43 comments for post ID: 45
+[2026-06-12 21:27:22.346] [INFO] Collected 28 comments for post ID: 73
+[2026-06-12 21:27:22.347] [INFO] Collected 22 comments for post ID: 41
+[2026-06-12 21:27:22.348] [INFO] Collected 43 comments for post ID: 29
+[2026-06-12 21:27:22.349] [INFO] Collected 29 comments for post ID: 70
+[2026-06-12 21:27:22.350] [INFO] Collected 20 comments for post ID: 77
+[2026-06-12 21:27:22.351] [INFO] Collected 32 comments for post ID: 76
+[2026-06-12 21:27:22.353] [INFO] Collected 36 comments for post ID: 61
+[2026-06-12 21:27:22.354] [INFO] Collected 39 comments for post ID: 42
+[2026-06-12 21:27:22.354] [INFO] Collected 27 comments for post ID: 43
+[2026-06-12 21:27:22.355] [INFO] Collected 15 comments for post ID: 68
+[2026-06-12 21:27:22.356] [INFO] Collected 42 comments for post ID: 30
+[2026-06-12 21:27:22.357] [INFO] Collected 46 comments for post ID: 14
+[2026-06-12 21:27:22.358] [INFO] Collected 39 comments for post ID: 49
+[2026-06-12 21:27:22.359] [INFO] Collected 37 comments for post ID: 5
+[2026-06-12 21:27:22.359] [INFO] Collected 18 comments for post ID: 80
+[2026-06-12 21:27:22.360] [INFO] Collected 46 comments for post ID: 81
+[2026-06-12 21:27:22.360] [INFO] Collected 31 comments for post ID: 1
+[2026-06-12 21:27:22.361] [INFO] Collected 30 comments for post ID: 31
+[2026-06-12 21:27:22.362] [INFO] Collected 21 comments for post ID: 58
+[2026-06-12 21:27:22.363] [INFO] Collected 32 comments for post ID: 18
+[2026-06-12 21:27:22.364] [INFO] Collected 45 comments for post ID: 21
+[2026-06-12 21:27:22.366] [INFO] Collected 45 comments for post ID: 36
+[2026-06-12 21:27:22.367] [INFO] Collected 40 comments for post ID: 2
+[2026-06-12 21:27:22.368] [INFO] Collected 17 comments for post ID: 44
+[2026-06-12 21:27:22.369] [INFO] Collected 39 comments for post ID: 22
+[2026-06-12 21:27:22.370] [INFO] Collected 33 comments for post ID: 8
+[2026-06-12 21:27:22.371] [INFO] Collected 49 comments for post ID: 23
+[2026-06-12 21:27:22.372] [INFO] Collected 44 comments for post ID: 12
+[2026-06-12 21:27:22.373] [INFO] Collected 49 comments for post ID: 16
+[2026-06-12 21:27:22.374] [INFO] Collected 45 comments for post ID: 20
+[2026-06-12 21:27:22.374] [INFO] Collected 15 comments for post ID: 46
+[2026-06-12 21:27:22.375] [INFO] Collected 16 comments for post ID: 38
+[2026-06-12 21:27:22.375] [INFO] Collected 18 comments for post ID: 56
+[2026-06-12 21:27:22.376] [INFO] Collected 23 comments for post ID: 33
+[2026-06-12 21:27:22.378] [INFO] Collected 19 comments for post ID: 25
+[2026-06-12 21:27:22.379] [INFO] Collected 19 comments for post ID: 4
+[2026-06-12 21:27:22.380] [INFO] Collected 42 comments for post ID: 34
+[2026-06-12 21:27:22.381] [INFO] Collected 23 comments for post ID: 55
+[2026-06-12 21:27:22.382] [INFO] Collected 22 comments for post ID: 69
+[2026-06-12 21:27:22.383] [INFO] Collected 39 comments for post ID: 75
+[2026-06-12 21:27:22.383] [INFO] Collected 16 comments for post ID: 35
+[2026-06-12 21:27:22.384] [INFO] Collected 38 comments for post ID: 19
+[2026-06-12 21:27:22.385] [INFO] Collected 41 comments for post ID: 10
+[2026-06-12 21:27:22.386] [INFO] Collected 28 comments for post ID: 72
+[2026-06-12 21:27:22.387] [INFO] Collected 16 comments for post ID: 65
+[2026-06-12 21:27:22.387] [INFO] Total raw comments collected: 2660
+[2026-06-12 21:27:22.388] [INFO] Preprocessing 2660 comments...
+[2026-06-12 21:27:22.416] [INFO] Preprocessing completed. Yielded 2660 valid comments.
+[2026-06-12 21:27:22.416] [INFO] Valid comments available after preprocessing: 2660
+[2026-06-12 21:27:23.199] [INFO] Saved 2660 comments to database
+[2026-06-12 21:27:23.202] [INFO] Loading collected posts and comments for project ID: 1
+[2026-06-12 21:27:24.142] [INFO] Collection Complete: Data collection finished. Check the collected posts below.
+[2026-06-12 21:27:56.816] [INFO] DataCollectionController initialize ...
+[2026-06-12 21:27:56.818] [INFO] Loading collected posts and comments for project ID: 1
