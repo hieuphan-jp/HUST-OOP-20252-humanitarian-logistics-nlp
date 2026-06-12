@@ -1638,3 +1638,743 @@ Stack trace:
 [2026-06-12 19:19:25.047] [INFO] Application started successfully
 [2026-06-12 19:19:33.681] [INFO] DataCollectionController initialize ...
 [2026-06-12 19:19:33.689] [INFO] Loading collected posts and comments for project ID: 4
+[2026-06-12 21:22:31.597] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-12 21:22:31.598] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-12 21:22:31.599] [INFO] Starting application with Java version: 26.0.1
+[2026-06-12 21:22:31.603] [INFO] Initializing application...
+[2026-06-12 21:22:31.622] [INFO] Starting application...
+[2026-06-12 21:22:31.972] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-12 21:22:31.990] [INFO] Database startup and verification sequence initiated.
+[2026-06-12 21:22:32.725] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-12 21:22:33.043] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-12 21:22:33.047] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-12 21:22:33.076] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-12 21:22:33.206] [INFO] PreprocessingService initialized.
+[2026-06-12 21:22:33.247] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-12 21:22:33.277] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-12 21:22:33.298] [INFO] Initialized API clients for 2 platforms
+[2026-06-12 21:22:34.209] [INFO] SentimentAnalysisService initialized.
+[2026-06-12 21:22:34.221] [INFO] DamageClassificationService initialized.
+[2026-06-12 21:22:34.297] [INFO] ExportService initialized successfully.
+[2026-06-12 21:22:34.297] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-12 21:22:35.083] [INFO] Application started successfully
+[2026-06-12 21:22:55.466] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-12 21:23:47.496] [INFO] Analysis Complete: Damage classification completed! Classified 46 posts and 1559 comments
+[2026-06-12 21:33:29.423] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-12 21:33:29.424] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-12 21:33:29.425] [INFO] Starting application with Java version: 26.0.1
+[2026-06-12 21:33:29.429] [INFO] Initializing application...
+[2026-06-12 21:33:29.444] [INFO] Starting application...
+[2026-06-12 21:33:29.695] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-12 21:33:29.697] [INFO] Database startup and verification sequence initiated.
+[2026-06-12 21:33:30.431] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-12 21:33:30.740] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-12 21:33:30.744] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-12 21:33:30.753] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-12 21:33:30.765] [INFO] PreprocessingService initialized.
+[2026-06-12 21:33:30.769] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-12 21:33:30.771] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-12 21:33:30.773] [INFO] Initialized API clients for 2 platforms
+[2026-06-12 21:33:31.620] [INFO] SentimentAnalysisService initialized.
+[2026-06-12 21:33:31.622] [INFO] DamageClassificationService initialized.
+[2026-06-12 21:33:31.627] [INFO] ExportService initialized successfully.
+[2026-06-12 21:33:31.627] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-12 21:33:32.342] [INFO] Application started successfully
+[2026-06-12 21:33:37.791] [ERROR] Open Error: An error occurred while opening the project: Failed to load view: Analysis
+[2026-06-12 21:34:21.743] [ERROR] Open Error: An error occurred while opening the project: Failed to load view: Analysis
+[2026-06-12 21:35:27.559] [INFO] Shutting down application...
+[2026-06-12 21:35:27.559] [INFO] Application shutdown complete
+[2026-06-12 21:35:27.576] [INFO] Shutting down application...
+[2026-06-12 21:35:27.576] [INFO] Application shutdown complete
+[2026-06-12 21:35:44.735] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-12 21:35:44.736] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-12 21:35:44.737] [INFO] Starting application with Java version: 26.0.1
+[2026-06-12 21:35:44.741] [INFO] Initializing application...
+[2026-06-12 21:35:44.758] [INFO] Starting application...
+[2026-06-12 21:35:44.982] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-12 21:35:44.984] [INFO] Database startup and verification sequence initiated.
+[2026-06-12 21:35:45.740] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-12 21:35:46.122] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-12 21:35:46.126] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-12 21:35:46.133] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-12 21:35:46.144] [INFO] PreprocessingService initialized.
+[2026-06-12 21:35:46.147] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-12 21:35:46.148] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-12 21:35:46.149] [INFO] Initialized API clients for 2 platforms
+[2026-06-12 21:35:46.969] [INFO] SentimentAnalysisService initialized.
+[2026-06-12 21:35:46.971] [INFO] DamageClassificationService initialized.
+[2026-06-12 21:35:46.974] [INFO] ExportService initialized successfully.
+[2026-06-12 21:35:46.975] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-12 21:35:47.595] [INFO] Application started successfully
+[2026-06-12 21:35:54.644] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-12 21:36:46.387] [INFO] Analysis Complete: Damage classification completed! Classified 46 posts and 1559 comments
+[2026-06-12 21:36:56.394] [ERROR] Uncaught exception in thread JavaFX Application Thread - Exception: java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+Stack trace:
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1858)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+  at javafx.base@21.0.5/javafx.event.Event.fireEvent(Event.java:198)
+  at javafx.graphics@21.0.5/javafx.scene.Node.fireEvent(Node.java:8875)
+  at javafx.controls@21.0.5/javafx.scene.control.Button.fire(Button.java:203)
+  at javafx.controls@21.0.5/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+  at javafx.controls@21.0.5/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+  at javafx.base@21.0.5/javafx.event.Event.fireEvent(Event.java:198)
+  at javafx.graphics@21.0.5/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+  at javafx.graphics@21.0.5/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+  at javafx.graphics@21.0.5/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.View.notifyMouse(View.java:937)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+Caused by: java.lang.reflect.InvocationTargetException: null
+  at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:116)
+  at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+  at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+  at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+  at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+  at javafx.base@21.0.5/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+  at javafx.fxml@21.0.5/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1855)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+  at javafx.base@21.0.5/javafx.event.Event.fireEvent(Event.java:198)
+  at javafx.graphics@21.0.5/javafx.scene.Node.fireEvent(Node.java:8875)
+  at javafx.controls@21.0.5/javafx.scene.control.Button.fire(Button.java:203)
+  at javafx.controls@21.0.5/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+  at javafx.controls@21.0.5/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+  at javafx.base@21.0.5/javafx.event.Event.fireEvent(Event.java:198)
+  at javafx.graphics@21.0.5/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+  at javafx.graphics@21.0.5/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+  at javafx.graphics@21.0.5/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.View.notifyMouse(View.java:937)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-12 21:37:38.933] [INFO] Shutting down application...
+[2026-06-12 21:37:38.934] [INFO] Application shutdown complete
+[2026-06-12 21:37:38.950] [INFO] Shutting down application...
+[2026-06-12 21:37:38.951] [INFO] Application shutdown complete
+[2026-06-12 21:48:03.540] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-12 21:48:03.541] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-12 21:48:03.542] [INFO] Starting application with Java version: 26.0.1
+[2026-06-12 21:48:03.545] [INFO] Initializing application...
+[2026-06-12 21:48:03.559] [INFO] Starting application...
+[2026-06-12 21:48:03.798] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-12 21:48:03.799] [INFO] Database startup and verification sequence initiated.
+[2026-06-12 21:48:04.563] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-12 21:48:04.950] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-12 21:48:04.954] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-12 21:48:04.964] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-12 21:48:04.976] [INFO] PreprocessingService initialized.
+[2026-06-12 21:48:04.979] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-12 21:48:04.981] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-12 21:48:04.983] [INFO] Initialized API clients for 2 platforms
+[2026-06-12 21:48:05.865] [INFO] SentimentAnalysisService initialized.
+[2026-06-12 21:48:05.866] [INFO] DamageClassificationService initialized.
+[2026-06-12 21:48:05.870] [INFO] ExportService initialized successfully.
+[2026-06-12 21:48:05.870] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-12 21:48:06.520] [INFO] Application started successfully
+[2026-06-12 21:48:16.269] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-12 21:49:08.452] [INFO] Analysis Complete: Damage classification completed! Classified 46 posts and 1559 comments
+[2026-06-12 21:49:34.740] [ERROR] Uncaught exception in thread JavaFX Application Thread - Exception: java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+Stack trace:
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1858)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+  at javafx.base@21.0.5/javafx.event.Event.fireEvent(Event.java:198)
+  at javafx.graphics@21.0.5/javafx.scene.Node.fireEvent(Node.java:8875)
+  at javafx.controls@21.0.5/javafx.scene.control.Button.fire(Button.java:203)
+  at javafx.controls@21.0.5/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+  at javafx.controls@21.0.5/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+  at javafx.base@21.0.5/javafx.event.Event.fireEvent(Event.java:198)
+  at javafx.graphics@21.0.5/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+  at javafx.graphics@21.0.5/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+  at javafx.graphics@21.0.5/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.View.notifyMouse(View.java:937)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+Caused by: java.lang.reflect.InvocationTargetException: null
+  at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:116)
+  at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+  at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+  at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+  at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+  at javafx.base@21.0.5/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+  at javafx.fxml@21.0.5/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1855)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+  at javafx.base@21.0.5/javafx.event.Event.fireEvent(Event.java:198)
+  at javafx.graphics@21.0.5/javafx.scene.Node.fireEvent(Node.java:8875)
+  at javafx.controls@21.0.5/javafx.scene.control.Button.fire(Button.java:203)
+  at javafx.controls@21.0.5/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+  at javafx.controls@21.0.5/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+  at javafx.base@21.0.5/javafx.event.Event.fireEvent(Event.java:198)
+  at javafx.graphics@21.0.5/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+  at javafx.graphics@21.0.5/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+  at javafx.graphics@21.0.5/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.View.notifyMouse(View.java:937)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-12 21:53:25.682] [INFO] Shutting down application...
+[2026-06-12 21:53:25.690] [INFO] Application shutdown complete
+[2026-06-12 21:53:25.713] [INFO] Shutting down application...
+[2026-06-12 21:53:25.714] [INFO] Application shutdown complete
+[2026-06-12 21:53:47.780] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-12 21:53:47.781] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-12 21:53:47.784] [INFO] Starting application with Java version: 26.0.1
+[2026-06-12 21:53:47.789] [INFO] Initializing application...
+[2026-06-12 21:53:47.813] [INFO] Starting application...
+[2026-06-12 21:53:48.133] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-12 21:53:48.148] [INFO] Database startup and verification sequence initiated.
+[2026-06-12 21:53:48.944] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-12 21:53:49.243] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-12 21:53:49.252] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-12 21:53:49.261] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-12 21:53:49.345] [INFO] PreprocessingService initialized.
+[2026-06-12 21:53:49.365] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-12 21:53:49.380] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-12 21:53:49.394] [INFO] Initialized API clients for 2 platforms
+[2026-06-12 21:53:50.491] [INFO] SentimentAnalysisService initialized.
+[2026-06-12 21:53:50.514] [INFO] DamageClassificationService initialized.
+[2026-06-12 21:53:50.543] [INFO] ExportService initialized successfully.
+[2026-06-12 21:53:50.543] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-12 21:53:51.297] [INFO] Application started successfully
+[2026-06-12 21:54:13.780] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-12 21:55:05.723] [INFO] Analysis Complete: Damage classification completed! Classified 46 posts and 1559 comments
+[2026-06-12 21:55:15.255] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-12 21:56:06.485] [INFO] Analysis Complete: Damage classification completed! Classified 46 posts and 1559 comments
+[2026-06-12 21:56:12.432] [ERROR] Uncaught exception in thread JavaFX Application Thread - Exception: java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+Stack trace:
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1858)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+  at javafx.base@21.0.5/javafx.event.Event.fireEvent(Event.java:198)
+  at javafx.graphics@21.0.5/javafx.scene.Node.fireEvent(Node.java:8875)
+  at javafx.controls@21.0.5/javafx.scene.control.Button.fire(Button.java:203)
+  at javafx.controls@21.0.5/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+  at javafx.controls@21.0.5/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+  at javafx.base@21.0.5/javafx.event.Event.fireEvent(Event.java:198)
+  at javafx.graphics@21.0.5/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+  at javafx.graphics@21.0.5/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+  at javafx.graphics@21.0.5/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.View.notifyMouse(View.java:937)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+Caused by: java.lang.reflect.InvocationTargetException: null
+  at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:116)
+  at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+  at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+  at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+  at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+  at javafx.base@21.0.5/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+  at javafx.fxml@21.0.5/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1855)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+  at javafx.base@21.0.5/javafx.event.Event.fireEvent(Event.java:198)
+  at javafx.graphics@21.0.5/javafx.scene.Node.fireEvent(Node.java:8875)
+  at javafx.controls@21.0.5/javafx.scene.control.Button.fire(Button.java:203)
+  at javafx.controls@21.0.5/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+  at javafx.controls@21.0.5/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+  at javafx.base@21.0.5/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+  at javafx.base@21.0.5/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+  at javafx.base@21.0.5/javafx.event.Event.fireEvent(Event.java:198)
+  at javafx.graphics@21.0.5/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+  at javafx.graphics@21.0.5/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+  at javafx.graphics@21.0.5/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+  at javafx.graphics@21.0.5/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.View.notifyMouse(View.java:937)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-12 22:13:20.048] [INFO] Shutting down application...
+[2026-06-12 22:13:20.059] [INFO] Application shutdown complete
+[2026-06-12 22:13:20.077] [INFO] Shutting down application...
+[2026-06-12 22:13:20.077] [INFO] Application shutdown complete
+[2026-06-12 22:19:10.220] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-12 22:19:10.222] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-12 22:19:10.222] [INFO] Starting application with Java version: 26.0.1
+[2026-06-12 22:19:10.226] [INFO] Initializing application...
+[2026-06-12 22:19:10.243] [INFO] Starting application...
+[2026-06-12 22:19:10.521] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-12 22:19:10.525] [INFO] Database startup and verification sequence initiated.
+[2026-06-12 22:19:11.273] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-12 22:19:11.599] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-12 22:19:11.603] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-12 22:19:11.611] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-12 22:19:11.681] [INFO] PreprocessingService initialized.
+[2026-06-12 22:19:11.697] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-12 22:19:11.711] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-12 22:19:11.723] [INFO] Initialized API clients for 2 platforms
+[2026-06-12 22:19:12.558] [INFO] SentimentAnalysisService initialized.
+[2026-06-12 22:19:12.569] [INFO] DamageClassificationService initialized.
+[2026-06-12 22:19:12.590] [INFO] ExportService initialized successfully.
+[2026-06-12 22:19:12.590] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-12 22:19:13.266] [INFO] Application started successfully
+[2026-06-12 22:19:21.095] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-12 22:19:22.336] [INFO] Analysis Complete: Damage classification completed! Classified 46 posts and 1559 comments
+[2026-06-12 22:19:26.885] [INFO] demo: start summary generate
+[2026-06-12 22:19:28.648] [INFO] demo: end summary generate
+[2026-06-12 22:19:30.359] [INFO] Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: 4
+[2026-06-12 22:19:55.519] [INFO] Đang chờ AI phân tích và viết báo cáo...
+[2026-06-12 22:19:55.539] [INFO] demo: success summary generate
+[2026-06-12 22:22:39.213] [INFO] demo: update generateSummaryTextArea
+[2026-06-12 22:22:41.012] [INFO] demo: done update generateSummaryTextArea
+[2026-06-12 22:22:43.220] [INFO] Successfully generated AI summary for project: yagi
+[2026-06-12 22:22:46.268] [INFO] Shutting down application...
+[2026-06-12 22:22:46.269] [INFO] Application shutdown complete
+[2026-06-12 22:22:46.287] [INFO] Shutting down application...
+[2026-06-12 22:22:46.287] [INFO] Application shutdown complete
+[2026-06-12 22:22:57.119] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-12 22:22:57.120] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-12 22:22:57.121] [INFO] Starting application with Java version: 26.0.1
+[2026-06-12 22:22:57.126] [INFO] Initializing application...
+[2026-06-12 22:22:57.140] [INFO] Starting application...
+[2026-06-12 22:22:57.405] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-12 22:22:57.409] [INFO] Database startup and verification sequence initiated.
+[2026-06-12 22:22:58.063] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-12 22:22:58.300] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-12 22:22:58.303] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-12 22:22:58.311] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-12 22:22:58.379] [INFO] PreprocessingService initialized.
+[2026-06-12 22:22:58.396] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-12 22:22:58.407] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-12 22:22:58.420] [INFO] Initialized API clients for 2 platforms
+[2026-06-12 22:22:59.208] [INFO] SentimentAnalysisService initialized.
+[2026-06-12 22:22:59.222] [INFO] DamageClassificationService initialized.
+[2026-06-12 22:22:59.246] [INFO] ExportService initialized successfully.
+[2026-06-12 22:22:59.247] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-12 22:22:59.908] [INFO] Application started successfully
+[2026-06-12 22:23:03.823] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-12 22:23:06.873] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-12 22:23:28.553] [INFO] Shutting down application...
+[2026-06-12 22:23:28.553] [INFO] Application shutdown complete
+[2026-06-12 22:23:28.569] [INFO] Shutting down application...
+[2026-06-12 22:23:28.569] [INFO] Application shutdown complete

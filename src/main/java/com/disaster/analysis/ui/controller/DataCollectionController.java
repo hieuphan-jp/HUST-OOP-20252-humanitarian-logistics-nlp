@@ -30,8 +30,7 @@ public class DataCollectionController implements Initializable {
     @FXML
     private Label projectNameLabel;
 
-    @FXML
-    private Label projectDetailsLabel;
+
 
     @FXML
     private Label projectDisasterNameLabel;

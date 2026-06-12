@@ -42,14 +42,12 @@ public class ProjectListController implements Initializable {
     @FXML
     private TableColumn<ProjectDTO, String> modifiedColumn;
 
-    @FXML
-    private Button openButton;
+
 
     @FXML
     private Button deleteButton;
 
-    @FXML
-    private Button refreshButton;
+
 
     @FXML
     private Label projectCountLabel;

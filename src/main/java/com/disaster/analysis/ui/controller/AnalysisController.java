@@ -84,15 +84,7 @@ public class AnalysisController implements Initializable {
     @FXML
     private BarChart<String, Number> damageChart;
 
-    @FXML
-    private ListView<String> samplePostsListView;
-
-    @FXML
-    private Label samplePostsCountLabel;
-
     // Action Buttons
-    @FXML
-    private Button backButton;
 
     @FXML
     private Button exportButton;
@@ -103,15 +95,6 @@ public class AnalysisController implements Initializable {
 
     @FXML
     private TextArea summaryTextArea;
-
-    @FXML
-    private ProgressIndicator summaryProgressIndicator;
-
-    @FXML
-    private Button copySummaryButton;
-
-    @FXML
-    private Label summaryMetadataLabel;
 
     // Services
     private SentimentAnalysisService sentimentService;
@@ -210,9 +193,6 @@ public class AnalysisController implements Initializable {
         }
 
         // Initialize AI Summary UI components
-        if (summaryProgressIndicator != null) {
-            summaryProgressIndicator.setVisible(false);
-        }
         if (summaryTextArea != null) {
             summaryTextArea.setEditable(false);
             summaryTextArea.setWrapText(true);
@@ -832,10 +812,7 @@ public class AnalysisController implements Initializable {
                 }
 
                 // Update metadata label
-                if (summaryMetadataLabel != null) {
-                    String metadata = formatSummaryMetadata(currentSummary);
-                    summaryMetadataLabel.setText(metadata);
-                }
+
 
                 // Change button text to "Regenerate Summary"
                 if (generateSummaryButton != null) {
@@ -851,9 +828,6 @@ public class AnalysisController implements Initializable {
                     summaryTextArea.setText("");
                 }
 
-                if (summaryMetadataLabel != null) {
-                    summaryMetadataLabel.setText("");
-                }
 
                 if (generateSummaryButton != null) {
                     generateSummaryButton.setText("Generate AI Summary");
@@ -920,9 +894,9 @@ public class AnalysisController implements Initializable {
 
         // Disable button and show progress indicator
         generateSummaryButton.setDisable(true);
-        summaryProgressIndicator.setVisible(true);
 
         // Create background task for summary generation
+
         Task<AISummaryDTO> summaryTask = new Task<AISummaryDTO>() {
             @Override
             protected AISummaryDTO call() throws Exception {
@@ -935,19 +909,18 @@ public class AnalysisController implements Initializable {
         summaryTask.setOnSucceeded(event -> {
             try {
                 // Get the generated summary
+                DialogUtil.showInformation("demo", "success summary generate");
                 AISummaryDTO generatedSummary = summaryTask.getValue();
                 currentSummary = generatedSummary;
 
                 // Update summary text area
                 if (summaryTextArea != null && generatedSummary != null) {
+
                     summaryTextArea.setText(generatedSummary.getSummaryText());
+
                 }
 
                 // Update metadata label
-                if (summaryMetadataLabel != null) {
-                    String metadata = formatSummaryMetadata(generatedSummary);
-                    summaryMetadataLabel.setText(metadata);
-                }
 
                 // Change button text to "Regenerate Summary"
                 generateSummaryButton.setText("Regenerate Summary");
@@ -957,13 +930,13 @@ public class AnalysisController implements Initializable {
             } finally {
                 // Re-enable button and hide progress indicator
                 generateSummaryButton.setDisable(false);
-                summaryProgressIndicator.setVisible(false);
             }
         });
 
         // Handle task failure
         summaryTask.setOnFailed(event -> {
             try {
+
                 Throwable exception = summaryTask.getException();
                 LogUtil.error("AI summary generation failed", exception);
 
@@ -972,7 +945,7 @@ public class AnalysisController implements Initializable {
             } finally {
                 // Re-enable button and hide progress indicator
                 generateSummaryButton.setDisable(false);
-                summaryProgressIndicator.setVisible(false);
+
             }
         });
 
