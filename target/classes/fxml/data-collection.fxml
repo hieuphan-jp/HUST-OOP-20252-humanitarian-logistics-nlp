@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<VBox xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.disaster.analysis.ui.controller.DataCollectionController"
+      spacing="0">
+    <stylesheets>
+        <URL value="@../css/styles.css" />
+    </stylesheets>
+
+    <HBox alignment="CENTER_LEFT" prefHeight="70.0" styleClass="header-bar">
+        <children>
+            <VBox alignment="CENTER_LEFT">
+                <Label fx:id="projectNameLabel" text="Project: Loading..." styleClass="label-header-white"/>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="statusLabel" text="SYSTEM READY" styleClass="status-badge-green"/>
+        </children>
+    </HBox>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="scroll-pane-transparent">
+        <content>
+            <VBox spacing="25">
+                <padding>
+                    <Insets top="25" right="25" bottom="25" left="25"/>
+                </padding>
+
+                <VBox spacing="15" styleClass="card-dark-bordered">
+                    <children>
+                        <Label text="COLLECTION PARAMETERS" styleClass="label-caption-muted"/>
+                        <GridPane hgap="30" vgap="10">
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="100" />
+                                <ColumnConstraints hgrow="ALWAYS" />
+                            </columnConstraints>
+                            <children>
+                                <Label text="Disaster Type:" styleClass="label-field-title" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                                <Label fx:id="projectDisasterNameLabel" text="-" styleClass="label-value-white" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                                <Label text="Platforms:" styleClass="label-field-title" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                                <Label fx:id="projectPlatformLabel" text="-" styleClass="label-value-cyan" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                                <Label text="Time Period:" styleClass="label-field-title" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                                <Label fx:id="projectPeriodLabel" text="-" styleClass="label-value-white" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                            </children>
+                        </GridPane>
+                    </children>
+                </VBox>
+
+                <VBox spacing="15">
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Button fx:id="startButton" text="▶ Start Collection" onAction="#handleStart" prefHeight="40" prefWidth="160" styleClass="btn-success-green"/>
+                        <Button fx:id="stopButton" text="⏹ Stop" onAction="#handleStop" disable="true" prefHeight="40" prefWidth="160" styleClass="btn-danger-red"/>
+                        <Button fx:id="analysisButton" text="Analysis" onAction="#handleAnalysis" prefHeight="40" prefWidth="160" styleClass="btn-primary-blue"/>
+                    </HBox>
+
+                    <VBox spacing="8">
+                        <padding>
+                            <Insets top="10" right="0" bottom="0" left="0"/>
+                        </padding>
+                        <HBox>
+                            <Label text="Collection Progress" styleClass="label-sub-gray"/>
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Label fx:id="progressDetailsLabel" text="0%" styleClass="label-value-cyan"/>
+                        </HBox>
+                        <ProgressBar fx:id="progressBar" progress="0.0" maxWidth="Infinity" prefHeight="10" styleClass="progress-bar-custom"/>
+                    </VBox>
+                </VBox>
+
+                <VBox spacing="8" styleClass="log-box-container">
+                    <children>
+                        <HBox alignment="CENTER_LEFT">
+                            <Label text="COLLECTION LOGS" styleClass="label-caption-muted"/>
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Label text="LIVE" styleClass="status-text-green"/>
+                        </HBox>
+                        <ListView fx:id="collectionLogListView" prefHeight="120.0" styleClass="list-view-light"/>
+                    </children>
+                </VBox>
+
+                <VBox spacing="10" VBox.vgrow="ALWAYS" styleClass="inner-box-dark">
+                    <children>
+                        <HBox alignment="CENTER_LEFT">
+                            <Label text="DATA" styleClass="label-value-white"/>
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Label text="REAL-TIME" styleClass="status-text-red"/>
+                        </HBox>
+                        <ListView fx:id="postsListView" VBox.vgrow="ALWAYS" prefHeight="350.0" styleClass="list-view-dark-code"/>
+                    </children>
+                </VBox>
+
+            </VBox>
+        </content>
+    </ScrollPane>
+
+    <HBox prefHeight="70.0" alignment="CENTER_LEFT" styleClass="footer-bar">
+        <children>
+            <Button fx:id="backButton" text="← Back to Projects" onAction="#handleBack" styleClass="btn-secondary-slate-radius6"/>
+        </children>
+    </HBox>
+</VBox>

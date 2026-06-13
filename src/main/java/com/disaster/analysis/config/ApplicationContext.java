@@ -19,6 +19,7 @@ import com.disaster.analysis.infrastructure.social.*;
 import com.disaster.analysis.infrastructure.ai.*;
 import com.disaster.analysis.infrastructure.analysis.*;
 import com.disaster.analysis.infrastructure.export.XlsxExporter;
+import com.disaster.analysis.infrastructure.repository.context.DbContext;
 
 // Nhập các Service (Tầng ứng dụng - Application Layer) xử lý nghiệp vụ
 import com.disaster.analysis.application.service.*;
@@ -85,6 +86,7 @@ public class ApplicationContext {
 
         SqlServerDatabaseInitializerImpl dbInitializer = new SqlServerDatabaseInitializerImpl();
         dbInitializer.initialize();
+        DbContext.initConnectionPool();
 
         ProjectRepository projectRepository = new ProjectRepositoryImpl();
         PostRepository postRepository = new PostRepositoryImpl();

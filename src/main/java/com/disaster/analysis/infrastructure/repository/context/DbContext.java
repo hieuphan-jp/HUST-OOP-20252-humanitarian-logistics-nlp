@@ -40,15 +40,16 @@ public class DbContext {
 
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
-            // KHỞI TẠO CONNECTION POOL
-            initConnectionPool();
-
         } catch (Exception e) {
             LogUtil.error("DbContext Static Block Initialization Failed: " + e.getMessage());
         }
     }
 
-    private static void initConnectionPool() {
+    public static synchronized void initConnectionPool() {
+        if (dataSource != null && !dataSource.isClosed()) {
+            return;
+        }
+
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl(cachedUrl);
         config.setUsername(dbUser);

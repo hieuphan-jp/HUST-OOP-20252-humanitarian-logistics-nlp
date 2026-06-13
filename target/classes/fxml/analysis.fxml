@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<?import java.net.URL?>
+
+<VBox xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.disaster.analysis.ui.controller.AnalysisController"
+      spacing="0">
+    <stylesheets>
+        <URL value="@../css/styles.css" />
+    </stylesheets>
+
+    <HBox alignment="CENTER_LEFT" prefHeight="80.0" styleClass="header-bar">
+        <children>
+            <VBox alignment="CENTER_LEFT" spacing="5">
+                <Label text="ANALYTICS DASHBOARD" styleClass="label-title-cyan"/>
+                <HBox spacing="10" alignment="BASELINE_LEFT">
+                    <Label fx:id="projectNameLabel" text="Project: Loading..." styleClass="label-header-white"/>
+                    <Label fx:id="projectDetailsLabel" text="Details..." styleClass="label-sub-gray"/>
+                </HBox>
+            </VBox>
+        </children>
+    </HBox>
+
+    <TabPane fx:id="analysisTabPane" tabClosingPolicy="UNAVAILABLE" styleClass="tab-pane-custom" VBox.vgrow="ALWAYS">
+        <Tab text="Sentiment Analysis">
+            <HBox spacing="20">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <VBox spacing="15" HBox.hgrow="ALWAYS" styleClass="card-dark">
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label text="Time Granularity:" styleClass="label-field-title"/>
+                        <ComboBox fx:id="timeGranularityComboBox" prefWidth="120" styleClass="combo-box-dark"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="runSentimentButton" text="⚡ Run Analysis"
+                                onAction="#handleRunSentimentAnalysis" styleClass="btn-primary-blue"/>
+                    </HBox>
+                    <LineChart fx:id="sentimentChart" VBox.vgrow="ALWAYS" animated="true" styleClass="sentiment-chart">
+                        <xAxis>
+                            <CategoryAxis side="BOTTOM" tickLabelFill="#94a3b8"/>
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis side="LEFT" tickLabelFill="#94a3b8"/>
+                        </yAxis>
+                    </LineChart>
+                    <HBox spacing="30" alignment="CENTER" prefHeight="60" styleClass="inner-box-dark">
+                        <VBox alignment="CENTER">
+                            <Label text="Positive" styleClass="stat-title"/>
+                            <Label fx:id="positiveCountLabel" text="0" styleClass="stat-val-pos"/>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <Label text="Neutral" styleClass="stat-title"/>
+                            <Label fx:id="neutralCountLabel" text="0" styleClass="stat-val-neu"/>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <Label text="Negative" styleClass="stat-title"/>
+                            <Label fx:id="negativeCountLabel" text="0" styleClass="stat-val-neg"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <VBox spacing="10" prefWidth="350" styleClass="ai-summary-box">
+                    <Label text="AI SENTIMENT SUMMARY" styleClass="label-title-cyan"/>
+                    <TextArea fx:id="summaryTextSentimentArea" VBox.vgrow="ALWAYS" editable="false" wrapText="true"
+                              promptText="Summary will appear here..." styleClass="text-area-summary"/>
+                    <Button fx:id="generateSummarySentimentButton" onAction="#handleGenerateSentimentSummary"
+                            text="✨ Generate Summary" maxWidth="Infinity" styleClass="btn-success-green"/>
+                    <Button text="📋 Copy Insights" onAction="#handleCopySentimentSummary" maxWidth="Infinity"
+                            styleClass="btn-secondary-slate"/>
+                </VBox>
+            </HBox>
+        </Tab>
+
+        <Tab text="Damage Classification">
+            <HBox spacing="20">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <VBox spacing="15" HBox.hgrow="ALWAYS" styleClass="card-dark">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <ComboBox fx:id="categoryFilterComboBox" promptText="Category" prefWidth="150"
+                                  onAction="#handleCategoryFilterChange"/>
+                        <ComboBox fx:id="contentTypeFilterComboBox" promptText="Type" prefWidth="100"
+                                  onAction="#handleContentTypeFilterChange"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="runDamageButton" text="🔍 Run Damage Analysis"
+                                onAction="#handleRunDamageAnalysis" styleClass="btn-warning-orange"/>
+                    </HBox>
+                    <BarChart fx:id="damageChart" VBox.vgrow="ALWAYS" legendVisible="false">
+                        <xAxis>
+                            <CategoryAxis side="BOTTOM" tickLabelFill="#94a3b8"/>
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis side="LEFT" tickLabelFill="#94a3b8"/>
+                        </yAxis>
+                    </BarChart>
+                </VBox>
+
+                <VBox spacing="10" prefWidth="350" styleClass="ai-summary-box">
+                    <Label text="AI DAMAGE INSIGHTS" styleClass="label-title-orange"/>
+                    <TextArea fx:id="summaryTextDamageArea" VBox.vgrow="ALWAYS" editable="false" wrapText="true"
+                              styleClass="text-area-summary"/>
+                    <Button fx:id="generateSummaryDamageButton" onAction="#handleGenerateDamageSummary" text="✨ Generate Damage Insights" maxWidth="Infinity" styleClass="btn-warning-orange"/>
+                    <Button text="📋 Copy Insights" onAction="#handleCopyDamageSummary" maxWidth="Infinity"
+                            styleClass="btn-secondary-slate"/>
+                </VBox>
+            </HBox>
+        </Tab>
+    </TabPane>
+
+    <HBox spacing="15" alignment="CENTER_RIGHT" prefHeight="70.0" styleClass="footer-bar">
+        <children>
+            <Button fx:id="backButton" text="← Back to Projects" onAction="#handleBack" prefHeight="35" styleClass="btn-secondary-slate"/>
+            <Button fx:id="exportButton" text="📥 Export Analysis Results" onAction="#handleExport" prefHeight="35" styleClass="btn-success-green"/>
+        </children>
+    </HBox>
+</VBox>
