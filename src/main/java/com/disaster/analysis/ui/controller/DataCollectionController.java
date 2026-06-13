@@ -7,6 +7,7 @@ import com.disaster.analysis.application.mapper.ProjectMapper;
 import com.disaster.analysis.config.ApplicationContext;
 import com.disaster.analysis.domain.model.enums.Platform;
 import com.disaster.analysis.ui.navigation.Navigator;
+import com.disaster.analysis.ui.navigation.View;
 import com.disaster.analysis.application.service.DataCollectionService;
 import com.disaster.analysis.application.service.ProjectService;
 import com.disaster.analysis.util.DialogUtil;
@@ -55,6 +56,9 @@ public class DataCollectionController implements Initializable {
     private ListView<String> postsListView;
 
     @FXML
+    private ListView<String> collectionLogListView;
+
+    @FXML
     private Button startButton;
 
     @FXML
@@ -63,9 +67,13 @@ public class DataCollectionController implements Initializable {
     @FXML
     private Button backButton;
 
+    @FXML
+    private Button analysisButton;
+
     private DataCollectionService dataCollectionService;
     private ProjectService projectService;
     private final ObservableList<String> collectedPosts;
+    private final ObservableList<String> collectionLogs;
     private ProjectDTO currentProject;
     private Task<Void> collectionTask;
     private Navigator navigator;
@@ -75,12 +83,14 @@ public class DataCollectionController implements Initializable {
     public DataCollectionController() {
         // Initialize observable list for posts
         this.collectedPosts = FXCollections.observableArrayList();
+        this.collectionLogs = FXCollections.observableArrayList();
     }
 
 
     public DataCollectionController(DataCollectionService dataCollectionService) {
         this.dataCollectionService = dataCollectionService;
         this.collectedPosts = FXCollections.observableArrayList();
+        this.collectionLogs = FXCollections.observableArrayList();
     }
 
 
@@ -110,6 +120,8 @@ public class DataCollectionController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         // Bind the posts list to the ListView
         postsListView.setItems(collectedPosts);
+        collectionLogListView.setItems(collectionLogs);
+        addCollectionLog("Ready to collect data.");
 
         // Set initial UI state
         updateUIState(false);
@@ -161,6 +173,8 @@ public class DataCollectionController implements Initializable {
 
         // Clear previous results
         collectedPosts.clear();
+        collectionLogs.clear();
+        addCollectionLog("Starting data collection for project: " + currentProject.getName());
         progressBar.setProgress(0);
         progressDetailsLabel.setText("");
 
@@ -178,6 +192,7 @@ public class DataCollectionController implements Initializable {
         collectionTask.setOnSucceeded(event -> {
             updateStatus("Data collection completed successfully!");
             updateUIState(false);
+            addCollectionLog("Data collection completed.");
             DialogUtil.showInformation("Collection Complete",
                     "Data collection finished. Check the collected posts below.");
         });
@@ -189,6 +204,7 @@ public class DataCollectionController implements Initializable {
 
             updateStatus("Data collection failed");
             updateUIState(false);
+            addCollectionLog("Data collection failed: " + exception.getMessage());
 
             DialogUtil.showError("Collection Failed",
                     "Data collection failed: " +
@@ -199,6 +215,7 @@ public class DataCollectionController implements Initializable {
         collectionTask.setOnCancelled(event -> {
             updateStatus("Data collection cancelled by user");
             updateUIState(false);
+            addCollectionLog("Data collection cancelled by user.");
             DialogUtil.showInformation("Collection Cancelled", "Data collection was stopped by user.");
         });
 
@@ -213,6 +230,7 @@ public class DataCollectionController implements Initializable {
     private void handleStop() {
         if (collectionTask != null && collectionTask.isRunning()) {
             updateStatus("Stopping data collection...");
+            addCollectionLog("Stopping data collection...");
             collectionTask.cancel();
         }
     }
@@ -245,6 +263,29 @@ public class DataCollectionController implements Initializable {
     }
 
 
+    @FXML
+    private void handleAnalysis() {
+        if (collectionTask != null && collectionTask.isRunning()) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Collection in Progress");
+            alert.setHeaderText("Data collection is currently running");
+            alert.setContentText("Are you sure you want to open Analysis? This will stop the collection.");
+
+            if (alert.showAndWait().orElse(ButtonType.CANCEL) != ButtonType.OK) {
+                return;
+            }
+
+            collectionTask.cancel();
+        }
+
+        if (navigator != null) {
+            navigator.navigateTo(View.ANALYSIS);
+        } else {
+            LogUtil.warn("Navigator not set. Cannot navigate to analysis.");
+        }
+    }
+
+
     private Task<Void> createCollectionTask() {
         return new Task<Void>() {
             @Override
@@ -259,6 +300,7 @@ public class DataCollectionController implements Initializable {
                         javafx.application.Platform.runLater(() -> {
                             updateProgress(progress, 100);
                             updateProgressDetails(progress);
+                            addCollectionLog(progressDetailsLabel.getText());
                         });
                     });
 
@@ -327,10 +369,12 @@ public class DataCollectionController implements Initializable {
             }
 
             updateStatus("Loaded " + posts.size() + " posts and " + comments.size() + " comments");
+            addCollectionLog("Loaded " + posts.size() + " posts and " + comments.size() + " comments.");
 
         } catch (Exception e) {
             LogUtil.warn("Failed to load collected posts and comments", e);
             updateStatus("Failed to load collected data: " + e.getMessage());
+            addCollectionLog("Failed to load collected data: " + e.getMessage());
         }
     }
 
@@ -377,11 +421,19 @@ public class DataCollectionController implements Initializable {
         startButton.setDisable(isCollecting);
         stopButton.setDisable(!isCollecting);
         backButton.setDisable(isCollecting);
+        analysisButton.setDisable(isCollecting);
     }
 
 
     private void updateStatus(String message) {
         statusLabel.setText(message);
+    }
+
+
+    private void addCollectionLog(String message) {
+        String timestamp = java.time.LocalTime.now().format(java.time.format.DateTimeFormatter.ofPattern("HH:mm:ss"));
+        collectionLogs.add("[" + timestamp + "] " + message);
+        collectionLogListView.scrollTo(collectionLogs.size() - 1);
     }
 
 

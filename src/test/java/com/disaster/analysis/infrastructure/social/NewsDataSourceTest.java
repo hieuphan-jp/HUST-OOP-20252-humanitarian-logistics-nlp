@@ -1,6 +1,6 @@
 package com.disaster.analysis.infrastructure.social;
 
-import com.disaster.analysis.domain.model.Post;
+import com.disaster.analysis.domain.model.entities.Post;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;

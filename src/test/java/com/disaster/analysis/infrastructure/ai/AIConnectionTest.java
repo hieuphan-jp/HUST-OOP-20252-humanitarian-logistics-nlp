@@ -29,8 +29,8 @@ public class AIConnectionTest {
             assertNotNull(response, "Lỗi: AI Client trả về dữ liệu null.");
             assertFalse(response.trim().isEmpty(), "Lỗi: AI Client trả về chuỗi rỗng.");
 
-            System.out.println("✅ Kết nối AI THÀNH CÔNG! Phản hồi từ Bot: " + response);
+            System.out.println("Kết nối AI THÀNH CÔNG! Phản hồi từ Bot: " + response);
 
-        }, "❌ LỖI MẠNG HOẶC API KEY: Quá trình gọi API lên máy chủ AI bị thất bại.");
+        }, "LỖI MẠNG HOẶC API KEY: Quá trình gọi API lên máy chủ AI bị thất bại.");
     }
 }

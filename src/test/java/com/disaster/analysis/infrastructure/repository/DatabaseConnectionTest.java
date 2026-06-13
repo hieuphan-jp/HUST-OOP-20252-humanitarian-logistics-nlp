@@ -1,4 +1,4 @@
-package com.disaster.analysis.infrastructure.persistence;
+package com.disaster.analysis.infrastructure.repository;
 
 import com.disaster.analysis.domain.contract.repository.ProjectRepository;
 import org.junit.jupiter.api.Test;
@@ -23,8 +23,8 @@ public class DatabaseConnectionTest {
             // Nếu chạy qua được dòng trên mà không sập, chứng tỏ SQL Server ĐANG SỐNG!
             assertNotNull(projects, "Lỗi: Hàm findAll trả về null thay vì danh sách.");
 
-            System.out.println("✅ Kết nối SQL Server THÀNH CÔNG! Đọc được " + projects.size() + " dự án.");
+            System.out.println("Kết nối SQL Server THÀNH CÔNG! Đọc được " + projects.size() + " dự án.");
 
-        }, "❌ LỖI NGHIÊM TRỌNG: Không thể kết nối tới SQL Server. Hãy kiểm tra lại file cấu hình hoặc xem Service SQL đã bật chưa!");
+        }, "LỖI NGHIÊM TRỌNG: Không thể kết nối tới SQL Server. Hãy kiểm tra lại file cấu hình hoặc xem Service SQL đã bật chưa!");
     }
 }
