@@ -21,6 +21,7 @@ com\disaster\analysis\ui\navigation\Navigator$NavigationException.class
 com\disaster\analysis\infrastructure\repository\ProjectRepositoryImpl.class
 com\disaster\analysis\domain\contract\ai\AIClient.class
 com\disaster\analysis\infrastructure\repository\CommentRepositoryImpl.class
+com\disaster\analysis\ui\controller\AnalysisController$6.class
 com\disaster\analysis\ui\navigation\NavigationHistory.class
 com\disaster\analysis\application\services\DataCollectionService.class
 com\disaster\analysis\application\dto\PostDTO.class

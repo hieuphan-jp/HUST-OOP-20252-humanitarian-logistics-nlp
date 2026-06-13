@@ -37,25 +37,22 @@ public class TextParser {
      * @param fullSummaryText Toàn bộ nội dung thô lấy từ Database.
      * @return Văn bản báo cáo cảm xúc đồng bộ hoàn chỉnh để in lên giao diện.
      */
+
+
     public static String getCompleteSentimentReport(String fullSummaryText) {
         String header = extractSection(fullSummaryText, "header");
         String sentiment = extractSection(fullSummaryText, "sentiment");
         String recommendation = extractSection(fullSummaryText, "recommendation");
-
         StringBuilder report = new StringBuilder();
 
         // 1. Gán phần mở bài
         if (!header.isEmpty()) {
-            report.append("╔════════════════════════════════════════════════════╗\n");
-            report.append("║                  THÔNG TIN TỔNG QUAN               ║");
-            report.append("╚════════════════════════════════════════════════════╝\n\n");
+            report.append("THÔNG TIN TỔNG QUAN");
             report.append(header).append("\n\n");
         }
 
         // 2. Gán phần thân bài chuyên sâu về cảm xúc
-        report.append("╔════════════════════════════════════════════════════╗\n");
-        report.append("║       PHÂN TÍCH TÂM LÝ & CẢM XÚC CỘNG ĐỒNG         ║");
-        report.append("╚════════════════════════════════════════════════════╝\n\n");
+        report.append("PHÂN TÍCH TÂM LÝ & CẢM XÚC CỘNG ĐỒNG");
         if (!sentiment.isEmpty()) {
             report.append(sentiment).append("\n\n");
         } else {
@@ -64,9 +61,7 @@ public class TextParser {
 
         // 3. Gán phần kết luận cứu hộ khẩn cấp
         if (!recommendation.isEmpty()) {
-            report.append("┌────────────────────────────────────────────────────┐\n");
-            report.append("│        ĐỀ XUẤT CÁC HÀNH ĐỘNG ỨNG PHÓ KHẨN CẤP      │\n");
-            report.append("└────────────────────────────────────────────────────┘\n");
+            report.append("ĐỀ XUẤT CÁC HÀNH ĐỘNG ỨNG PHÓ KHẨN CẤP\n");
             report.append(recommendation);
         }
 
@@ -89,16 +84,12 @@ public class TextParser {
 
         // 1. Gán phần mở bài
         if (!header.isEmpty()) {
-            report.append("╔════════════════════════════════════════════════════╗\n");
-            report.append("║                  THÔNG TIN TỔNG QUAN               ║");
-            report.append("╚════════════════════════════════════════════════════╝\n\n");
+            report.append("THÔNG TIN TỔNG QUAN\n\n");
             report.append(header).append("\n\n");
         }
 
         // 2. Gán phần thân bài chuyên sâu về hạng mục thiệt hại
-        report.append("╔════════════════════════════════════════════════════╗\n");
-        report.append("║       PHÂN TÍCH CÁC HẠNG MỤC THIỆT HẠI CHÍNH       ║\n");
-        report.append("╚════════════════════════════════════════════════════╝\n\n");
+        report.append("PHÂN TÍCH CÁC HẠNG MỤC THIỆT HẠI CHÍNH\n\n");
         if (!damage.isEmpty()) {
             report.append(damage).append("\n\n");
         } else {
@@ -107,9 +98,7 @@ public class TextParser {
 
         // 3. Gán phần kết luận cứu hộ khẩn cấp
         if (!recommendation.isEmpty()) {
-            report.append("┌────────────────────────────────────────────────────┐\n");
-            report.append("│        ĐỀ XUẤT CÁC HÀNH ĐỘNG ỨNG PHÓ KHẨN CẤP      │\n");
-            report.append("└────────────────────────────────────────────────────┘\n");
+            report.append("ĐỀ XUẤT CÁC HÀNH ĐỘNG ỨNG PHÓ KHẨN CẤP\n\n");
             report.append(recommendation);
         }
 

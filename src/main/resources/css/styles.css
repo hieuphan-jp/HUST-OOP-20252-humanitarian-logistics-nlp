@@ -213,7 +213,7 @@
 /* Mini Statistics Labels */
 .stat-title { -fx-text-fill: #94a3b8; -fx-font-size: 10px; }
 .stat-val-pos { -fx-text-fill: #10b981; -fx-font-size: 18px; -fx-font-weight: bold; }
-.stat-val-neu { -fx-text-fill: #64748b; -fx-font-size: 18px; -fx-font-weight: bold; }
+.stat-val-neu { -fx-text-fill: #d9a014; -fx-font-size: 18px; -fx-font-weight: bold; }
 .stat-val-neg { -fx-text-fill: #ef4444; -fx-font-size: 18px; -fx-font-weight: bold; }
 .stat-val-total { -fx-text-fill: #34d399; -fx-font-size: 18px; -fx-font-weight: bold; }
 

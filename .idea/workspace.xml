@@ -5,12 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="721804f1-5197-47ba-a4c1-2bdbf363e181" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/disaster_analysis.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/disaster_analysis.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/infrastructure/ai/MockAIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/infrastructure/ai/MockAIClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/AnalysisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/AnalysisController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/DataCollectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/DataCollectionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/ProjectListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/ProjectListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/util/TextParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/util/TextParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/analysis.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/analysis.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/util/TextParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/util/TextParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/analysis.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/analysis.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,26 +59,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.TestViewMain.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.disaster-social-analysis [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;UI/Hieu&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/OOP.Project.Nhom2/pom.xml&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.TestViewMain.executor": "Run",
+    "Maven.disaster-social-analysis [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "UI/Hieu",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/OOP.Project.Nhom2/pom.xml",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -98,7 +110,9 @@
       <workItem from="1781195194422" duration="5871000" />
       <workItem from="1781201314333" duration="85000" />
       <workItem from="1781266639037" duration="161000" />
-      <workItem from="1781272323325" duration="5040000" />
+      <workItem from="1781272323325" duration="5398000" />
+      <workItem from="1781316906788" duration="4753000" />
+      <workItem from="1781328101127" duration="7008000" />
     </task>
     <servers />
   </component>

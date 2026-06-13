@@ -65,13 +65,15 @@
                         </HBox>
                     </VBox>
 
-<!--                    <VBox spacing="10" prefWidth="350" styleClass="ai-summary-box">-->
-<!--                        <Label text="AI SENTIMENT SUMMARY" styleClass="label-title-cyan"/>-->
-<!--                        <TextArea fx:id="summaryTextArea" VBox.vgrow="ALWAYS" editable="false" wrapText="true"-->
-<!--                                  promptText="Summary will appear here..." styleClass="text-area-summary"/>-->
-<!--&lt;!&ndash;                        <Button fx:id="generateSummaryButton" onAction="#handleGenerateSummary"&ndash;&gt;-->
-<!--&lt;!&ndash;                                text="✨ Generate Summary" maxWidth="Infinity" styleClass="btn-success-green"/>&ndash;&gt;-->
-<!--                    </VBox>-->
+                    <VBox spacing="10" prefWidth="350" styleClass="ai-summary-box">
+                        <Label text="AI SENTIMENT SUMMARY" styleClass="label-title-cyan"/>
+                        <TextArea fx:id="summaryTextSentimentArea" VBox.vgrow="ALWAYS" editable="false" wrapText="true"
+                                  promptText="Summary will appear here..." styleClass="text-area-summary"/>
+                        <Button fx:id="generateSummarySentimentButton" onAction="#handleGenerateSentimentSummary"
+                                text="✨ Generate Summary" maxWidth="Infinity" styleClass="btn-success-green"/>
+                        <Button text="📋 Copy Insights" onAction="#handleCopySentimentSummary" maxWidth="Infinity"
+                                styleClass="btn-secondary-slate"/>
+                    </VBox>
                 </HBox>
             </Tab>
 
@@ -82,10 +84,6 @@
                     </padding>
                     <VBox spacing="15" HBox.hgrow="ALWAYS" styleClass="card-dark">
                         <HBox spacing="10" alignment="CENTER_LEFT">
-                            <ComboBox fx:id="categoryFilterComboBox" promptText="Category" prefWidth="150"
-                                      onAction="#handleCategoryFilterChange"/>
-                            <ComboBox fx:id="contentTypeFilterComboBox" promptText="Type" prefWidth="100"
-                                      onAction="#handleContentTypeFilterChange"/>
                             <Region HBox.hgrow="ALWAYS"/>
                             <Button fx:id="runDamageButton" text="🔍 Run Damage Analysis"
                                     onAction="#handleRunDamageAnalysis" styleClass="btn-warning-orange"/>
@@ -102,10 +100,10 @@
 
                     <VBox spacing="10" prefWidth="350" styleClass="ai-summary-box">
                         <Label text="AI DAMAGE INSIGHTS" styleClass="label-title-orange"/>
-                        <TextArea fx:id="summaryTextArea" VBox.vgrow="ALWAYS" editable="false" wrapText="true"
+                        <TextArea fx:id="summaryTextDamageArea" VBox.vgrow="ALWAYS" editable="false" wrapText="true"
                                   styleClass="text-area-summary"/>
-                        <Button fx:id="generateSummaryButton" onAction="#handleGenerateSummary" text="✨ Generate Damage Insights" maxWidth="Infinity" styleClass="btn-warning-orange"/>
-                        <Button text="📋 Copy Insights" onAction="#handleCopySummary" maxWidth="Infinity"
+                        <Button fx:id="generateSummaryDamageButton" onAction="#handleGenerateDamageSummary" text="✨ Generate Damage Insights" maxWidth="Infinity" styleClass="btn-warning-orange"/>
+                        <Button text="📋 Copy Insights" onAction="#handleCopyDamageSummary" maxWidth="Infinity"
                                 styleClass="btn-secondary-slate"/>
                     </VBox>
                 </HBox>

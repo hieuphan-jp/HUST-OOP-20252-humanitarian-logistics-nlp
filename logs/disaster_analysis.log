@@ -2378,3 +2378,1681 @@ Stack trace:
 [2026-06-12 22:23:28.553] [INFO] Application shutdown complete
 [2026-06-12 22:23:28.569] [INFO] Shutting down application...
 [2026-06-12 22:23:28.569] [INFO] Application shutdown complete
+[2026-06-12 22:26:58.117] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-12 22:26:58.119] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-12 22:26:58.120] [INFO] Starting application with Java version: 26.0.1
+[2026-06-12 22:26:58.127] [INFO] Initializing application...
+[2026-06-12 22:26:58.149] [INFO] Starting application...
+[2026-06-12 22:26:58.513] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-12 22:26:58.518] [INFO] Database startup and verification sequence initiated.
+[2026-06-12 22:26:59.646] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-12 22:26:59.959] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-12 22:26:59.963] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-12 22:26:59.970] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-12 22:27:00.051] [INFO] PreprocessingService initialized.
+[2026-06-12 22:27:00.069] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-12 22:27:00.082] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-12 22:27:00.097] [INFO] Initialized API clients for 2 platforms
+[2026-06-12 22:27:01.037] [INFO] SentimentAnalysisService initialized.
+[2026-06-12 22:27:01.055] [INFO] DamageClassificationService initialized.
+[2026-06-12 22:27:01.076] [INFO] ExportService initialized successfully.
+[2026-06-12 22:27:01.077] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-12 22:27:01.930] [INFO] Application started successfully
+[2026-06-12 22:27:38.452] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-12 22:27:42.423] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-12 22:28:31.984] [INFO] Analysis Complete: Damage classification completed! Classified 46 posts and 1559 comments
+[2026-06-12 22:28:53.255] [INFO] Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: 4
+[2026-06-12 22:28:53.330] [INFO] Đang chờ AI phân tích và viết báo cáo...
+[2026-06-12 22:28:53.338] [INFO] demo: success summary generate
+[2026-06-12 22:28:56.309] [INFO] Successfully generated AI summary for project: yagi
+[2026-06-12 22:28:58.078] [INFO] Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: 4
+[2026-06-12 22:29:12.041] [INFO] Đang chờ AI phân tích và viết báo cáo...
+[2026-06-12 22:29:12.049] [INFO] demo: success summary generate
+[2026-06-12 22:30:01.595] [INFO] Successfully generated AI summary for project: yagi
+[2026-06-12 22:30:05.537] [INFO] Shutting down application...
+[2026-06-12 22:30:05.538] [INFO] Application shutdown complete
+[2026-06-12 22:30:05.552] [INFO] Shutting down application...
+[2026-06-12 22:30:05.552] [INFO] Application shutdown complete
+[2026-06-13 09:37:28.813] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 09:37:28.814] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 09:37:28.815] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 09:37:28.820] [INFO] Initializing application...
+[2026-06-13 09:37:28.834] [INFO] Starting application...
+[2026-06-13 09:37:29.174] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 09:37:29.193] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 09:37:29.865] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 09:37:30.224] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 09:37:30.229] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 09:37:30.251] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 09:37:30.380] [INFO] PreprocessingService initialized.
+[2026-06-13 09:37:30.420] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 09:37:30.440] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 09:37:30.460] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 09:37:31.355] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 09:37:31.371] [INFO] DamageClassificationService initialized.
+[2026-06-13 09:37:31.463] [INFO] ExportService initialized successfully.
+[2026-06-13 09:37:31.464] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 09:37:32.288] [INFO] Application started successfully
+[2026-06-13 09:37:37.032] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 09:37:56.849] [INFO] Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: 4
+[2026-06-13 09:38:22.097] [INFO] Đang chờ AI phân tích và viết báo cáo...
+[2026-06-13 09:38:22.125] [INFO] Successfully generated AI summary for project: yagi
+[2026-06-13 09:47:09.186] [INFO] Shutting down application...
+[2026-06-13 09:47:09.187] [INFO] Application shutdown complete
+[2026-06-13 09:47:09.201] [INFO] Shutting down application...
+[2026-06-13 09:47:09.202] [INFO] Application shutdown complete
+[2026-06-13 09:51:20.752] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 09:51:20.753] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 09:51:20.753] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 09:51:20.758] [INFO] Initializing application...
+[2026-06-13 09:51:20.776] [INFO] Starting application...
+[2026-06-13 09:51:21.015] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 09:51:21.022] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 09:51:21.673] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 09:51:22.043] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 09:51:22.047] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 09:51:22.056] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 09:51:22.142] [INFO] PreprocessingService initialized.
+[2026-06-13 09:51:22.158] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 09:51:22.171] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 09:51:22.184] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 09:51:22.984] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 09:51:23.002] [INFO] DamageClassificationService initialized.
+[2026-06-13 09:51:23.036] [INFO] ExportService initialized successfully.
+[2026-06-13 09:51:23.036] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 09:51:23.728] [INFO] Application started successfully
+[2026-06-13 09:51:27.085] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 09:51:29.025] [INFO] Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: 4
+[2026-06-13 09:51:33.196] [INFO] Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: 4
+[2026-06-13 09:52:19.405] [INFO] Đang chờ AI phân tích và viết báo cáo...
+[2026-06-13 09:52:19.441] [INFO] Đang chờ AI phân tích và viết báo cáo...
+[2026-06-13 09:52:19.486] [INFO] Successfully generated AI summary for project: yagi
+[2026-06-13 09:52:19.488] [INFO] Successfully generated AI summary for project: yagi
+[2026-06-13 09:53:53.508] [INFO] Shutting down application...
+[2026-06-13 09:53:53.509] [INFO] Application shutdown complete
+[2026-06-13 09:53:53.532] [INFO] Shutting down application...
+[2026-06-13 09:53:53.533] [INFO] Application shutdown complete
+[2026-06-13 09:55:28.815] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 09:55:28.816] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 09:55:28.817] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 09:55:28.821] [INFO] Initializing application...
+[2026-06-13 09:55:28.833] [INFO] Starting application...
+[2026-06-13 09:55:29.037] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 09:55:29.042] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 09:55:29.684] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 09:55:30.106] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 09:55:30.111] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 09:55:30.118] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 09:55:30.197] [INFO] PreprocessingService initialized.
+[2026-06-13 09:55:30.214] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 09:55:30.226] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 09:55:30.238] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 09:55:31.037] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 09:55:31.052] [INFO] DamageClassificationService initialized.
+[2026-06-13 09:55:31.072] [INFO] ExportService initialized successfully.
+[2026-06-13 09:55:31.072] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 09:55:31.735] [INFO] Application started successfully
+[2026-06-13 09:55:43.069] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 09:55:49.018] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-13 09:56:40.460] [INFO] Analysis Complete: Damage classification completed! Classified 46 posts and 1559 comments
+[2026-06-13 09:56:48.404] [INFO] Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: 4
+[2026-06-13 09:57:13.496] [INFO] Đang chờ AI phân tích và viết báo cáo...
+[2026-06-13 09:57:13.504] [INFO] Successfully generated AI summary for project: yagi
+[2026-06-13 09:58:38.509] [INFO] Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: 4
+[2026-06-13 09:59:03.629] [INFO] Đang chờ AI phân tích và viết báo cáo...
+[2026-06-13 09:59:03.638] [INFO] Successfully generated AI summary for project: yagi
+[2026-06-13 10:01:02.010] [INFO] Shutting down application...
+[2026-06-13 10:01:02.011] [INFO] Application shutdown complete
+[2026-06-13 10:01:02.019] [INFO] Shutting down application...
+[2026-06-13 10:01:02.019] [INFO] Application shutdown complete
+[2026-06-13 10:01:02.186] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 10:01:02.188] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 10:01:02.188] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 10:01:02.194] [INFO] Initializing application...
+[2026-06-13 10:01:02.208] [INFO] Starting application...
+[2026-06-13 10:01:02.487] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 10:01:02.491] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 10:01:03.230] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 10:01:03.480] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 10:01:03.483] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 10:01:03.492] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 10:01:03.576] [INFO] PreprocessingService initialized.
+[2026-06-13 10:01:03.595] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 10:01:03.608] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 10:01:03.620] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 10:01:04.511] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 10:01:04.526] [INFO] DamageClassificationService initialized.
+[2026-06-13 10:01:04.547] [INFO] ExportService initialized successfully.
+[2026-06-13 10:01:04.547] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 10:01:05.216] [INFO] Application started successfully
+[2026-06-13 10:01:09.433] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 10:01:14.677] [INFO] Starting sentiment analysis for 46 posts in project 4
+[2026-06-13 10:01:39.830] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-13 10:01:39.931] [INFO] Starting sentiment analysis for 1559 comments in project 4
+[2026-06-13 10:02:30.148] [INFO] Analysis Complete: Analysis completed for both posts and comments
+[2026-06-13 10:03:01.951] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 10:03:01.952] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 10:03:01.953] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 10:03:01.957] [INFO] Initializing application...
+[2026-06-13 10:03:01.970] [INFO] Starting application...
+[2026-06-13 10:03:02.154] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 10:03:02.155] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 10:03:02.848] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 10:03:03.164] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 10:03:03.168] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 10:03:03.176] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 10:03:03.186] [INFO] PreprocessingService initialized.
+[2026-06-13 10:03:03.188] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 10:03:03.191] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 10:03:03.192] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 10:03:04.045] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 10:03:04.047] [INFO] DamageClassificationService initialized.
+[2026-06-13 10:03:04.052] [INFO] ExportService initialized successfully.
+[2026-06-13 10:03:04.053] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 10:03:04.721] [INFO] Application started successfully
+[2026-06-13 10:03:08.136] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 10:03:10.984] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-13 10:03:33.920] [INFO] Analysis Complete: Damage classification completed! Classified 46 posts and 1559 comments
+[2026-06-13 10:03:44.953] [INFO] Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: 4
+[2026-06-13 10:04:10.047] [INFO] Đang chờ AI phân tích và viết báo cáo...
+[2026-06-13 10:04:10.055] [INFO] Successfully generated AI summary for project: yagi
+[2026-06-13 10:06:23.062] [INFO] Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: 4
+[2026-06-13 10:06:48.212] [INFO] Đang chờ AI phân tích và viết báo cáo...
+[2026-06-13 10:06:48.224] [INFO] Successfully generated AI summary for project: yagi
+[2026-06-13 10:07:54.512] [INFO] Shutting down application...
+[2026-06-13 10:07:54.514] [INFO] Application shutdown complete
+[2026-06-13 10:07:54.530] [INFO] Shutting down application...
+[2026-06-13 10:07:54.530] [INFO] Application shutdown complete
+[2026-06-13 10:08:02.128] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 10:08:02.129] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 10:08:02.130] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 10:08:02.134] [INFO] Initializing application...
+[2026-06-13 10:08:02.147] [INFO] Starting application...
+[2026-06-13 10:08:02.397] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 10:08:02.402] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 10:08:03.057] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 10:08:03.339] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 10:08:03.345] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 10:08:03.353] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 10:08:03.431] [INFO] PreprocessingService initialized.
+[2026-06-13 10:08:03.447] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 10:08:03.460] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 10:08:03.471] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 10:08:04.173] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 10:08:04.187] [INFO] DamageClassificationService initialized.
+[2026-06-13 10:08:04.209] [INFO] ExportService initialized successfully.
+[2026-06-13 10:08:04.209] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 10:08:04.864] [INFO] Application started successfully
+[2026-06-13 10:08:08.277] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 10:08:11.429] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-13 10:09:02.601] [INFO] Analysis Complete: Damage classification completed! Classified 46 posts and 1559 comments
+[2026-06-13 10:09:06.436] [INFO] Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: 4
+[2026-06-13 10:09:31.544] [INFO] Đang chờ AI phân tích và viết báo cáo...
+[2026-06-13 10:09:31.553] [INFO] Successfully generated AI summary for project: yagi
+[2026-06-13 10:13:31.301] [INFO] Copied: Damage Summary text has been copied to clipboard.
+[2026-06-13 10:13:33.188] [INFO] Damge Summary text copied to clipboard
+[2026-06-13 10:15:50.342] [INFO] Shutting down application...
+[2026-06-13 10:15:50.344] [INFO] Application shutdown complete
+[2026-06-13 10:15:50.362] [INFO] Shutting down application...
+[2026-06-13 10:15:50.362] [INFO] Application shutdown complete
+[2026-06-13 10:16:00.191] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 10:16:00.192] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 10:16:00.192] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 10:16:00.197] [INFO] Initializing application...
+[2026-06-13 10:16:00.209] [INFO] Starting application...
+[2026-06-13 10:16:00.447] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 10:16:00.452] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 10:16:01.207] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 10:16:01.554] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 10:16:01.557] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 10:16:01.567] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 10:16:01.665] [INFO] PreprocessingService initialized.
+[2026-06-13 10:16:01.682] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 10:16:01.696] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 10:16:01.708] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 10:16:02.543] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 10:16:02.556] [INFO] DamageClassificationService initialized.
+[2026-06-13 10:16:02.578] [INFO] ExportService initialized successfully.
+[2026-06-13 10:16:02.579] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 10:16:03.298] [INFO] Application started successfully
+[2026-06-13 10:16:07.372] [INFO] demo: ╔════════════════════════════════════════════════════╗
+║       PHÂN TÍCH CÁC HẠNG MỤC THIỆT HẠI CHÍNH       ║
+╚════════════════════════════════════════════════════╝
+
+⚠ Chưa có dữ liệu phân tích thiệt hại hạ tầng cho mục này.
+[2026-06-13 10:16:11.866] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 10:16:41.008] [INFO] Shutting down application...
+[2026-06-13 10:16:41.009] [INFO] Application shutdown complete
+[2026-06-13 10:16:41.023] [INFO] Shutting down application...
+[2026-06-13 10:16:41.024] [INFO] Application shutdown complete
+[2026-06-13 10:16:51.520] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 10:16:51.521] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 10:16:51.522] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 10:16:51.525] [INFO] Initializing application...
+[2026-06-13 10:16:51.537] [INFO] Starting application...
+[2026-06-13 10:16:51.745] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 10:16:51.750] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 10:16:52.367] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 10:16:52.710] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 10:16:52.717] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 10:16:52.725] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 10:16:52.799] [INFO] PreprocessingService initialized.
+[2026-06-13 10:16:52.816] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 10:16:52.828] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 10:16:52.840] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 10:16:53.629] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 10:16:53.646] [INFO] DamageClassificationService initialized.
+[2026-06-13 10:16:53.668] [INFO] ExportService initialized successfully.
+[2026-06-13 10:16:53.668] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 10:16:54.317] [INFO] Application started successfully
+[2026-06-13 10:16:57.945] [INFO] demo: === BÁO CÁO TỔNG HỢP TÌNH HÌNH (CHẾ ĐỘ MÔ PHỎNG) ===
+
+## 1. CÁC CHỦ ĐỀ CHÍNH ĐƯỢC QUAN TÂM
+Dựa trên phân tích dữ liệu mạng xã hội, các chủ đề sau đang được thảo luận nhiều nhất:
+
+- **Cảnh báo an toàn & Sơ tán:** Cộng đồng đang tích cực chia sẻ thông tin về các khu vực an toàn, tuyến đường chưa bị ngập và số điện thoại cứu hộ.
+- **Cập nhật thiệt hại:** Xuất hiện nhiều bài đăng báo cáo tình trạng cây đổ, tốc mái và ngập úng diện rộng tại các vùng trũng.
+- **Tinh thần tương thân tương ái:** Rất nhiều bài viết kêu gọi quyên góp áo phao, xuồng máy và thực phẩm cứu trợ.
+
+## 2. PHÂN LOẠI THIỆT HẠI NỔI BẬT
+Dữ liệu chỉ ra các khu vực/hạng mục bị ảnh hưởng nghiêm trọng nhất:
+
+- **Hạ tầng lưới điện:** Mất điện diện rộng được nhắc đến trong 60% bình luận khu vực tâm bão.
+- **Giao thông:** Cây đổ và ngập lụt gây tắc nghẽn, cô lập một số tuyến đường huyết mạch.
+- **Nông nghiệp:** Thiệt hại hoa màu và ngập úng lồng bè nuôi trồng thủy sản.
+
+## 3. PHÂN TÍCH CẢM XÚC CỘNG ĐỒNG
+- **Tiêu cực (Lo âu, Sợ hãi):** Chiếm tỷ lệ cao ở giai đoạn đầu, thể hiện sự lo lắng về an toàn của người thân và tài sản.
+- **Tích cực (Lạc quan, Biết ơn):** Đang có xu hướng tăng nhờ các hoạt động cứu trợ kịp thời từ chính quyền và các đoàn thiện nguyện.
+
+## 4. ĐỀ XUẤT HÀNH ĐỘNG
+1. Khẩn trương khôi phục mạng lưới thông tin liên lạc và điện lưới tại các khu vực bị cô lập.
+2. Điều phối lực lượng chức năng dọn dẹp chướng ngại vật trên các tuyến đường chính.
+3. Thiết lập hệ thống cung cấp thông tin chính thống để bác bỏ các tin giả (fake news) gây hoang mang dư luận.
+
+---
+*LƯU Ý: Đây chỉ là bản báo cáo giả lập (Mock) phục vụ mục đích kiểm thử phần mềm. Vui lòng cấu hình GEMINI_API_KEY hoặc OPENAI_API_KEY trong file .env để AI thật xử lý dữ liệu thực tế.*
+
+[2026-06-13 10:17:05.143] [INFO] demo: ╔════════════════════════════════════════════════════╗
+║       PHÂN TÍCH CÁC HẠNG MỤC THIỆT HẠI CHÍNH       ║
+╚════════════════════════════════════════════════════╝
+
+⚠ Chưa có dữ liệu phân tích thiệt hại hạ tầng cho mục này.
+[2026-06-13 10:17:06.900] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 10:20:29.330] [INFO] demo: === BÁO CÁO TỔNG HỢP TÌNH HÌNH (CHẾ ĐỘ MÔ PHỎNG) ===
+
+## 1. CÁC CHỦ ĐỀ CHÍNH ĐƯỢC QUAN TÂM
+Dựa trên phân tích dữ liệu mạng xã hội, các chủ đề sau đang được thảo luận nhiều nhất:
+
+- **Cảnh báo an toàn & Sơ tán:** Cộng đồng đang tích cực chia sẻ thông tin về các khu vực an toàn, tuyến đường chưa bị ngập và số điện thoại cứu hộ.
+- **Cập nhật thiệt hại:** Xuất hiện nhiều bài đăng báo cáo tình trạng cây đổ, tốc mái và ngập úng diện rộng tại các vùng trũng.
+- **Tinh thần tương thân tương ái:** Rất nhiều bài viết kêu gọi quyên góp áo phao, xuồng máy và thực phẩm cứu trợ.
+
+## 2. PHÂN LOẠI THIỆT HẠI NỔI BẬT
+Dữ liệu chỉ ra các khu vực/hạng mục bị ảnh hưởng nghiêm trọng nhất:
+
+- **Hạ tầng lưới điện:** Mất điện diện rộng được nhắc đến trong 60% bình luận khu vực tâm bão.
+- **Giao thông:** Cây đổ và ngập lụt gây tắc nghẽn, cô lập một số tuyến đường huyết mạch.
+- **Nông nghiệp:** Thiệt hại hoa màu và ngập úng lồng bè nuôi trồng thủy sản.
+
+## 3. PHÂN TÍCH CẢM XÚC CỘNG ĐỒNG
+- **Tiêu cực (Lo âu, Sợ hãi):** Chiếm tỷ lệ cao ở giai đoạn đầu, thể hiện sự lo lắng về an toàn của người thân và tài sản.
+- **Tích cực (Lạc quan, Biết ơn):** Đang có xu hướng tăng nhờ các hoạt động cứu trợ kịp thời từ chính quyền và các đoàn thiện nguyện.
+
+## 4. ĐỀ XUẤT HÀNH ĐỘNG
+1. Khẩn trương khôi phục mạng lưới thông tin liên lạc và điện lưới tại các khu vực bị cô lập.
+2. Điều phối lực lượng chức năng dọn dẹp chướng ngại vật trên các tuyến đường chính.
+3. Thiết lập hệ thống cung cấp thông tin chính thống để bác bỏ các tin giả (fake news) gây hoang mang dư luận.
+
+---
+*LƯU Ý: Đây chỉ là bản báo cáo giả lập (Mock) phục vụ mục đích kiểm thử phần mềm. Vui lòng cấu hình GEMINI_API_KEY hoặc OPENAI_API_KEY trong file .env để AI thật xử lý dữ liệu thực tế.*
+
+[2026-06-13 10:21:30.552] [INFO] demo: ╔════════════════════════════════════════════════════╗
+║       PHÂN TÍCH CÁC HẠNG MỤC THIỆT HẠI CHÍNH       ║
+╚════════════════════════════════════════════════════╝
+
+⚠ Chưa có dữ liệu phân tích thiệt hại hạ tầng cho mục này.
+[2026-06-13 10:21:39.515] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 10:24:12.003] [INFO] Shutting down application...
+[2026-06-13 10:24:12.004] [INFO] Application shutdown complete
+[2026-06-13 10:24:12.023] [INFO] Shutting down application...
+[2026-06-13 10:24:12.025] [INFO] Application shutdown complete
+[2026-06-13 10:24:18.570] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 10:24:18.571] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 10:24:18.572] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 10:24:18.576] [INFO] Initializing application...
+[2026-06-13 10:24:18.592] [INFO] Starting application...
+[2026-06-13 10:24:18.840] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 10:24:18.842] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 10:24:19.606] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 10:24:20.005] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 10:24:20.009] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 10:24:20.017] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 10:24:20.029] [INFO] PreprocessingService initialized.
+[2026-06-13 10:24:20.033] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 10:24:20.035] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 10:24:20.036] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 10:24:20.856] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 10:24:20.857] [INFO] DamageClassificationService initialized.
+[2026-06-13 10:24:20.862] [INFO] ExportService initialized successfully.
+[2026-06-13 10:24:20.862] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 10:24:21.583] [INFO] Application started successfully
+[2026-06-13 10:24:25.463] [INFO] demo: === BÁO CÁO TỔNG HỢP TÌNH HÌNH (CHẾ ĐỘ MÔ PHỎNG) ===
+
+## 1. CÁC CHỦ ĐỀ CHÍNH ĐƯỢC QUAN TÂM
+Dựa trên phân tích dữ liệu mạng xã hội, các chủ đề sau đang được thảo luận nhiều nhất:
+
+- **Cảnh báo an toàn & Sơ tán:** Cộng đồng đang tích cực chia sẻ thông tin về các khu vực an toàn, tuyến đường chưa bị ngập và số điện thoại cứu hộ.
+- **Cập nhật thiệt hại:** Xuất hiện nhiều bài đăng báo cáo tình trạng cây đổ, tốc mái và ngập úng diện rộng tại các vùng trũng.
+- **Tinh thần tương thân tương ái:** Rất nhiều bài viết kêu gọi quyên góp áo phao, xuồng máy và thực phẩm cứu trợ.
+
+## 2. PHÂN LOẠI THIỆT HẠI NỔI BẬT
+Dữ liệu chỉ ra các khu vực/hạng mục bị ảnh hưởng nghiêm trọng nhất:
+
+- **Hạ tầng lưới điện:** Mất điện diện rộng được nhắc đến trong 60% bình luận khu vực tâm bão.
+- **Giao thông:** Cây đổ và ngập lụt gây tắc nghẽn, cô lập một số tuyến đường huyết mạch.
+- **Nông nghiệp:** Thiệt hại hoa màu và ngập úng lồng bè nuôi trồng thủy sản.
+
+## 3. PHÂN TÍCH CẢM XÚC CỘNG ĐỒNG
+- **Tiêu cực (Lo âu, Sợ hãi):** Chiếm tỷ lệ cao ở giai đoạn đầu, thể hiện sự lo lắng về an toàn của người thân và tài sản.
+- **Tích cực (Lạc quan, Biết ơn):** Đang có xu hướng tăng nhờ các hoạt động cứu trợ kịp thời từ chính quyền và các đoàn thiện nguyện.
+
+## 4. ĐỀ XUẤT HÀNH ĐỘNG
+1. Khẩn trương khôi phục mạng lưới thông tin liên lạc và điện lưới tại các khu vực bị cô lập.
+2. Điều phối lực lượng chức năng dọn dẹp chướng ngại vật trên các tuyến đường chính.
+3. Thiết lập hệ thống cung cấp thông tin chính thống để bác bỏ các tin giả (fake news) gây hoang mang dư luận.
+
+---
+*LƯU Ý: Đây chỉ là bản báo cáo giả lập (Mock) phục vụ mục đích kiểm thử phần mềm. Vui lòng cấu hình GEMINI_API_KEY hoặc OPENAI_API_KEY trong file .env để AI thật xử lý dữ liệu thực tế.*
+
+[2026-06-13 10:24:29.890] [INFO] demo: ╔════════════════════════════════════════════════════╗
+║       PHÂN TÍCH CÁC HẠNG MỤC THIỆT HẠI CHÍNH       ║
+╚════════════════════════════════════════════════════╝
+
+⚠ Chưa có dữ liệu phân tích thiệt hại hạ tầng cho mục này.
+[2026-06-13 10:24:31.587] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 10:24:35.733] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-13 10:25:15.847] [INFO] Analysis Complete: Damage classification completed! Classified 46 posts and 1559 comments
+[2026-06-13 10:25:21.917] [INFO] Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: 4
+[2026-06-13 10:25:25.872] [INFO] Đang chờ AI phân tích và viết báo cáo...
+[2026-06-13 10:25:25.882] [INFO] Successfully generated AI summary for project: yagi
+[2026-06-13 10:25:39.610] [INFO] demo: === BÁO CÁO TỔNG HỢP TÌNH HÌNH (CHẾ ĐỘ MÔ PHỎNG) ===
+
+## 1. CÁC CHỦ ĐỀ CHÍNH ĐƯỢC QUAN TÂM
+Dựa trên phân tích dữ liệu mạng xã hội, các chủ đề sau đang được thảo luận nhiều nhất:
+
+- **Cảnh báo an toàn & Sơ tán:** Cộng đồng đang tích cực chia sẻ thông tin về các khu vực an toàn, tuyến đường chưa bị ngập và số điện thoại cứu hộ.
+- **Cập nhật thiệt hại:** Xuất hiện nhiều bài đăng báo cáo tình trạng cây đổ, tốc mái và ngập úng diện rộng tại các vùng trũng.
+- **Tinh thần tương thân tương ái:** Rất nhiều bài viết kêu gọi quyên góp áo phao, xuồng máy và thực phẩm cứu trợ.
+
+## 2. PHÂN LOẠI THIỆT HẠI NỔI BẬT
+Dữ liệu chỉ ra các khu vực/hạng mục bị ảnh hưởng nghiêm trọng nhất:
+
+- **Hạ tầng lưới điện:** Mất điện diện rộng được nhắc đến trong 60% bình luận khu vực tâm bão.
+- **Giao thông:** Cây đổ và ngập lụt gây tắc nghẽn, cô lập một số tuyến đường huyết mạch.
+- **Nông nghiệp:** Thiệt hại hoa màu và ngập úng lồng bè nuôi trồng thủy sản.
+
+## 3. PHÂN TÍCH CẢM XÚC CỘNG ĐỒNG
+- **Tiêu cực (Lo âu, Sợ hãi):** Chiếm tỷ lệ cao ở giai đoạn đầu, thể hiện sự lo lắng về an toàn của người thân và tài sản.
+- **Tích cực (Lạc quan, Biết ơn):** Đang có xu hướng tăng nhờ các hoạt động cứu trợ kịp thời từ chính quyền và các đoàn thiện nguyện.
+
+## 4. ĐỀ XUẤT HÀNH ĐỘNG
+1. Khẩn trương khôi phục mạng lưới thông tin liên lạc và điện lưới tại các khu vực bị cô lập.
+2. Điều phối lực lượng chức năng dọn dẹp chướng ngại vật trên các tuyến đường chính.
+3. Thiết lập hệ thống cung cấp thông tin chính thống để bác bỏ các tin giả (fake news) gây hoang mang dư luận.
+
+---
+*LƯU Ý: Đây chỉ là bản báo cáo giả lập (Mock) phục vụ mục đích kiểm thử phần mềm. Vui lòng cấu hình GEMINI_API_KEY hoặc OPENAI_API_KEY trong file .env để AI thật xử lý dữ liệu thực tế.*
+
+[2026-06-13 10:25:43.178] [INFO] demo: ╔════════════════════════════════════════════════════╗
+║       PHÂN TÍCH CÁC HẠNG MỤC THIỆT HẠI CHÍNH       ║
+╚════════════════════════════════════════════════════╝
+
+⚠ Chưa có dữ liệu phân tích thiệt hại hạ tầng cho mục này.
+[2026-06-13 10:25:46.643] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 10:25:53.923] [INFO] demo: === BÁO CÁO TỔNG HỢP TÌNH HÌNH (CHẾ ĐỘ MÔ PHỎNG) ===
+
+## 1. CÁC CHỦ ĐỀ CHÍNH ĐƯỢC QUAN TÂM
+Dựa trên phân tích dữ liệu mạng xã hội, các chủ đề sau đang được thảo luận nhiều nhất:
+
+- **Cảnh báo an toàn & Sơ tán:** Cộng đồng đang tích cực chia sẻ thông tin về các khu vực an toàn, tuyến đường chưa bị ngập và số điện thoại cứu hộ.
+- **Cập nhật thiệt hại:** Xuất hiện nhiều bài đăng báo cáo tình trạng cây đổ, tốc mái và ngập úng diện rộng tại các vùng trũng.
+- **Tinh thần tương thân tương ái:** Rất nhiều bài viết kêu gọi quyên góp áo phao, xuồng máy và thực phẩm cứu trợ.
+
+## 2. PHÂN LOẠI THIỆT HẠI NỔI BẬT
+Dữ liệu chỉ ra các khu vực/hạng mục bị ảnh hưởng nghiêm trọng nhất:
+
+- **Hạ tầng lưới điện:** Mất điện diện rộng được nhắc đến trong 60% bình luận khu vực tâm bão.
+- **Giao thông:** Cây đổ và ngập lụt gây tắc nghẽn, cô lập một số tuyến đường huyết mạch.
+- **Nông nghiệp:** Thiệt hại hoa màu và ngập úng lồng bè nuôi trồng thủy sản.
+
+## 3. PHÂN TÍCH CẢM XÚC CỘNG ĐỒNG
+- **Tiêu cực (Lo âu, Sợ hãi):** Chiếm tỷ lệ cao ở giai đoạn đầu, thể hiện sự lo lắng về an toàn của người thân và tài sản.
+- **Tích cực (Lạc quan, Biết ơn):** Đang có xu hướng tăng nhờ các hoạt động cứu trợ kịp thời từ chính quyền và các đoàn thiện nguyện.
+
+## 4. ĐỀ XUẤT HÀNH ĐỘNG
+1. Khẩn trương khôi phục mạng lưới thông tin liên lạc và điện lưới tại các khu vực bị cô lập.
+2. Điều phối lực lượng chức năng dọn dẹp chướng ngại vật trên các tuyến đường chính.
+3. Thiết lập hệ thống cung cấp thông tin chính thống để bác bỏ các tin giả (fake news) gây hoang mang dư luận.
+
+---
+*LƯU Ý: Đây chỉ là bản báo cáo giả lập (Mock) phục vụ mục đích kiểm thử phần mềm. Vui lòng cấu hình GEMINI_API_KEY hoặc OPENAI_API_KEY trong file .env để AI thật xử lý dữ liệu thực tế.*
+
+[2026-06-13 10:26:05.586] [INFO] demo: ╔════════════════════════════════════════════════════╗
+║       PHÂN TÍCH CÁC HẠNG MỤC THIỆT HẠI CHÍNH       ║
+╚════════════════════════════════════════════════════╝
+
+⚠ Chưa có dữ liệu phân tích thiệt hại hạ tầng cho mục này.
+[2026-06-13 10:26:07.305] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 10:26:12.459] [INFO] Shutting down application...
+[2026-06-13 10:26:12.460] [INFO] Application shutdown complete
+[2026-06-13 10:26:12.480] [INFO] Shutting down application...
+[2026-06-13 10:26:12.480] [INFO] Application shutdown complete
+[2026-06-13 10:26:37.588] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 10:26:37.590] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 10:26:37.590] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 10:26:37.595] [INFO] Initializing application...
+[2026-06-13 10:26:37.608] [INFO] Starting application...
+[2026-06-13 10:26:37.830] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 10:26:37.831] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 10:26:38.588] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 10:26:38.953] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 10:26:38.958] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 10:26:38.965] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 10:26:38.974] [INFO] PreprocessingService initialized.
+[2026-06-13 10:26:38.978] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 10:26:38.979] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 10:26:38.980] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 10:26:39.819] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 10:26:39.820] [INFO] DamageClassificationService initialized.
+[2026-06-13 10:26:40.083] [INFO] ExportService initialized successfully.
+[2026-06-13 10:26:40.083] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 10:26:40.751] [INFO] Application started successfully
+[2026-06-13 10:26:44.562] [INFO] demo: === BÁO CÁO TỔNG HỢP TÌNH HÌNH (CHẾ ĐỘ MÔ PHỎNG) ===
+
+## 1. CÁC CHỦ ĐỀ CHÍNH ĐƯỢC QUAN TÂM
+Dựa trên phân tích dữ liệu mạng xã hội, các chủ đề sau đang được thảo luận nhiều nhất:
+
+- **Cảnh báo an toàn & Sơ tán:** Cộng đồng đang tích cực chia sẻ thông tin về các khu vực an toàn, tuyến đường chưa bị ngập và số điện thoại cứu hộ.
+- **Cập nhật thiệt hại:** Xuất hiện nhiều bài đăng báo cáo tình trạng cây đổ, tốc mái và ngập úng diện rộng tại các vùng trũng.
+- **Tinh thần tương thân tương ái:** Rất nhiều bài viết kêu gọi quyên góp áo phao, xuồng máy và thực phẩm cứu trợ.
+
+## 2. PHÂN LOẠI THIỆT HẠI NỔI BẬT
+Dữ liệu chỉ ra các khu vực/hạng mục bị ảnh hưởng nghiêm trọng nhất:
+
+- **Hạ tầng lưới điện:** Mất điện diện rộng được nhắc đến trong 60% bình luận khu vực tâm bão.
+- **Giao thông:** Cây đổ và ngập lụt gây tắc nghẽn, cô lập một số tuyến đường huyết mạch.
+- **Nông nghiệp:** Thiệt hại hoa màu và ngập úng lồng bè nuôi trồng thủy sản.
+
+## 3. PHÂN TÍCH CẢM XÚC CỘNG ĐỒNG
+- **Tiêu cực (Lo âu, Sợ hãi):** Chiếm tỷ lệ cao ở giai đoạn đầu, thể hiện sự lo lắng về an toàn của người thân và tài sản.
+- **Tích cực (Lạc quan, Biết ơn):** Đang có xu hướng tăng nhờ các hoạt động cứu trợ kịp thời từ chính quyền và các đoàn thiện nguyện.
+
+## 4. ĐỀ XUẤT HÀNH ĐỘNG
+1. Khẩn trương khôi phục mạng lưới thông tin liên lạc và điện lưới tại các khu vực bị cô lập.
+2. Điều phối lực lượng chức năng dọn dẹp chướng ngại vật trên các tuyến đường chính.
+3. Thiết lập hệ thống cung cấp thông tin chính thống để bác bỏ các tin giả (fake news) gây hoang mang dư luận.
+
+---
+*LƯU Ý: Đây chỉ là bản báo cáo giả lập (Mock) phục vụ mục đích kiểm thử phần mềm. Vui lòng cấu hình GEMINI_API_KEY hoặc OPENAI_API_KEY trong file .env để AI thật xử lý dữ liệu thực tế.*
+
+[2026-06-13 10:26:47.466] [INFO] demo: ╔════════════════════════════════════════════════════╗
+║       PHÂN TÍCH CÁC HẠNG MỤC THIỆT HẠI CHÍNH       ║
+╚════════════════════════════════════════════════════╝
+
+⚠ Chưa có dữ liệu phân tích thiệt hại hạ tầng cho mục này.
+[2026-06-13 10:26:48.932] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 10:26:53.679] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-13 10:27:44.993] [INFO] Analysis Complete: Damage classification completed! Classified 46 posts and 1559 comments
+[2026-06-13 10:27:48.839] [INFO] Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: 4
+[2026-06-13 10:28:13.962] [INFO] Đang chờ AI phân tích và viết báo cáo...
+[2026-06-13 10:28:13.977] [INFO] Đang gửi yêu cầu lên Google Gemini API...
+[2026-06-13 10:28:40.069] [INFO] Gemini đã tạo báo cáo thành công.
+[2026-06-13 10:28:40.118] [INFO] Successfully generated AI summary for project: yagi
+[2026-06-13 12:22:34.442] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 12:22:34.443] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 12:22:34.444] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 12:22:34.448] [INFO] Initializing application...
+[2026-06-13 12:22:34.464] [INFO] Starting application...
+[2026-06-13 12:22:34.868] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 12:22:34.891] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 12:22:35.771] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 12:22:36.190] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 12:22:36.196] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 12:22:36.237] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 12:22:36.391] [INFO] PreprocessingService initialized.
+[2026-06-13 12:22:36.465] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 12:22:36.504] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 12:22:36.526] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 12:22:37.637] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 12:22:37.650] [INFO] DamageClassificationService initialized.
+[2026-06-13 12:22:38.010] [INFO] ExportService initialized successfully.
+[2026-06-13 12:22:38.011] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 12:22:38.933] [INFO] Application started successfully
+[2026-06-13 12:22:44.367] [INFO] demo: <header>
+Dự án "yagi" đã tiến hành quét dữ liệu mạng xã hội liên quan đến sự kiện/thảm họa "yagi" trong khoảng thời gian từ 00:00 ngày 02/06/2026 đến 00:00 ngày 06/06/2026. Tổng cộng 46 bài viết và 1559 bình luận đã được thu thập và phân tích, cho thấy bức tranh đa chiều về tác động của thảm họa và phản ứng của cộng đồng trong giai đoạn khắc phục hậu quả ban đầu.
+</header>
+
+<sentiment>
+Biểu đồ cảm xúc cộng đồng cho thấy tâm lý phức tạp nhưng có xu hướng trung lập và tích cực chiếm ưu thế, với 41.0% trung lập (658 lượt), 33.5% tích cực (538 lượt) và 25.5% tiêu cực (409 lượt).
+Chỉ số trung lập cao phản ánh sự lan truyền mạnh mẽ của các thông tin cập nhật tình hình bão, lũ lụt, sạt lở (ví dụ: "cập nhật tình hình bão số 3: cơ quan khí tượng dự báo mưa lớn sẽ còn tiếp diễn..." - bài 5; "cập nhật tình hình sạt lở đất tại lào cai..." - bài 6), cũng như các thông báo chính thức về kêu gọi quyên góp từ Mặt trận Tổ quốc (bài 4, 7). Điều này cho thấy cộng đồng đang rất quan tâm đến việc nắm bắt thông tin chính xác và hướng dẫn hành động trong bối cảnh thảm họa "yagi" và các ảnh hưởng liên quan.
+Cảm xúc tích cực chủ yếu đến từ các tin tức về công tác cứu hộ, sự hỗ trợ từ cộng đồng và tinh thần vượt khó. Các bài viết như "đã cứu thành công nhiều hộ gia đình bị mắc kẹt..." (bài 3, 9, 11), "công tác cứu trợ cho lũ lụt miền bắc đang diễn ra rất nhanh chóng!" (bài 8), hay bày tỏ lòng biết ơn đối với lực lượng cứu hộ, quân đội, tình nguyện viên (bài 14, 15) đã tạo nên làn sóng động viên và hy vọng. Sự lạc quan cũng được thể hiện qua việc nước bắt đầu rút và bà con dọn dẹp nhà cửa (bài 1).
+Trong khi đó, cảm xúc tiêu cực xuất phát từ những thông tin về mức độ thiệt hại nặng nề, sự mất mát và tình trạng khó khăn của người dân. Các bài viết mô tả cảnh "cả một mảng đồi sạt lở vùi lấp bao nhiêu nhà dân" (bài 2), "vùng này đang bị cô lập hoàn toàn, mất điện, mất sóng, cạn kiệt thức ăn" (bài 10, 12), hay "nhà bị lũ cuốn trôi", "nhà cửa đổ sập" đã gây ra sự lo lắng, ám ảnh và thương cảm sâu sắc trong cộng đồng.
+Để ổn định tâm lý người dân, cần tiếp tục công bố các thông tin cập nhật chính xác về tình hình khắc phục hậu quả và hỗ trợ, đồng thời lan tỏa mạnh mẽ hơn nữa những câu chuyện tích cực về tinh thần đoàn kết, giúp đỡ lẫn nhau và những nỗ lực tái thiết.
+</sentiment>
+
+<damage>
+Dựa trên số liệu phân tích, các hạng mục thiệt hại được nhắc tới nhiều nhất là "Infrastructure Damage" (774 lượt) và "Building Damage" (513 lượt), cho thấy cơ sở hạ tầng và nhà cửa là hai lĩnh vực chịu ảnh hưởng nặng nề nhất do sự kiện "yagi" và các hệ quả của nó. Tiếp theo là "People Affected" (405 lượt), phản ánh số lượng lớn người dân gặp khó khăn. "Economic Disruption" (224 lượt) và "Personal Property Loss" (190 lượt) cũng là những vấn đề đáng quan ngại.
+Thiệt hại về cơ sở hạ tầng được thể hiện rõ qua các nội dung như "sạt lở quốc lộ" (bài 2), "sập cầu" (bài 10), "công trình hư hỏng" (bài 12), "đứt cáp quang" (bài 13), và "mất điện diện rộng" (bài 14). Điều này cho thấy hệ thống giao thông, thông tin liên lạc và năng lượng bị ảnh hưởng nghiêm trọng, dẫn đến tình trạng cô lập nhiều khu vực.
+Thiệt hại về nhà cửa cũng rất đáng kể, với các cụm từ như "nhà bị lũ cuốn trôi" (bài 1, 9), "nhà cửa đổ sập" (bài 2, 10), "trường học tốc mái" (bài 5, 8), và "tốc mái" (bài 11). Sự tàn phá này ảnh hưởng trực tiếp đến nơi ở và sinh hoạt của người dân.
+Số lượt nhắc "People Affected" cao liên quan đến việc "bà con mắc kẹt" (bài 4), "hộ gia đình bị mắc kẹt" (bài 3, 9, 11), hoặc "vùng này đang bị cô lập hoàn toàn" (bài 10, 12).
+Thiệt hại kinh tế biểu hiện qua "hàng quán đóng cửa" (bài 1, 8), "chuỗi cung ứng đứt gãy" (bài 2, 3, 7, 14), và "doanh nghiệp điêu đứng" (bài 15). "Personal Property Loss" được nhắc đến với "mất trắng lợn gà" (bài 10, 12) và "ngập úng lúa" (bài 4, 6).
+Từ phân tích trên, đề xuất ưu tiên phân bổ nguồn lực cứu hộ và tái thiết:
+1. Ưu tiên hàng đầu là khôi phục cơ sở hạ tầng thiết yếu (giao thông, điện, thông tin liên lạc) để tiếp cận các khu vực bị cô lập, đảm bảo an toàn cho người dân và tạo điều kiện cho công tác cứu trợ và khắc phục hậu quả.
+2. Cung cấp hỗ trợ khẩn cấp (thực phẩm, nước uống, thuốc men, nơi ở tạm) cho người dân bị ảnh hưởng, đặc biệt là những người mất nhà cửa và bị cô lập, đồng thời triển khai đánh giá thiệt hại nhà cửa để lên kế hoạch tái thiết.
+</damage>
+
+<recommendation>
+Dưới đây là 5 hành động tóm lược có mức độ khẩn cấp giảm dần dành cho chính quyền hoặc đội cứu hộ:
+1.  **Cực kỳ khẩn cấp:** Tổ chức các đội cứu hộ chuyên nghiệp để giải cứu những người còn mắc kẹt tại các vùng bị cô lập (đặc biệt là các khu vực mất điện, mất sóng, cạn kiệt thức ăn như bài 10, 12) và cung cấp ngay lập tức các nhu yếu phẩm cơ bản (thực phẩm, nước, thuốc men).
+2.  **Khẩn cấp:** Triển khai lực lượng và thiết bị để khôi phục nhanh chóng các tuyến đường giao thông bị sạt lở (quốc lộ, cầu sập - bài 2, 10) và hệ thống điện, thông tin liên lạc (mất điện, đứt cáp quang - bài 10, 12, 13, 14) nhằm kết nối lại các vùng bị cô lập và hỗ trợ vận chuyển hàng cứu trợ.
+3.  **Quan trọng:** Đánh giá toàn diện thiệt hại về nhà cửa và cơ sở vật chất (nhà bị cuốn trôi, đổ sập, tốc mái, công trình hư hỏng - bài 1, 2, 5, 8, 9, 10, 11, 12) để lên kế hoạch hỗ trợ tái thiết nhà ở và trường học cho người dân, ưu tiên các hộ gia đình bị ảnh hưởng nặng nề.
+4.  **Trung bình:** Hỗ trợ khôi phục sản xuất, kinh doanh cho người dân và doanh nghiệp bị ảnh hưởng (mất trắng lợn gà, ngập úng lúa, hàng quán đóng cửa, chuỗi cung ứng đứt gãy, doanh nghiệp điêu đứng - bài 1, 2, 3, 4, 6, 7, 8, 10, 12, 14, 15) nhằm ổn định sinh kế và kinh tế địa phương.
+5.  **Dài hạn:** Xây dựng và triển khai các chương trình phòng chống thiên tai bền vững, nâng cao nhận thức cộng đồng về ứng phó với bão lũ, sạt lở và thích nghi với biến đổi khí hậu, đồng thời đầu tư vào cơ sở hạ tầng chống chịu tốt hơn để giảm thiểu rủi ro trong tương lai.
+</recommendation>
+[2026-06-13 12:27:21.218] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 12:27:21.220] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 12:27:21.221] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 12:27:21.226] [INFO] Initializing application...
+[2026-06-13 12:27:21.243] [INFO] Starting application...
+[2026-06-13 12:27:21.507] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 12:27:21.511] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 12:27:22.232] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 12:27:22.553] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 12:27:22.557] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 12:27:22.565] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 12:27:22.636] [INFO] PreprocessingService initialized.
+[2026-06-13 12:27:22.651] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 12:27:22.666] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 12:27:22.680] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 12:27:23.496] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 12:27:23.513] [INFO] DamageClassificationService initialized.
+[2026-06-13 12:27:23.724] [INFO] ExportService initialized successfully.
+[2026-06-13 12:27:23.725] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 12:27:24.407] [INFO] Application started successfully
+[2026-06-13 12:27:28.132] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 12:27:56.376] [INFO] Shutting down application...
+[2026-06-13 12:27:56.377] [INFO] Application shutdown complete
+[2026-06-13 12:27:56.397] [INFO] Shutting down application...
+[2026-06-13 12:27:56.397] [INFO] Application shutdown complete
+[2026-06-13 12:29:23.738] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 12:29:23.739] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 12:29:23.739] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 12:29:23.744] [INFO] Initializing application...
+[2026-06-13 12:29:23.761] [INFO] Starting application...
+[2026-06-13 12:29:24.020] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 12:29:24.024] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 12:29:24.675] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 12:29:25.006] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 12:29:25.010] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 12:29:25.016] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 12:29:25.091] [INFO] PreprocessingService initialized.
+[2026-06-13 12:29:25.106] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 12:29:25.118] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 12:29:25.130] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 12:29:25.926] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 12:29:25.943] [INFO] DamageClassificationService initialized.
+[2026-06-13 12:29:26.149] [INFO] ExportService initialized successfully.
+[2026-06-13 12:29:26.149] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 12:29:26.725] [INFO] Application started successfully
+[2026-06-13 12:29:31.646] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 12:29:37.165] [INFO] Copied: Damage Summary text has been copied to clipboard.
+[2026-06-13 12:29:38.996] [INFO] Damge Summary text copied to clipboard
+[2026-06-13 12:30:33.446] [INFO] Starting data export pipeline for project: yagi
+[2026-06-13 12:30:33.447] [INFO] Fetching posts for project ID: 4
+[2026-06-13 12:30:33.457] [INFO] Fetching comments for project ID: 4
+[2026-06-13 12:30:35.941] [INFO] Shutting down application...
+[2026-06-13 12:30:35.941] [INFO] Application shutdown complete
+[2026-06-13 12:30:35.959] [INFO] Shutting down application...
+[2026-06-13 12:30:35.959] [INFO] Application shutdown complete
+[2026-06-13 12:33:17.929] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 12:33:17.931] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 12:33:17.932] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 12:33:17.936] [INFO] Initializing application...
+[2026-06-13 12:33:17.957] [INFO] Starting application...
+[2026-06-13 12:33:18.222] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 12:33:18.225] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 12:33:18.933] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 12:33:19.296] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 12:33:19.302] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 12:33:19.310] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 12:33:19.454] [INFO] PreprocessingService initialized.
+[2026-06-13 12:33:19.473] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 12:33:19.489] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 12:33:19.507] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 12:33:20.362] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 12:33:20.378] [INFO] DamageClassificationService initialized.
+[2026-06-13 12:33:20.417] [INFO] ExportService initialized successfully.
+[2026-06-13 12:33:20.417] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 12:33:21.149] [INFO] Application started successfully
+[2026-06-13 12:33:28.554] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 12:33:37.775] [INFO] Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: 4
+[2026-06-13 12:34:02.994] [INFO] Đang chờ AI phân tích và viết báo cáo...
+[2026-06-13 12:34:03.029] [INFO] Successfully generated AI summary for project: yagi
+[2026-06-13 12:35:22.748] [INFO] Shutting down application...
+[2026-06-13 12:35:22.750] [INFO] Application shutdown complete
+[2026-06-13 12:35:22.766] [INFO] Shutting down application...
+[2026-06-13 12:35:22.767] [INFO] Application shutdown complete
+[2026-06-13 12:38:42.001] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 12:38:42.003] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 12:38:42.003] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 12:38:42.007] [INFO] Initializing application...
+[2026-06-13 12:38:42.022] [INFO] Starting application...
+[2026-06-13 12:38:42.376] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 12:38:42.395] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 12:38:43.189] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 12:38:43.532] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 12:38:43.538] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 12:38:43.564] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 12:38:43.692] [INFO] PreprocessingService initialized.
+[2026-06-13 12:38:43.731] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 12:38:43.751] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 12:38:43.765] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 12:38:44.594] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 12:38:44.608] [INFO] DamageClassificationService initialized.
+[2026-06-13 12:38:44.674] [INFO] ExportService initialized successfully.
+[2026-06-13 12:38:44.675] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 12:38:45.533] [INFO] Application started successfully
+[2026-06-13 12:38:49.445] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 12:38:59.893] [INFO] Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: 4
+[2026-06-13 12:39:25.178] [INFO] Đang chờ AI phân tích và viết báo cáo...
+[2026-06-13 12:39:25.221] [INFO] Successfully generated AI summary for project: yagi
+[2026-06-13 12:44:39.140] [INFO] Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: 4
+[2026-06-13 12:45:04.277] [INFO] Đang chờ AI phân tích và viết báo cáo...
+[2026-06-13 12:45:04.290] [INFO] Successfully generated AI summary for project: yagi
+[2026-06-13 12:45:13.518] [INFO] Shutting down application...
+[2026-06-13 12:45:13.520] [INFO] Application shutdown complete
+[2026-06-13 12:45:13.540] [INFO] Shutting down application...
+[2026-06-13 12:45:13.542] [INFO] Application shutdown complete
+[2026-06-13 12:53:38.221] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 12:53:38.223] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 12:53:38.224] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 12:53:38.228] [INFO] Initializing application...
+[2026-06-13 12:53:38.245] [INFO] Starting application...
+[2026-06-13 12:53:38.485] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 12:53:38.508] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 12:53:39.267] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 12:53:39.544] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 12:53:39.548] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 12:53:39.555] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 12:53:39.633] [INFO] PreprocessingService initialized.
+[2026-06-13 12:53:39.651] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 12:53:39.666] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 12:53:39.679] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 12:53:40.535] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 12:53:40.553] [INFO] DamageClassificationService initialized.
+[2026-06-13 12:53:40.590] [INFO] ExportService initialized successfully.
+[2026-06-13 12:53:40.591] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 12:53:41.499] [INFO] Application started successfully
+[2026-06-13 12:53:50.483] [INFO] Analysis Complete: Damage classification completed! Classified 0 posts and 0 comments
+[2026-06-13 12:54:05.152] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 12:54:07.913] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-13 12:54:59.903] [INFO] Analysis Complete: Damage classification completed! Classified 46 posts and 1559 comments
+[2026-06-13 12:57:08.199] [INFO] Analysis Complete: Damage classification completed! Classified 0 posts and 0 comments
+[2026-06-13 12:57:39.052] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 12:57:57.373] [INFO] Shutting down application...
+[2026-06-13 12:57:57.374] [INFO] Application shutdown complete
+[2026-06-13 12:57:57.386] [INFO] Shutting down application...
+[2026-06-13 12:57:57.387] [INFO] Application shutdown complete
+[2026-06-13 12:58:33.642] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 12:58:33.643] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 12:58:33.643] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 12:58:33.647] [INFO] Initializing application...
+[2026-06-13 12:58:33.660] [INFO] Starting application...
+[2026-06-13 12:58:33.873] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 12:58:33.890] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 12:58:34.524] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 12:58:34.750] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 12:58:34.754] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 12:58:34.760] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 12:58:34.830] [INFO] PreprocessingService initialized.
+[2026-06-13 12:58:34.846] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 12:58:34.859] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 12:58:34.870] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 12:58:35.685] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 12:58:35.698] [INFO] DamageClassificationService initialized.
+[2026-06-13 12:58:35.725] [INFO] ExportService initialized successfully.
+[2026-06-13 12:58:35.725] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 12:58:36.355] [INFO] Application started successfully
+[2026-06-13 12:58:48.207] [INFO] Analysis Complete: Damage classification completed! Classified 0 posts and 0 comments
+[2026-06-13 12:59:02.727] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 12:59:06.753] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-13 12:59:55.935] [INFO] Analysis Complete: Damage classification completed! Classified 46 posts and 1559 comments
+[2026-06-13 13:06:19.725] [INFO] Starting sentiment analysis for 46 posts in project 4
+[2026-06-13 13:06:36.706] [INFO] Starting sentiment analysis for 1559 comments in project 4
+[2026-06-13 13:06:37.414] [INFO] Analysis Complete: Analysis completed for both posts and comments
+[2026-06-13 13:06:53.737] [INFO] Shutting down application...
+[2026-06-13 13:06:53.738] [INFO] Application shutdown complete
+[2026-06-13 13:06:53.752] [INFO] Shutting down application...
+[2026-06-13 13:06:53.752] [INFO] Application shutdown complete
+[2026-06-13 13:12:52.899] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 13:12:52.900] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 13:12:52.901] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 13:12:52.905] [INFO] Initializing application...
+[2026-06-13 13:12:52.920] [INFO] Starting application...
+[2026-06-13 13:12:53.160] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 13:12:53.176] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 13:12:53.849] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 13:12:54.200] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 13:12:54.204] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 13:12:54.222] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 13:12:54.292] [INFO] PreprocessingService initialized.
+[2026-06-13 13:12:54.308] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 13:12:54.321] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 13:12:54.332] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 13:12:55.165] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 13:12:55.182] [INFO] DamageClassificationService initialized.
+[2026-06-13 13:12:55.209] [INFO] ExportService initialized successfully.
+[2026-06-13 13:12:55.209] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 13:12:55.876] [INFO] Application started successfully
+[2026-06-13 13:12:59.554] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 13:13:02.126] [INFO] Starting sentiment analysis for 46 posts in project 4
+[2026-06-13 13:13:27.323] [INFO] Starting sentiment analysis for 1559 comments in project 4
+[2026-06-13 13:13:53.286] [INFO] Analysis Complete: Analysis completed for both posts and comments
+[2026-06-13 13:18:58.029] [INFO] Shutting down application...
+[2026-06-13 13:18:58.030] [INFO] Application shutdown complete
+[2026-06-13 13:18:58.039] [INFO] Shutting down application...
+[2026-06-13 13:18:58.040] [INFO] Application shutdown complete
+[2026-06-13 13:19:10.450] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 13:19:10.451] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 13:19:10.452] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 13:19:10.457] [INFO] Initializing application...
+[2026-06-13 13:19:10.469] [INFO] Starting application...
+[2026-06-13 13:19:10.679] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 13:19:10.707] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 13:19:11.356] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 13:19:11.652] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 13:19:11.657] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 13:19:11.664] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 13:19:11.730] [INFO] PreprocessingService initialized.
+[2026-06-13 13:19:11.746] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 13:19:11.758] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 13:19:11.770] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 13:19:12.517] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 13:19:12.535] [INFO] DamageClassificationService initialized.
+[2026-06-13 13:19:12.562] [INFO] ExportService initialized successfully.
+[2026-06-13 13:19:12.562] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 13:19:13.180] [INFO] Application started successfully
+[2026-06-13 13:19:17.606] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 13:19:23.017] [INFO] Starting sentiment analysis for 46 posts in project 4
+[2026-06-13 13:19:48.220] [INFO] Starting sentiment analysis for 1559 comments in project 4
+[2026-06-13 13:20:14.169] [INFO] Analysis Complete: Analysis completed for both posts and comments
+[2026-06-13 13:30:08.391] [INFO] Shutting down application...
+[2026-06-13 13:30:08.397] [INFO] Application shutdown complete
+[2026-06-13 13:30:08.424] [INFO] Shutting down application...
+[2026-06-13 13:30:08.424] [INFO] Application shutdown complete
+[2026-06-13 13:35:27.382] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 13:35:27.384] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 13:35:27.384] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 13:35:27.389] [INFO] Initializing application...
+[2026-06-13 13:35:27.403] [INFO] Starting application...
+[2026-06-13 13:35:27.667] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 13:35:27.691] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 13:35:28.326] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 13:35:28.659] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 13:35:28.663] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 13:35:28.671] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 13:35:28.748] [INFO] PreprocessingService initialized.
+[2026-06-13 13:35:28.765] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 13:35:28.785] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 13:35:28.797] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 13:35:29.622] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 13:35:29.641] [INFO] DamageClassificationService initialized.
+[2026-06-13 13:35:29.667] [INFO] ExportService initialized successfully.
+[2026-06-13 13:35:29.668] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 13:35:30.321] [INFO] Application started successfully
+[2026-06-13 13:35:34.430] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 13:35:37.267] [INFO] Starting sentiment analysis for 46 posts in project 4
+[2026-06-13 13:35:44.281] [INFO] Shutting down application...
+[2026-06-13 13:35:44.282] [INFO] Application shutdown complete
+[2026-06-13 13:35:44.297] [INFO] Shutting down application...
+[2026-06-13 13:35:44.298] [INFO] Application shutdown complete
+[2026-06-13 13:36:15.582] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 13:36:15.583] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 13:36:15.584] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 13:36:15.589] [INFO] Initializing application...
+[2026-06-13 13:36:15.603] [INFO] Starting application...
+[2026-06-13 13:36:15.805] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 13:36:15.806] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 13:36:16.467] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 13:36:16.727] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 13:36:16.731] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 13:36:16.738] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 13:36:16.746] [INFO] PreprocessingService initialized.
+[2026-06-13 13:36:16.748] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 13:36:16.749] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 13:36:16.750] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 13:36:17.539] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 13:36:17.540] [INFO] DamageClassificationService initialized.
+[2026-06-13 13:36:17.544] [INFO] ExportService initialized successfully.
+[2026-06-13 13:36:17.545] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 13:36:18.187] [INFO] Application started successfully
+[2026-06-13 13:36:29.216] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 13:36:31.624] [INFO] Starting sentiment analysis for 46 posts in project 4
+[2026-06-13 13:36:39.578] [INFO] Starting sentiment analysis for 1559 comments in project 4
+[2026-06-13 13:36:40.580] [INFO] Analysis Complete: Analysis completed for both posts and comments
+[2026-06-13 13:36:59.077] [INFO] Shutting down application...
+[2026-06-13 13:36:59.078] [INFO] Application shutdown complete
+[2026-06-13 13:36:59.104] [INFO] Shutting down application...
+[2026-06-13 13:36:59.104] [INFO] Application shutdown complete
+[2026-06-13 13:39:48.549] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 13:39:48.551] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 13:39:48.551] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 13:39:48.555] [INFO] Initializing application...
+[2026-06-13 13:39:48.569] [INFO] Starting application...
+[2026-06-13 13:39:48.819] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 13:39:48.841] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 13:39:49.537] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 13:39:49.899] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 13:39:49.905] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 13:39:49.918] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 13:39:49.992] [INFO] PreprocessingService initialized.
+[2026-06-13 13:39:50.009] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 13:39:50.022] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 13:39:50.034] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 13:39:50.809] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 13:39:50.825] [INFO] DamageClassificationService initialized.
+[2026-06-13 13:39:50.853] [INFO] ExportService initialized successfully.
+[2026-06-13 13:39:50.853] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 13:39:51.540] [INFO] Application started successfully
+[2026-06-13 13:39:55.378] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 13:39:59.988] [INFO] Starting sentiment analysis for 46 posts in project 4
+[2026-06-13 13:40:25.239] [INFO] Starting sentiment analysis for 1559 comments in project 4
+[2026-06-13 13:40:51.300] [INFO] Analysis Complete: Analysis completed for both posts and comments
+[2026-06-13 13:43:36.974] [INFO] Shutting down application...
+[2026-06-13 13:43:36.981] [INFO] Application shutdown complete
+[2026-06-13 13:43:37.002] [INFO] Shutting down application...
+[2026-06-13 13:43:37.003] [INFO] Application shutdown complete
+[2026-06-13 13:44:44.621] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 13:44:44.625] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 13:44:44.626] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 13:44:44.630] [INFO] Initializing application...
+[2026-06-13 13:44:44.642] [INFO] Starting application...
+[2026-06-13 13:44:44.897] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 13:44:44.912] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 13:44:45.607] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 13:44:45.924] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 13:44:45.931] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 13:44:45.948] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 13:44:46.013] [INFO] PreprocessingService initialized.
+[2026-06-13 13:44:46.027] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 13:44:46.039] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 13:44:46.050] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 13:44:46.821] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 13:44:46.836] [INFO] DamageClassificationService initialized.
+[2026-06-13 13:44:46.872] [INFO] ExportService initialized successfully.
+[2026-06-13 13:44:46.872] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 13:44:47.509] [INFO] Application started successfully
+[2026-06-13 13:44:51.724] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 13:44:54.063] [INFO] Starting sentiment analysis for 46 posts in project 4
+[2026-06-13 13:44:54.265] [INFO] Starting sentiment analysis for 1559 comments in project 4
+[2026-06-13 13:44:55.291] [INFO] Analysis Complete: Analysis completed for both posts and comments
+[2026-06-13 13:45:09.906] [INFO] Shutting down application...
+[2026-06-13 13:45:09.907] [INFO] Application shutdown complete
+[2026-06-13 13:45:09.928] [INFO] Shutting down application...
+[2026-06-13 13:45:09.929] [INFO] Application shutdown complete
+[2026-06-13 13:46:29.892] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 13:46:29.893] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 13:46:29.894] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 13:46:29.898] [INFO] Initializing application...
+[2026-06-13 13:46:29.911] [INFO] Starting application...
+[2026-06-13 13:46:30.141] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 13:46:30.165] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 13:46:30.828] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 13:46:31.107] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 13:46:31.111] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 13:46:31.121] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 13:46:31.186] [INFO] PreprocessingService initialized.
+[2026-06-13 13:46:31.202] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 13:46:31.215] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 13:46:31.226] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 13:46:31.972] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 13:46:31.983] [INFO] DamageClassificationService initialized.
+[2026-06-13 13:46:32.014] [INFO] ExportService initialized successfully.
+[2026-06-13 13:46:32.014] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 13:46:32.654] [INFO] Application started successfully
+[2026-06-13 13:46:36.032] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 13:46:37.707] [INFO] Starting sentiment analysis for 46 posts in project 4
+[2026-06-13 13:46:52.931] [INFO] Shutting down application...
+[2026-06-13 13:46:52.932] [INFO] Application shutdown complete
+[2026-06-13 13:46:52.955] [INFO] Shutting down application...
+[2026-06-13 13:46:52.956] [INFO] Application shutdown complete
+[2026-06-13 14:03:16.633] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 14:03:16.635] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 14:03:16.635] [INFO] Starting application with Java version: 26.0.1
+[2026-06-13 14:03:16.643] [INFO] Initializing application...
+[2026-06-13 14:03:16.655] [INFO] Starting application...
+[2026-06-13 14:03:16.872] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 14:03:16.897] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 14:03:17.480] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 14:03:17.815] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 14:03:17.821] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 14:03:17.833] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'projects' in the database.
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:920)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:814)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+  at com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:787)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:70)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1516)
+
+[2026-06-13 14:03:17.901] [INFO] PreprocessingService initialized.
+[2026-06-13 14:03:17.917] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 14:03:17.929] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 14:03:17.941] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 14:03:18.723] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 14:03:18.740] [INFO] DamageClassificationService initialized.
+[2026-06-13 14:03:18.772] [INFO] ExportService initialized successfully.
+[2026-06-13 14:03:18.773] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 14:03:19.364] [INFO] Application started successfully
+[2026-06-13 14:03:51.396] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 14:04:01.943] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-13 14:04:02.972] [INFO] Analysis Complete: Damage classification completed! Classified 46 posts and 1559 comments
+[2026-06-13 14:10:31.833] [INFO] Shutting down application...
+[2026-06-13 14:10:31.833] [INFO] Application shutdown complete
+[2026-06-13 14:10:31.841] [INFO] Shutting down application...
+[2026-06-13 14:10:31.844] [INFO] Application shutdown complete
