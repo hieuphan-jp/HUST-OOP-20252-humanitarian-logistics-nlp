@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="721804f1-5197-47ba-a4c1-2bdbf363e181" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/disaster_analysis.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/disaster_analysis.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/AnalysisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/AnalysisController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/analysis.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/analysis.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/analysis.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/analysis.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="721804f1-5197-47ba-a4c1-2bdbf363e181" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,7 +94,7 @@
       <workItem from="1781266639037" duration="161000" />
       <workItem from="1781272323325" duration="5398000" />
       <workItem from="1781316906788" duration="4753000" />
-      <workItem from="1781328101127" duration="7420000" />
+      <workItem from="1781328101127" duration="7485000" />
     </task>
     <servers />
   </component>
