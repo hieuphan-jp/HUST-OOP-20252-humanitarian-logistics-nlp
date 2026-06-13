@@ -2,57 +2,39 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
 
 <BorderPane fx:id="mainPane" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.disaster.analysis.ui.controller.MainController"
             prefHeight="700.0" prefWidth="1200.0">
+    <stylesheets>
+        <URL value="@../css/styles.css" />
+    </stylesheets>
 
     <top>
-        <VBox>
-            <MenuBar fx:id="menuBar">
-                <Menu text="File">
-                    <!-- <MenuItem text="New Project" onAction="#handleNewProject" accelerator="Shortcut+N"/> -->
-                    <MenuItem text="Exit" onAction="#handleExit" accelerator="Shortcut+Q"/>
-                </Menu>
-
-                <Menu text="Project">
-                    <MenuItem text="New Project" onAction="#handleNewProject" accelerator="Shortcut+N"/>
-                    <!-- <MenuItem text="Open Project" onAction="#handleOpenProject" accelerator="Shortcut+O"/>
-                    <SeparatorMenuItem/> -->
-                    <MenuItem text="View All Projects" onAction="#handleViewProjects" accelerator="Shortcut+P"/>
-                </Menu>
-
-                <Menu text="Theme">
-                    <MenuItem text="Toggle Dark Mode" onAction="#handleToggleTheme"/>
-                </Menu>
-
-                <!-- <Menu text="Analysis">
-                    <MenuItem text="Collect Data" onAction="#handleCollectData" accelerator="Shortcut+D"/>
-                    <MenuItem text="Run Sentiment Analysis" onAction="#handleSentimentAnalysis" accelerator="Shortcut+S"/>
-                    <MenuItem text="Run Damage Analysis" onAction="#handleDamageAnalysis" accelerator="Shortcut+A"/>
-                </Menu> -->
-
-                <Menu text="Help">
-                    <MenuItem text="About" onAction="#handleAbout"/>
-                </Menu>
-            </MenuBar>
-        </VBox>
+        <HBox alignment="CENTER_LEFT" prefHeight="40.0" styleClass="header-bar">
+            <padding>
+                <Insets left="10"/>
+            </padding>
+            <Button mnemonicParsing="false" onAction="#handleExit" text="Exit" styleClass="btn-transparent-exit"/>
+        </HBox>
     </top>
 
     <center>
-        <!-- Content area where different views will be loaded dynamically -->
-        <BorderPane fx:id="contentArea">
+        <BorderPane fx:id="contentArea" styleClass="main-content-area">
             <center>
-                <Label text="Welcome to Disaster Social Media Analysis" style="-fx-font-size: 24px; -fx-text-fill: #666;"/>
+                <Label text="Welcome to Disaster Social Media Analysis" styleClass="welcome-text"/>
             </center>
         </BorderPane>
     </center>
 
     <bottom>
-        <!-- Status bar for feedback -->
-        <HBox fx:id="statusBar" styleClass="status-bar" alignment="CENTER" spacing="10" style="-fx-padding: 5; -fx-background-color: #f0f0f0;">
-            <Label fx:id="statusLabel" text="Ready" style="-fx-font-size: 12px;"/>
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="footer-bar">
+            <padding>
+                <Insets top="8" right="15" bottom="8" left="15"/>
+            </padding>
+            <Label fx:id="statusLabel" text="Pending" styleClass="label-caption-muted"/>
         </HBox>
     </bottom>
-
 </BorderPane>

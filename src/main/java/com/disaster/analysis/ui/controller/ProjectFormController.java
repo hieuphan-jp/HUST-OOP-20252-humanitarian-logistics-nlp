@@ -35,9 +35,6 @@ public class ProjectFormController implements Initializable {
     private TextArea keywordsArea;
 
     @FXML
-    private TextArea hashtagsArea;
-
-    @FXML
     private DatePicker startDatePicker;
 
     @FXML
@@ -205,11 +202,6 @@ public class ProjectFormController implements Initializable {
         // Join keywords with commas
         keywordsArea.setText(String.join(", ", project.getKeywords()));
 
-        // Join hashtags with commas
-        if (project.getHashtags() != null && !project.getHashtags().isEmpty()) {
-            hashtagsArea.setText(String.join(", ", project.getHashtags()));
-        }
-
         // Set dates
         if (project.getStartDate() != null) {
             startDatePicker.setValue(project.getStartDate().toLocalDate());
@@ -246,7 +238,7 @@ public class ProjectFormController implements Initializable {
             String name = nameField.getText().trim();
             String disasterName = disasterNameField.getText().trim();
             List<String> keywords = parseCommaSeparated(keywordsArea.getText());
-            List<String> hashtags = parseCommaSeparated(hashtagsArea.getText());
+            List<String> hashtags = buildHashtagsFromKeywords(keywords);
 
             // Dates are now optional - use null if not provided
             LocalDateTime startDate = startDatePicker.getValue() != null
@@ -378,6 +370,16 @@ public class ProjectFormController implements Initializable {
     }
 
 
+    private List<String> buildHashtagsFromKeywords(List<String> keywords) {
+        return keywords.stream()
+                // Lọc bỏ các phần tử null hoặc rỗng (Tùy chọn, giúp code an toàn hơn)
+                .filter(keyword -> keyword != null && !keyword.trim().isEmpty())
+                // Thêm dấu # nếu chưa có
+                .map(keyword -> keyword.startsWith("#") ? keyword : "#" + keyword)
+                .collect(Collectors.toList());
+    }
+
+
     private Set<Platform> getSelectedPlatforms() {
         Set<Platform> platforms = new HashSet<>();
 
@@ -396,7 +398,6 @@ public class ProjectFormController implements Initializable {
         return !nameField.getText().trim().isEmpty() ||
                 !disasterNameField.getText().trim().isEmpty() ||
                 !keywordsArea.getText().trim().isEmpty() ||
-                !hashtagsArea.getText().trim().isEmpty() ||
                 startDatePicker.getValue() != null ||
                 endDatePicker.getValue() != null ||
                 isAnyPlatformSelected();

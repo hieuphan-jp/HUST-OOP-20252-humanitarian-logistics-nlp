@@ -1,6 +1,6 @@
 package com.disaster.analysis.infrastructure.social;
 
-import com.disaster.analysis.domain.model.Post;
+import com.disaster.analysis.domain.model.entities.Post;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -43,16 +43,16 @@ public class YouTubeDataSourceTest {
         YouTubeDataSource youtubeSource = new YouTubeDataSource(apiKey);
 
         // Tự nhập thời gian để test
-        LocalDateTime startDate = LocalDateTime.parse("2024-09-07T15:30:00");
-        LocalDateTime endDate = LocalDateTime.parse("2024-09-15T15:30:00");
-        String testQuery = "Sơn Tùng"; // Từ khóa hot, chắc chắn có video trên YouTube
+        LocalDateTime startDate = LocalDateTime.parse("2025-01-07T15:30:00");
+        LocalDateTime endDate = LocalDateTime.parse("2025-01-30T15:30:00");
+        String testQuery = "yagi"; // Từ khóa hot, chắc chắn có video trên YouTube
 
         // 2. Thực thi & Khẳng định (Act & Assert)
         assertDoesNotThrow(() -> {
             System.out.println("📡 Đang kết nối tới máy chủ YouTube API để tìm kiếm: '" + testQuery + "'...");
 
             // Ra lệnh cào thử tối đa 3 video
-            List<Post> results = youtubeSource.fetchPosts(testQuery, startDate, endDate,3);
+            List<Post> results = youtubeSource.fetchPosts(testQuery, startDate, endDate,10);
 
             // GÁC CỔNG 2: Kết quả trả về bắt buộc không được null
             assertNotNull(results, "Lỗi nghiêm trọng: Hàm fetchPosts trả về danh sách null.");

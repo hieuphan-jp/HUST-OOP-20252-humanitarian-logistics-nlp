@@ -47,6 +47,8 @@ public class AISummaryService {
         this.postRepository = postRepository;
         this.commentRepository = commentRepository;
         this.projectRepository = projectRepository;
+
+        LogUtil.info("Initialized API clients for " + this.aiClient.getModelName() + " successfully");
     }
 
     /**
@@ -62,7 +64,7 @@ public class AISummaryService {
      */
     public AISummaryDTO generateProjectSummary(Long projectId) {
         try {
-            LogUtil.info("Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: " + projectId);
+            LogUtil.info("Start crawling data to generate AI summary for project with ID: " + projectId);
 
             // 1. Gom nhóm toàn bộ dữ liệu thống kê của dự án
             ProjectData data = aggregateProjectData(projectId);
@@ -71,7 +73,7 @@ public class AISummaryService {
             String prompt = buildPrompt(data);
 
             // 3. Gọi AI xử lý
-            LogUtil.info("Đang chờ AI phân tích và viết báo cáo...");
+            LogUtil.info("Waiting for AI analysing and summary generating...");
             String summaryText = aiClient.generateSummary(prompt);
 
             // 4. Tạo đối tượng và lưu xuống Database
@@ -89,11 +91,11 @@ public class AISummaryService {
             return AISummaryMapper.toDTO(savedSummary);
 
         } catch (AIClientException e) {
-            LogUtil.error("Lỗi AI Client: " + e.getMessage(), e);
-            throw new RuntimeException("Giao tiếp với AI thất bại: " + e.getMessage(), e);
+            LogUtil.error("Error AI Client: " + e.getMessage(), e);
+            throw new RuntimeException("Failed to communicate with AI: " + e.getMessage(), e);
         } catch (Exception e) {
-            LogUtil.error("Lỗi không xác định khi tạo báo cáo AI: " + e.getMessage(), e);
-            throw new RuntimeException("Lỗi hệ thống khi tạo báo cáo: " + e.getMessage(), e);
+            LogUtil.error("Unknown error while generating AI summary: " + e.getMessage(), e);
+            throw new RuntimeException("System error while generating AI summary: " + e.getMessage(), e);
         }
     }
 

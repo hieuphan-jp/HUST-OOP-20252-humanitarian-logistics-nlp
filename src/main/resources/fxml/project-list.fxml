@@ -3,48 +3,78 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.disaster.analysis.ui.controller.ProjectListController">
+    <stylesheets>
+        <URL value="@../css/styles.css" />
+    </stylesheets>
 
-<VBox xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.disaster.analysis.ui.controller.ProjectListController"
-      spacing="15" styleClass="content-container">
-
-    <!-- Header -->
-    <HBox alignment="CENTER" spacing="10">
-        <Label text="Projects" styleClass="header"/>
-        <Region HBox.hgrow="ALWAYS"/>
-    </HBox>
-
-    <!-- Action Buttons -->
-    <HBox spacing="10" alignment="CENTER_LEFT">
-        <Button fx:id="newButton" text="New" onAction="#handleNewProject" styleClass="success"/>
-        <!--<Button fx:id="openButton" text="Open" onAction="#handleOpenProject" disable="true"/>-->
-        <Button fx:id="deleteButton" text="Delete" onAction="#handleDeleteProject" styleClass="danger" disable="true"/>
-        <!-- <Button fx:id="refreshButton" text="Refresh" onAction="#handleRefresh" styleClass="secondary"/> -->
-    </HBox>
-
-    <!-- Projects Table -->
-    <TableView fx:id="projectTable" VBox.vgrow="ALWAYS">
-        <columns>
-            <TableColumn fx:id="nameColumn" text="Name" prefWidth="200" minWidth="150"/>
-            <TableColumn fx:id="disasterColumn" text="Disaster" prefWidth="200" minWidth="150"/>
-            <TableColumn fx:id="dateColumn" text="Date Range" prefWidth="250" minWidth="200"/>
-            <TableColumn fx:id="platformsColumn" text="Platforms" prefWidth="200" minWidth="150"/>
-            <TableColumn fx:id="createdColumn" text="Created" prefWidth="180" minWidth="150"/>
-            <TableColumn fx:id="modifiedColumn" text="Last Modified" prefWidth="180" minWidth="150"/>
-        </columns>
-
-        <placeholder>
-            <VBox alignment="CENTER" spacing="10" styleClass="empty-state">
-                <Label text="No projects found" styleClass="subheader"/>
-                <Label text="Click 'New' to create your first project" styleClass="secondary"/>
+    <left>
+        <VBox spacing="25" prefWidth="260" minWidth="260" styleClass="sidebar">
+            <VBox spacing="5">
+                <Label text="DISASTER SOCIAL MEDIA" styleClass="label-title-cyan"/>
+                <Label text="Analysis Portal" styleClass="label-header-white"/>
             </VBox>
-        </placeholder>
-    </TableView>
 
-    <!-- Footer with project count -->
-    <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 5 0 0 0;">
-        <Label fx:id="projectCountLabel" text="0 projects" styleClass="secondary"/>
-        <Button fx:id="refreshButton" text="Refresh" onAction="#handleRefresh" styleClass="secondary" />
-    </HBox>
+            <Separator style="-fx-opacity: 0.1;"/> <VBox spacing="8" styleClass="sidebar-card">
+            <Label text="TOTAL PROJECTS RUNNING" styleClass="label-caption-muted"/>
+            <Label fx:id="projectCountLabel" text="0 project" styleClass="stat-val-total"/>
+        </VBox>
 
-</VBox>
+            <VBox spacing="12" VBox.vgrow="ALWAYS">
+                <Label text="MANAGEMENT" styleClass="label-caption-muted">
+                    <padding>
+                        <Insets bottom="5"/>
+                    </padding>
+                </Label>
+
+                <Button fx:id="newButton" text="➕ New Project" onAction="#handleNewProject" maxWidth="1.7976931348623157E308" prefHeight="42" styleClass="btn-success-green, btn-sidebar-nav"/>
+                <Button fx:id="refreshButton" text="🔄 Refresh" onAction="#handleRefresh" maxWidth="1.7976931348623157E308" prefHeight="42" styleClass="btn-secondary-slate, btn-sidebar-nav"/>
+                <Button fx:id="deleteButton" text="🗑 Delete" onAction="#handleDeleteProject" disable="false" maxWidth="1.7976931348623157E308" prefHeight="42" styleClass="btn-danger-red, btn-sidebar-nav"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="main-content-area">
+            <padding>
+                <Insets top="30" right="30" bottom="30" left="30"/>
+            </padding>
+            <VBox VBox.vgrow="ALWAYS" styleClass="card-dark">
+                <padding>
+                    <Insets top="25" right="25" bottom="25" left="25"/>
+                </padding>
+
+                <HBox alignment="CENTER_LEFT">
+                    <padding>
+                        <Insets bottom="20"/>
+                    </padding>
+                    <style>
+                        -fx-border-color: #334155; -fx-border-width: 0 0 1 0;
+                    </style>
+                    <VBox spacing="4">
+                        <Label text="Active Data Streams" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #f8fafc;"/>
+                        <Label text="Overview of monitored disaster events and platform statistics." styleClass="label-sub-gray"/>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label text="LIVE MONITOR" styleClass="status-badge-live-cyan"/>
+                </HBox>
+
+                <TableView fx:id="projectTable" VBox.vgrow="ALWAYS" styleClass="table-view-custom">
+                    <columns>
+                        <TableColumn fx:id="nameColumn" text="Project Name" prefWidth="200" style="-fx-font-weight: bold;"/>
+                        <TableColumn fx:id="disasterColumn" text="Disaster" prefWidth="150" />
+                        <TableColumn fx:id="dateColumn" text="Monitoring Period" prefWidth="400" />
+                        <TableColumn fx:id="platformsColumn" text="Platforms" prefWidth="300" />
+                        <TableColumn fx:id="createdColumn" text="Created" prefWidth="180" />
+                        <TableColumn fx:id="modifiedColumn" text="Last Modified" prefWidth="180" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="UNCONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>
