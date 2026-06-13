@@ -7,10 +7,40 @@
     <list default="true" id="721804f1-5197-47ba-a4c1-2bdbf363e181" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/disaster_analysis.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/disaster_analysis.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/ProjectFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/ProjectFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/project-form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/project-form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/ProjectFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/ProjectFormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/project-form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/project-form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/infrastructure/ai/MockAIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/infrastructure/ai/MockAIClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/infrastructure/repository/context/DbContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/infrastructure/repository/context/DbContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/AnalysisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/AnalysisController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/ProjectListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/ProjectListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/util/TextParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/util/TextParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/analysis.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/analysis.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/project-list.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/project-list.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/dto/DamageClassificationDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/dto/DamageClassificationDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/dto/SentimentResultDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/dto/SentimentResultDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/AISummaryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/AISummaryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/DamageClassificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/DamageClassificationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/DataCollectionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/DataCollectionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/PreprocessingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/PreprocessingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/ai/MockAIClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/ai/MockAIClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/analysis/KeywordDamageClassifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/analysis/KeywordDamageClassifier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/analysis/VietnameseSentimentAnalyzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/analysis/VietnameseSentimentAnalyzer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/export/XlsxExporter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/export/XlsxExporter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/repository/context/DbContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/repository/context/DbContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/social/MockDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/social/MockDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/ProjectListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/ProjectListController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/navigation/Navigator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/navigation/Navigator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/util/TextParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/util/TextParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/analysis.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/analysis.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/project-list.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/project-list.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,18 +62,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "hoang31710-art"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;hoang31710-art&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/hieuphan-jp/OOP.Project.Nhom2",
-    "accountId": "245827e0-d5ae-4e10-96dc-c48f734d018c"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/hieuphan-jp/OOP.Project.Nhom2&quot;,
+    &quot;accountId&quot;: &quot;245827e0-d5ae-4e10-96dc-c48f734d018c&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -57,61 +87,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.2691045477109837" />
-      <entry key="MS500" value="3.504031148715953" />
-      <entry key="S2" value="6.3032930370680225" />
-      <entry key="S5" value="7.25664857740354" />
-      <entry key="S10" value="7.865861081326701" />
-      <entry key="S30" value="14.271197814017974" />
-      <entry key="S60" value="24.519688376305485" />
-      <entry key="M2" value="41.5925819180046" />
-      <entry key="M5" value="77.59726590619066" />
-      <entry key="M10" value="113.6228862325521" />
-      <entry key="M15" value="138.83691640426815" />
-      <entry key="M30" value="193.96043487728792" />
-      <entry key="H1" value="255.26385246266062" />
-      <entry key="H2" value="304.9807923183652" />
-      <entry key="H4" value="337.2617563741623" />
-      <entry key="D1" value="369.03676081507507" />
-      <entry key="W1" value="374.99199364665094" />
+      <entry key="MS100" value="2.163510286289151" />
+      <entry key="MS500" value="4.385429560703578" />
+      <entry key="S2" value="5.541469736569246" />
+      <entry key="S5" value="7.478719633164154" />
+      <entry key="S10" value="13.082922048203558" />
+      <entry key="S30" value="43.76166476420616" />
+      <entry key="S60" value="100.09510002809279" />
+      <entry key="M2" value="187.60216777938626" />
+      <entry key="M5" value="343.10542435672363" />
+      <entry key="M10" value="509.1182976883808" />
+      <entry key="M15" value="629.0331284222093" />
+      <entry key="M30" value="866.9039169545108" />
+      <entry key="H1" value="1127.0594149847057" />
+      <entry key="H2" value="1362.8609355969072" />
+      <entry key="H4" value="1534.8078043652233" />
+      <entry key="D1" value="1721.550513236854" />
+      <entry key="W1" value="1758.6517207221746" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="7.045591862301238E-136" />
-      <entry key="S5" value="8.69294621745464E-55" />
-      <entry key="S10" value="9.323597062000613E-28" />
-      <entry key="S30" value="9.769248786930433E-10" />
-      <entry key="S60" value="3.126013222143463E-5" />
-      <entry key="M2" value="0.005683782163190273" />
-      <entry key="M5" value="0.16283169306753825" />
-      <entry key="M10" value="0.6502691370613135" />
-      <entry key="M15" value="1.1491349660791317" />
-      <entry key="M30" value="2.3865797233713977" />
-      <entry key="H1" value="3.8612499006220964" />
-      <entry key="H2" value="5.118407857382614" />
-      <entry key="H4" value="5.961734654664875" />
-      <entry key="D1" value="6.811336452679507" />
-      <entry key="W1" value="6.972634833506637" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="6.695219511775052E-204" />
+      <entry key="S10" value="2.5875122244686665E-102" />
+      <entry key="S30" value="1.3728638521325586E-34" />
+      <entry key="S60" value="1.1716927526350331E-17" />
+      <entry key="M2" value="3.4234817622846057E-9" />
+      <entry key="M5" value="4.228344176430404E-4" />
+      <entry key="M10" value="0.024146392675466734" />
+      <entry key="M15" value="0.10592057804873732" />
+      <entry key="M30" value="0.632301127294669" />
+      <entry key="H1" value="2.052471214508704" />
+      <entry key="H2" value="4.129232986885117" />
+      <entry key="H4" value="6.035849432373874" />
+      <entry key="D1" value="8.408838364709721" />
+      <entry key="W1" value="8.912777240086879" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.1941546019596931" />
-      <entry key="MS500" value="3.4596587632657716" />
-      <entry key="S2" value="6.283036321382729" />
-      <entry key="S5" value="7.247263418800339" />
-      <entry key="S10" value="7.860797893251506" />
-      <entry key="S30" value="14.268405076072671" />
-      <entry key="S60" value="24.51739019390262" />
-      <entry key="M2" value="41.5959153782621" />
-      <entry key="M5" value="77.75605725873419" />
-      <entry key="M10" value="114.26735475084713" />
-      <entry key="M15" value="139.97952087231985" />
-      <entry key="M30" value="196.33982056781664" />
-      <entry key="H1" value="259.1186740137668" />
-      <entry key="H2" value="310.0946448224293" />
-      <entry key="H4" value="343.2207396103839" />
-      <entry key="D1" value="375.84755664551784" />
-      <entry key="W1" value="381.96454898776454" />
+      <entry key="MS100" value="2.0586416256636446" />
+      <entry key="MS500" value="4.333189649022262" />
+      <entry key="S2" value="5.5248448408964945" />
+      <entry key="S5" value="7.470346518305147" />
+      <entry key="S10" value="13.076395576842577" />
+      <entry key="S30" value="43.75534629476991" />
+      <entry key="S60" value="100.08811863221578" />
+      <entry key="M2" value="187.5956955671544" />
+      <entry key="M5" value="343.10109470043653" />
+      <entry key="M10" value="509.1387909659304" />
+      <entry key="M15" value="629.135797298068" />
+      <entry key="M30" value="867.5329548277203" />
+      <entry key="H1" value="1129.108016403715" />
+      <entry key="H2" value="1366.986427341486" />
+      <entry key="H4" value="1540.840899536988" />
+      <entry key="D1" value="1729.9587013039338" />
+      <entry key="W1" value="1767.564399133614" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -126,33 +156,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.TestViewMain.executor": "Run",
-    "Maven.disaster-social-analysis [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "UI2/Hoang",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/hoang/OOP.Project.Nhom2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestViewMain.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.disaster-social-analysis [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;UI2/Hoang&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/hoang/OOP.Project.Nhom2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.disaster.analysis.Main" />
@@ -201,7 +231,8 @@
       <workItem from="1781108598093" duration="1098000" />
       <workItem from="1781109716347" duration="379000" />
       <workItem from="1781195194422" duration="5871000" />
-      <workItem from="1781271337090" duration="7644000" />
+      <workItem from="1781271337090" duration="9373000" />
+      <workItem from="1781338708824" duration="6486000" />
     </task>
     <servers />
   </component>

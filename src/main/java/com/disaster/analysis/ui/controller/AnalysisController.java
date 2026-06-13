@@ -18,14 +18,12 @@ import com.disaster.analysis.domain.model.enums.TimeGranularity;
 import com.disaster.analysis.ui.navigation.Navigator;
 import com.disaster.analysis.ui.util.DialogUtil;
 import com.disaster.analysis.util.LogUtil;
+import com.disaster.analysis.util.TextParser;
 import javafx.collections.FXCollections;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 import javafx.scene.control.*;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
@@ -40,10 +38,14 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import javafx.collections.ObservableList;
+import javafx.util.StringConverter;
 
 public class AnalysisController implements Initializable {
 
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+    private static final String POSITIVE_COLOR = "#10b981";
+    private static final String NEUTRAL_COLOR = "#d9a014";
+    private static final String NEGATIVE_COLOR = "#ef4444";
 
     // Project Info Labels
     @FXML
@@ -54,7 +56,7 @@ public class AnalysisController implements Initializable {
 
     // Sentiment Analysis Tab Components
     @FXML
-    private ComboBox<String> timeGranularityComboBox;
+    private ComboBox<TimeGranularity> timeGranularityComboBox;
 
     @FXML
     private Button runSentimentButton;
@@ -84,34 +86,23 @@ public class AnalysisController implements Initializable {
     @FXML
     private BarChart<String, Number> damageChart;
 
-    @FXML
-    private ListView<String> samplePostsListView;
-
-    @FXML
-    private Label samplePostsCountLabel;
-
     // Action Buttons
-    @FXML
-    private Button backButton;
 
     @FXML
     private Button exportButton;
 
     // AI Summary Tab Components
     @FXML
-    private Button generateSummaryButton;
+    private Button generateSummaryDamageButton;
 
     @FXML
-    private TextArea summaryTextArea;
+    private TextArea summaryTextDamageArea;
 
     @FXML
-    private ProgressIndicator summaryProgressIndicator;
+    private Button generateSummarySentimentButton;
 
     @FXML
-    private Button copySummaryButton;
-
-    @FXML
-    private Label summaryMetadataLabel;
+    private TextArea summaryTextSentimentArea;
 
     // Services
     private SentimentAnalysisService sentimentService;
@@ -131,6 +122,7 @@ public class AnalysisController implements Initializable {
 
     public AnalysisController() {
     }
+
 
 
     public AnalysisController(SentimentAnalysisService sentimentService,
@@ -187,10 +179,19 @@ public class AnalysisController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Initialize time granularity combo box
-        timeGranularityComboBox.setItems(FXCollections.observableArrayList(
-                "Hourly", "Daily", "Weekly", "Monthly"
-        ));
-        timeGranularityComboBox.setValue("Daily");
+        timeGranularityComboBox.setItems(FXCollections.observableArrayList(TimeGranularity.values()));
+        timeGranularityComboBox.setConverter(new StringConverter<>() {
+            @Override
+            public String toString(TimeGranularity granularity) {
+                return granularity == null ? "" : formatGranularity(granularity);
+            }
+
+            @Override
+            public TimeGranularity fromString(String value) {
+                return TimeGranularity.valueOf(value.toUpperCase(Locale.ENGLISH));
+            }
+        });
+        timeGranularityComboBox.setValue(TimeGranularity.DAILY);
 
         // Initialize category filter combo box with "All Categories" option
         List<String> categoryOptions = new ArrayList<>();
@@ -210,13 +211,25 @@ public class AnalysisController implements Initializable {
         }
 
         // Initialize AI Summary UI components
-        if (summaryProgressIndicator != null) {
-            summaryProgressIndicator.setVisible(false);
+        if (summaryTextSentimentArea != null) {
+            summaryTextSentimentArea.setEditable(false);
+            summaryTextSentimentArea.setWrapText(true);
         }
-        if (summaryTextArea != null) {
-            summaryTextArea.setEditable(false);
-            summaryTextArea.setWrapText(true);
+
+        if (summaryTextDamageArea != null) {
+            summaryTextDamageArea.setEditable(false);
+            summaryTextDamageArea.setWrapText(true);
         }
+
+        configureSentimentChartAxes();
+
+        timeGranularityComboBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                // Cập nhật lại biến granularity hiện tại bằng giá trị mới người dùng vừa chọn
+                this.currentGranularity = newValue;
+                updateSentimentChart();
+            }
+        });
 
         // Note: Service initialization and updateProjectInfo() are called in setApplicationContext()
         // after dependencies are injected
@@ -357,8 +370,6 @@ public class AnalysisController implements Initializable {
         analysisThread.setDaemon(true);
         analysisThread.start();
     }
-
-
     private void updateSentimentChart() {
         if (currentProject == null || currentProject.getId() == null) {
             return;
@@ -366,11 +377,14 @@ public class AnalysisController implements Initializable {
 
         try {
             // Get sentiment time series data
+            sentimentChart.setLegendVisible(false);
             Map<LocalDateTime, Map<Sentiment, Long>> timeSeries =
                     sentimentService.getSentimentTimeSeries(currentProject.getId(), currentGranularity);
 
             // Clear existing data
             sentimentChart.getData().clear();
+
+            configureSentimentChartAxes();
 
             // Create series for each sentiment type
             XYChart.Series<String, Number> positiveSeries = new XYChart.Series<>();
@@ -389,7 +403,6 @@ public class AnalysisController implements Initializable {
 
             // Populate series with data
             DateTimeFormatter formatter = getFormatterForGranularity(currentGranularity);
-
             for (Map.Entry<LocalDateTime, Map<Sentiment, Long>> entry : timeSeries.entrySet()) {
                 String timeLabel = entry.getKey().format(formatter);
                 Map<Sentiment, Long> sentimentCounts = entry.getValue();
@@ -411,6 +424,7 @@ public class AnalysisController implements Initializable {
             sentimentChart.getData().add(positiveSeries);
             sentimentChart.getData().add(neutralSeries);
             sentimentChart.getData().add(negativeSeries);
+            applySentimentSeriesColors(positiveSeries, neutralSeries, negativeSeries);
 
             // Update statistics labels
             positiveCountLabel.setText(String.valueOf(totalPositive));
@@ -424,18 +438,44 @@ public class AnalysisController implements Initializable {
     }
 
 
+    private void applySentimentSeriesColors(XYChart.Series<String, Number> positiveSeries,
+                                            XYChart.Series<String, Number> neutralSeries,
+                                            XYChart.Series<String, Number> negativeSeries) {
+        javafx.application.Platform.runLater(() -> {
+            styleLineSeries(positiveSeries, POSITIVE_COLOR);
+            styleLineSeries(neutralSeries, NEUTRAL_COLOR);
+            styleLineSeries(negativeSeries, NEGATIVE_COLOR);
+        });
+    }
+
+
+    private void styleLineSeries(XYChart.Series<String, Number> series, String color) {
+        if (series.getNode() != null) {
+            series.getNode().setStyle("-fx-stroke: " + color + ";");
+        }
+
+        for (XYChart.Data<String, Number> data : series.getData()) {
+            if (data.getNode() != null) {
+                data.getNode().setStyle("-fx-background-color: " + color + ", white;");
+            }
+        }
+    }
+
+
     private void updateDamageChart() {
         if (currentProject == null || currentProject.getId() == null) {
             return;
         }
 
         try {
-            // Get damage category distribution
+            // Get damage category distribution using the currently selected filters.
             Map<DamageCategory, Long> distribution =
-                    damageService.getDamageCategoryDistribution(currentProject.getId());
+                    getFilteredDamageCategoryDistribution(currentProject.getId());
 
             // Clear existing data
             damageChart.getData().clear();
+            damageChart.setBarGap(4);
+            configureDamageChartAxes();
 
             // Create series for damage categories
             XYChart.Series<String, Number> series = new XYChart.Series<>();
@@ -444,18 +484,21 @@ public class AnalysisController implements Initializable {
             // Sort categories by count (descending)
             List<Map.Entry<DamageCategory, Long>> sortedEntries = distribution.entrySet().stream()
                     .sorted(Map.Entry.<DamageCategory, Long>comparingByValue().reversed())
-                    .collect(Collectors.toList());
-
+                    .toList();
+            damageChart.setCategoryGap(24);
             if (damageChart.getXAxis() instanceof CategoryAxis xAxis) {
                 xAxis.getCategories().clear();
 
                 // TẠO DANH SÁCH NHÃN ĐỘC LẬP
-                ObservableList<String> categories = FXCollections.observableArrayList();
-                for (Map.Entry<DamageCategory, Long> entry : sortedEntries) {
-                    categories.add(entry.getKey().getDisplayName());
-                }
+                ObservableList<String> categories = buildDamageAxisCategories(sortedEntries);
+
                 // Ép trục X phải chia đều không gian cho các nhãn này
+                xAxis.getCategories().clear();
                 xAxis.setCategories(categories);
+                xAxis.invalidateRange(categories);
+
+                damageChart.layout();
+                xAxis.setGapStartAndEnd(true);
             }
 
             // Populate series with data
@@ -475,24 +518,20 @@ public class AnalysisController implements Initializable {
     }
 
 
-    @FXML
-    private void handleTimeGranularityChange() {
-        String selected = timeGranularityComboBox.getValue();
-
-        if (selected == null) {
-            return;
+    private ObservableList<String> buildDamageAxisCategories(List<Map.Entry<DamageCategory, Long>> sortedEntries) {
+        ObservableList<String> categories = FXCollections.observableArrayList();
+        for (Map.Entry<DamageCategory, Long> entry : sortedEntries) {
+            categories.add(entry.getKey().getDisplayName());
         }
 
-        // Map selection to TimeGranularity enum
-        currentGranularity = switch (selected) {
-            case "Hourly" -> TimeGranularity.HOURLY;
-            case "Weekly" -> TimeGranularity.WEEKLY;
-            case "Monthly" -> TimeGranularity.MONTHLY;
-            default -> TimeGranularity.DAILY;
-        };
+        if (categories.size() == 1) {
+            int targetSlots = DamageCategory.values().length;
+            for (int index = 1; index < targetSlots; index++) {
+                categories.add(" ".repeat(index));
+            }
+        }
 
-        // Refresh the sentiment chart with new granularity
-        updateSentimentChart();
+        return categories;
     }
 
 
@@ -518,6 +557,35 @@ public class AnalysisController implements Initializable {
 
         // Update sample posts list
         updateSamplePosts();
+        updateDamageChart();
+    }
+
+
+    private void configureDamageChartAxes() {
+        if (damageChart.getYAxis() instanceof NumberAxis yAxis) {
+            yAxis.setLabel(getDamageYAxisLabel());
+            yAxis.setMinorTickVisible(false);
+            yAxis.setTickLabelFormatter(new StringConverter<>() {
+                @Override
+                public String toString(Number value) {
+                    return String.valueOf(value.longValue());
+                }
+
+                @Override
+                public Number fromString(String value) {
+                    return Long.parseLong(value);
+                }
+            });
+        }
+    }
+
+
+    private String getDamageYAxisLabel() {
+        return switch (currentContentTypeFilter) {
+            case "Posts" -> "Number of Posts";
+            case "Comments" -> "Number of Comments";
+            default -> "Number of Posts and Comments";
+        };
     }
 
 
@@ -533,6 +601,47 @@ public class AnalysisController implements Initializable {
 
         // Update sample posts list
         updateSamplePosts();
+        updateDamageChart();
+    }
+
+
+    private Map<DamageCategory, Long> getFilteredDamageCategoryDistribution(Long projectId) {
+        Map<DamageCategory, Long> distribution = new EnumMap<>(DamageCategory.class);
+
+        if ("All".equals(currentContentTypeFilter) || "Posts".equals(currentContentTypeFilter)) {
+            List<PostDTO> posts = applicationContext.getProjectService().getPostsByProjectId(projectId);
+            for (PostDTO post : posts) {
+                addDamageCategories(distribution, post.getDamageCategories());
+            }
+        }
+
+        if ("All".equals(currentContentTypeFilter) || "Comments".equals(currentContentTypeFilter)) {
+            List<CommentDTO> comments = applicationContext.getProjectService().getCommentsByProjectId(projectId);
+            for (CommentDTO comment : comments) {
+                addDamageCategories(distribution, comment.getDamageCategories());
+            }
+        }
+
+        if (currentCategoryFilter == null) {
+            return distribution;
+        }
+
+        Map<DamageCategory, Long> filteredDistribution = new EnumMap<>(DamageCategory.class);
+        filteredDistribution.put(currentCategoryFilter, distribution.getOrDefault(currentCategoryFilter, 0L));
+        return filteredDistribution;
+    }
+
+
+    private void addDamageCategories(Map<DamageCategory, Long> distribution, Set<DamageCategory> categories) {
+        if (categories == null || categories.isEmpty()) {
+            return;
+        }
+
+        for (DamageCategory category : categories) {
+            if (currentCategoryFilter == null || currentCategoryFilter == category) {
+                distribution.merge(category, 1L, Long::sum);
+            }
+        }
     }
 
 
@@ -688,10 +797,59 @@ public class AnalysisController implements Initializable {
 
     private DateTimeFormatter getFormatterForGranularity(TimeGranularity granularity) {
         return switch (granularity) {
-            case HOURLY -> DateTimeFormatter.ofPattern("MM-dd HH:00");
-            case DAILY -> DateTimeFormatter.ofPattern("MM-dd");
-            case WEEKLY -> DateTimeFormatter.ofPattern("MM-dd");
-            case MONTHLY -> DateTimeFormatter.ofPattern("yyyy-MM");
+            case HOURLY -> DateTimeFormatter.ofPattern("MMM dd, HH:00", Locale.ENGLISH);
+            case DAILY -> DateTimeFormatter.ofPattern("MMM dd", Locale.ENGLISH);
+            case WEEKLY -> DateTimeFormatter.ofPattern("'Week of' MMM dd", Locale.ENGLISH);
+            case MONTHLY -> DateTimeFormatter.ofPattern("MMM yyyy", Locale.ENGLISH);
+        };
+    }
+
+
+    private void configureSentimentChartAxes() {
+        sentimentChart.setTitle("Sentiment Distribution Over Time");
+
+        if (sentimentChart.getXAxis() instanceof CategoryAxis xAxis) {
+            xAxis.setLabel(getTimeAxisLabel(currentGranularity));
+            xAxis.setTickLabelsVisible(true);
+            xAxis.setTickMarkVisible(true);
+            xAxis.setTickLabelRotation(-35);
+            xAxis.setTickLabelGap(8);
+        }
+
+        if (sentimentChart.getYAxis() instanceof NumberAxis yAxis) {
+            yAxis.setLabel("Number of Posts");
+            yAxis.setMinorTickVisible(false);
+            yAxis.setTickLabelFormatter(new StringConverter<>() {
+                @Override
+                public String toString(Number value) {
+                    return String.valueOf(value.longValue());
+                }
+
+                @Override
+                public Number fromString(String value) {
+                    return Long.parseLong(value);
+                }
+            });
+        }
+    }
+
+
+    private String getTimeAxisLabel(TimeGranularity granularity) {
+        return switch (granularity) {
+            case HOURLY -> "Time Period (Hour)";
+            case DAILY -> "Time Period (Day)";
+            case WEEKLY -> "Time Period (Week)";
+            case MONTHLY -> "Time Period (Month)";
+        };
+    }
+
+
+    private String formatGranularity(TimeGranularity granularity) {
+        return switch (granularity) {
+            case HOURLY -> "Hourly";
+            case DAILY -> "Daily";
+            case WEEKLY -> "Weekly";
+            case MONTHLY -> "Monthly";
         };
     }
 
@@ -827,19 +985,24 @@ public class AnalysisController implements Initializable {
                 currentSummary = existingSummary.get();
 
                 // Display summary text
-                if (summaryTextArea != null) {
-                    summaryTextArea.setText(currentSummary.getSummaryText());
+                if (summaryTextSentimentArea != null) {
+                    summaryTextSentimentArea.setText(TextParser.getCompleteSentimentReport(currentSummary.getSummaryText()));
+                }
+
+                if (summaryTextDamageArea != null) {
+                    summaryTextDamageArea.setText(TextParser.getCompleteDamageReport(currentSummary.getSummaryText()));
                 }
 
                 // Update metadata label
-                if (summaryMetadataLabel != null) {
-                    String metadata = formatSummaryMetadata(currentSummary);
-                    summaryMetadataLabel.setText(metadata);
-                }
+
+
 
                 // Change button text to "Regenerate Summary"
-                if (generateSummaryButton != null) {
-                    generateSummaryButton.setText("Regenerate Summary");
+                if (generateSummarySentimentButton != null) {
+                    generateSummarySentimentButton.setText("Regenerate Sentiment Summary");
+                }
+                if (generateSummaryDamageButton != null) {
+                    generateSummaryDamageButton.setText("Regenerate Damage Summary");
                 }
 
                 LogUtil.info("Loaded existing AI summary for project: " + currentProject.getName());
@@ -847,16 +1010,21 @@ public class AnalysisController implements Initializable {
                 // No summary exists - leave UI in default state
                 currentSummary = null;
 
-                if (summaryTextArea != null) {
-                    summaryTextArea.setText("");
+                if (summaryTextSentimentArea != null) {
+                    summaryTextSentimentArea.setText("");
                 }
 
-                if (summaryMetadataLabel != null) {
-                    summaryMetadataLabel.setText("");
+                if (summaryTextDamageArea != null) {
+                    summaryTextDamageArea.setText("");
                 }
 
-                if (generateSummaryButton != null) {
-                    generateSummaryButton.setText("Generate AI Summary");
+
+                if (generateSummarySentimentButton != null) {
+                    generateSummarySentimentButton.setText("Generate AI Sentiment Summary");
+                }
+
+                if (generateSummaryDamageButton != null) {
+                    generateSummaryDamageButton.setText("Generate AI Damage Summary");
                 }
             }
         } catch (Exception e) {
@@ -907,7 +1075,7 @@ public class AnalysisController implements Initializable {
 
 
     @FXML
-    private void handleGenerateSummary() {
+    private void handleGenerateSentimentSummary() {
         if (currentProject == null || currentProject.getId() == null) {
             DialogUtil.showError("No Project", "Please select a project before generating a summary.");
             return;
@@ -919,10 +1087,10 @@ public class AnalysisController implements Initializable {
         }
 
         // Disable button and show progress indicator
-        generateSummaryButton.setDisable(true);
-        summaryProgressIndicator.setVisible(true);
+        generateSummarySentimentButton.setDisable(true);
 
         // Create background task for summary generation
+
         Task<AISummaryDTO> summaryTask = new Task<AISummaryDTO>() {
             @Override
             protected AISummaryDTO call() throws Exception {
@@ -935,35 +1103,31 @@ public class AnalysisController implements Initializable {
         summaryTask.setOnSucceeded(event -> {
             try {
                 // Get the generated summary
+
                 AISummaryDTO generatedSummary = summaryTask.getValue();
                 currentSummary = generatedSummary;
 
                 // Update summary text area
-                if (summaryTextArea != null && generatedSummary != null) {
-                    summaryTextArea.setText(generatedSummary.getSummaryText());
-                }
+                if (summaryTextSentimentArea != null && generatedSummary != null) {
+                    summaryTextSentimentArea.setText(TextParser.getCompleteSentimentReport(generatedSummary.getSummaryText()));
 
-                // Update metadata label
-                if (summaryMetadataLabel != null) {
-                    String metadata = formatSummaryMetadata(generatedSummary);
-                    summaryMetadataLabel.setText(metadata);
                 }
 
                 // Change button text to "Regenerate Summary"
-                generateSummaryButton.setText("Regenerate Summary");
+                generateSummarySentimentButton.setText("Regenerate Summary");
 
                 LogUtil.info("Successfully generated AI summary for project: " + currentProject.getName());
 
             } finally {
                 // Re-enable button and hide progress indicator
-                generateSummaryButton.setDisable(false);
-                summaryProgressIndicator.setVisible(false);
+                generateSummarySentimentButton.setDisable(false);
             }
         });
 
         // Handle task failure
         summaryTask.setOnFailed(event -> {
             try {
+
                 Throwable exception = summaryTask.getException();
                 LogUtil.error("AI summary generation failed", exception);
 
@@ -971,8 +1135,80 @@ public class AnalysisController implements Initializable {
 
             } finally {
                 // Re-enable button and hide progress indicator
-                generateSummaryButton.setDisable(false);
-                summaryProgressIndicator.setVisible(false);
+                generateSummarySentimentButton.setDisable(false);
+
+            }
+        });
+
+        // Start the task in a background thread
+        Thread summaryThread = new Thread(summaryTask);
+        summaryThread.setDaemon(true);
+        summaryThread.start();
+    }
+    @FXML
+    private void handleGenerateDamageSummary() {
+        if (currentProject == null || currentProject.getId() == null) {
+            DialogUtil.showError("No Project", "Please select a project before generating a summary.");
+            return;
+        }
+
+        if (aiSummaryService == null) {
+            DialogUtil.showError("Service Unavailable", "AI Summary service is not available.");
+            return;
+        }
+
+        // Disable button and show progress indicator
+        generateSummaryDamageButton.setDisable(true);
+
+        // Create background task for summary generation
+
+        Task<AISummaryDTO> summaryTask = new Task<AISummaryDTO>() {
+            @Override
+            protected AISummaryDTO call() throws Exception {
+                // Call the AI summary service to generate the summary
+                return aiSummaryService.generateProjectSummary(currentProject.getId());
+            }
+        };
+
+        // Handle task success
+        summaryTask.setOnSucceeded(event -> {
+            try {
+                // Get the generated summary
+
+                AISummaryDTO generatedSummary = summaryTask.getValue();
+                currentSummary = generatedSummary;
+
+                // Update summary text area
+
+                if (summaryTextDamageArea != null && generatedSummary != null) {
+                    summaryTextDamageArea.setText(TextParser.getCompleteDamageReport(generatedSummary.getSummaryText()));
+                }
+
+
+                // Change button text to "Regenerate Summary"
+                generateSummaryDamageButton.setText("Regenerate Summary");
+
+                LogUtil.info("Successfully generated AI summary for project: " + currentProject.getName());
+
+            } finally {
+                // Re-enable button and hide progress indicator
+                generateSummaryDamageButton.setDisable(false);
+            }
+        });
+
+        // Handle task failure
+        summaryTask.setOnFailed(event -> {
+            try {
+
+                Throwable exception = summaryTask.getException();
+                LogUtil.error("AI summary generation failed", exception);
+
+                DialogUtil.showError("AI Summary Generation Error", exception.getMessage());
+
+            } finally {
+                // Re-enable button and hide progress indicator
+                generateSummaryDamageButton.setDisable(false);
+
             }
         });
 
@@ -984,16 +1220,16 @@ public class AnalysisController implements Initializable {
 
 
     @FXML
-    private void handleCopySummary() {
+    private void handleCopySentimentSummary() {
         // Check if there is text to copy
-        if (summaryTextArea == null || summaryTextArea.getText() == null || summaryTextArea.getText().trim().isEmpty()) {
-            DialogUtil.showWarning("No Summary", "There is no summary text to copy. Please generate a summary first.");
+        if (summaryTextSentimentArea == null || summaryTextSentimentArea.getText() == null || summaryTextSentimentArea.getText().trim().isEmpty()) {
+            DialogUtil.showWarning("No Sentiment Summary", "There is no summary text to copy. Please generate a summary first.");
             return;
         }
 
         try {
             // Get the summary text
-            String summaryText = summaryTextArea.getText();
+            String summaryText = summaryTextSentimentArea.getText();
 
             // Create clipboard content
             ClipboardContent content = new ClipboardContent();
@@ -1004,16 +1240,46 @@ public class AnalysisController implements Initializable {
             clipboard.setContent(content);
 
             // Show confirmation message
-            DialogUtil.showInformation("Copied", "Summary text has been copied to clipboard.");
+            DialogUtil.showInformation("Copied", "Sentiment Summary text has been copied to clipboard.");
 
-            LogUtil.info("Summary text copied to clipboard");
+            LogUtil.info("Sentiment Summary text copied to clipboard");
 
         } catch (Exception e) {
-            LogUtil.error("Failed to copy summary to clipboard", e);
-            DialogUtil.showError("Copy Failed", "Failed to copy summary text to clipboard.");
+            LogUtil.error("Failed to copy sentiment summary to clipboard", e);
+            DialogUtil.showError("Copy Failed", "Failed to copy sentiment summary text to clipboard.");
         }
     }
 
+    @FXML
+    private void handleCopyDamageSummary() {
+        // Check if there is text to copy
+        if (summaryTextDamageArea == null || summaryTextDamageArea.getText() == null || summaryTextDamageArea.getText().trim().isEmpty()) {
+            DialogUtil.showWarning("No Damage Summary", "There is no Damage summary text to copy. Please generate a summary first.");
+            return;
+        }
+
+        try {
+            // Get the summary text
+            String summaryText = summaryTextDamageArea.getText();
+
+            // Create clipboard content
+            ClipboardContent content = new ClipboardContent();
+            content.putString(summaryText);
+
+            // Copy to system clipboard
+            Clipboard clipboard = Clipboard.getSystemClipboard();
+            clipboard.setContent(content);
+
+            // Show confirmation message
+            DialogUtil.showInformation("Copied", "Damage Summary text has been copied to clipboard.");
+
+            LogUtil.info("Damge Summary text copied to clipboard");
+
+        } catch (Exception e) {
+            LogUtil.error("Failed to copy damage summary to clipboard", e);
+            DialogUtil.showError("Copy Failed", "Failed to copy damage summary text to clipboard.");
+        }
+    }
 
     private String ensureXlsxExtension(String filename) {
         if (filename == null || filename.isEmpty()) {
