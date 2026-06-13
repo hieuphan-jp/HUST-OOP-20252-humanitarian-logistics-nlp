@@ -2864,3 +2864,123 @@ Caused by: java.lang.RuntimeException: Data fetch error on platform REDDIT: Lỗ
 [2026-06-13 17:31:14.634] [INFO] Application shutdown complete
 [2026-06-13 17:31:14.659] [INFO] Shutting down application...
 [2026-06-13 17:31:14.661] [INFO] Application shutdown complete
+[2026-06-13 18:17:22.724] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 18:17:22.726] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 18:17:22.726] [INFO] Starting application with Java version: 25.0.2
+[2026-06-13 18:17:22.733] [INFO] Initializing application...
+[2026-06-13 18:17:22.752] [INFO] Starting application...
+[2026-06-13 18:17:23.038] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 18:17:23.043] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 18:17:25.051] [ERROR] DbContext Static Block Initialization Failed: Failed to initialize pool: Login failed for user 'sa'. ClientConnectionId:0890a2ca-3387-4865-89a0-4f5b735727a8
+[2026-06-13 18:17:25.258] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: Login failed for user 'sa'. ClientConnectionId:51f94161-fef6-44a1-95cb-94f19424703a
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.TDSTokenHandler.onEOF(tdsparser.java:304)
+  at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:137)
+  at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:42)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.sendLogon(SQLServerConnection.java:6612)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.logon(SQLServerConnection.java:5154)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection$LogonCommand.doExecute(SQLServerConnection.java:5087)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3583)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3172)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3014)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1836)
+  at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1246)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+  at com.disaster.analysis.infrastructure.repository.context.DbContext.getRootConnection(DbContext.java:82)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:32)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:87)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1474)
+
+[2026-06-13 18:17:25.278] [INFO] PreprocessingService initialized.
+[2026-06-13 18:17:25.284] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 18:17:25.286] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 18:17:25.288] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 18:17:26.306] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 18:17:26.308] [INFO] DamageClassificationService initialized.
+[2026-06-13 18:17:26.315] [INFO] ExportService initialized successfully.
+[2026-06-13 18:17:26.315] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 18:17:26.399] [ERROR] Load Error: An error occurred while loading projects: Lỗi lấy danh sách dự án: Connection Pool is not initialized.
+[2026-06-13 18:17:32.744] [INFO] Application started successfully
+[2026-06-13 18:17:34.809] [INFO] Shutting down application...
+[2026-06-13 18:17:34.810] [INFO] Application shutdown complete
+[2026-06-13 18:17:34.834] [INFO] Shutting down application...
+[2026-06-13 18:17:34.837] [INFO] Application shutdown complete
+[2026-06-13 18:17:52.169] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 18:17:52.169] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 18:17:52.171] [INFO] Starting application with Java version: 25.0.2
+[2026-06-13 18:17:52.175] [INFO] Initializing application...
+[2026-06-13 18:17:52.191] [INFO] Starting application...
+[2026-06-13 18:17:52.437] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 18:17:52.439] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 18:17:53.116] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 18:17:53.517] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 18:17:53.524] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 18:17:53.526] [WARN] Execution paused: schema.sql not found. Application will boot with an empty database state.
+[2026-06-13 18:17:53.538] [INFO] PreprocessingService initialized.
+[2026-06-13 18:17:53.543] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 18:17:53.545] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 18:17:53.546] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 18:17:54.313] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 18:17:54.315] [INFO] DamageClassificationService initialized.
+[2026-06-13 18:17:54.323] [INFO] ExportService initialized successfully.
+[2026-06-13 18:17:54.323] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 18:17:55.036] [INFO] Application started successfully
+[2026-06-13 18:18:04.480] [INFO] DataCollectionController initialize ...
+[2026-06-13 18:18:04.485] [INFO] Loading collected posts and comments for project ID: 4
+[2026-06-13 18:18:12.531] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 18:18:22.007] [INFO] Starting damage classification for 46 posts in project 4
+[2026-06-13 18:19:38.471] [INFO] Analysis Complete: Damage classification completed! Classified 46 posts and 1559 comments
+[2026-06-13 18:19:46.570] [INFO] Bắt đầu thu thập số liệu để tạo báo cáo AI cho dự án ID: 4
+[2026-06-13 18:20:11.670] [INFO] Starting sentiment analysis for 46 posts in project 4
+[2026-06-13 18:20:11.752] [INFO] Đang chờ AI phân tích và viết báo cáo...
+[2026-06-13 18:20:11.777] [INFO] Successfully generated AI summary for project: yagi
+[2026-06-13 18:20:36.830] [INFO] Starting sentiment analysis for 1559 comments in project 4
+[2026-06-13 18:21:02.814] [INFO] Analysis Complete: Analysis completed for both posts and comments
+[2026-06-13 18:22:19.669] [INFO] Shutting down application...
+[2026-06-13 18:22:19.669] [INFO] Application shutdown complete
+[2026-06-13 18:22:19.692] [INFO] Shutting down application...
+[2026-06-13 18:22:19.693] [INFO] Application shutdown complete
+[2026-06-13 22:11:37.305] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 22:11:37.307] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 22:11:37.309] [INFO] Starting application with Java version: 25.0.2
+[2026-06-13 22:11:37.313] [INFO] Initializing application...
+[2026-06-13 22:11:37.330] [INFO] Starting application...
+[2026-06-13 22:11:37.696] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 22:11:37.698] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 22:11:38.584] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 22:11:39.084] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 22:11:39.093] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 22:11:39.094] [WARN] Execution paused: schema.sql not found. Application will boot with an empty database state.
+[2026-06-13 22:11:39.108] [INFO] PreprocessingService initialized.
+[2026-06-13 22:11:39.112] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 22:11:39.114] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 22:11:39.118] [INFO] Initialized API clients for 2 platforms
+[2026-06-13 22:11:40.110] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 22:11:40.113] [INFO] DamageClassificationService initialized.
+[2026-06-13 22:11:40.127] [INFO] ExportService initialized successfully.
+[2026-06-13 22:11:40.127] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 22:11:41.127] [INFO] Application started successfully
+[2026-06-13 22:11:48.462] [INFO] Starting sentiment analysis for 0 posts in project 3
+[2026-06-13 22:11:48.478] [INFO] Starting sentiment analysis for 0 comments in project 3
+[2026-06-13 22:11:48.503] [INFO] Analysis Complete: Analysis completed for both posts and comments
+[2026-06-13 22:11:55.322] [INFO] Loaded existing AI summary for project: yagi
+[2026-06-13 22:11:57.697] [INFO] Starting sentiment analysis for 46 posts in project 4
+[2026-06-13 22:12:23.083] [INFO] Starting sentiment analysis for 1559 comments in project 4
+[2026-06-13 22:12:49.279] [INFO] Analysis Complete: Analysis completed for both posts and comments

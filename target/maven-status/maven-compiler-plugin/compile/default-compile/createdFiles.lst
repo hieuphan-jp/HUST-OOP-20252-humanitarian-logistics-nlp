@@ -1,4 +1,5 @@
 com\disaster\analysis\application\dto\AISummaryDTO.class
+com\disaster\analysis\ui\controller\AnalysisController$8.class
 com\disaster\analysis\application\services\PreprocessingService.class
 com\disaster\analysis\application\services\SentimentAnalysisService$1.class
 com\disaster\analysis\application\mapper\PostMapper.class
@@ -30,6 +31,7 @@ com\disaster\analysis\util\DateTimeUtil$1.class
 com\disaster\analysis\infrastructure\analysis\VietnameseSentimentAnalyzer.class
 com\disaster\analysis\infrastructure\repository\SqlServerDatabaseInitializerImpl.class
 com\disaster\analysis\infrastructure\export\XlsxExporter.class
+com\disaster\analysis\ui\controller\AnalysisController$7.class
 com\disaster\analysis\infrastructure\ai\OpenAIClient.class
 com\disaster\analysis\domain\contract\repository\ProjectRepository.class
 com\disaster\analysis\util\LogUtil.class
@@ -59,6 +61,7 @@ com\disaster\analysis\application\services\DamageClassificationService.class
 com\disaster\analysis\ui\controller\MainController.class
 com\disaster\analysis\domain\contract\social\DataSource.class
 com\disaster\analysis\domain\model\entities\Project.class
+com\disaster\analysis\ui\controller\AnalysisController$9.class
 com\disaster\analysis\application\mapper\AISummaryMapper.class
 com\disaster\analysis\infrastructure\preprocessing\TextPreprocessorImpl.class
 com\disaster\analysis\domain\exception\DatabaseException.class

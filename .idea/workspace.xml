@@ -5,10 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="721804f1-5197-47ba-a4c1-2bdbf363e181" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/disaster_analysis.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/disaster_analysis.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/AnalysisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/AnalysisController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/dto/DamageClassificationDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/dto/DamageClassificationDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/dto/SentimentResultDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/dto/SentimentResultDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/AISummaryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/AISummaryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/DamageClassificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/DamageClassificationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/DataCollectionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/DataCollectionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/PreprocessingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/PreprocessingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/analysis/KeywordDamageClassifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/analysis/KeywordDamageClassifier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/analysis/VietnameseSentimentAnalyzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/analysis/VietnameseSentimentAnalyzer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/export/XlsxExporter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/export/XlsxExporter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/social/MockDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/social/MockDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/DataCollectionController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/DataCollectionController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/DataCollectionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/DataCollectionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/ProjectFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/ProjectFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/ProjectListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/ProjectListController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/navigation/Navigator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/navigation/Navigator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,33 +146,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TestViewMain.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.disaster-social-analysis [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;UI2/Hoang&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/hoang/OOP.Project.Nhom2&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.TestViewMain.executor": "Run",
+    "Maven.disaster-social-analysis [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "UI2/Hoang",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/OOP.Project.Nhom2/pom.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.disaster.analysis.Main" />
@@ -201,6 +223,10 @@
       <workItem from="1781195194422" duration="5871000" />
       <workItem from="1781271337090" duration="9373000" />
       <workItem from="1781338708824" duration="7587000" />
+      <workItem from="1781362137306" duration="1128000" />
+      <workItem from="1781366838732" duration="3518000" />
+      <workItem from="1781371073084" duration="17000" />
+      <workItem from="1781371483558" duration="32000" />
     </task>
     <servers />
   </component>

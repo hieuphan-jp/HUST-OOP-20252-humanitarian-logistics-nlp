@@ -4,7 +4,6 @@ import com.disaster.analysis.application.dto.AISummaryDTO;
 import com.disaster.analysis.application.dto.CommentDTO;
 import com.disaster.analysis.application.dto.PostDTO;
 import com.disaster.analysis.application.dto.ProjectDTO;
-import com.disaster.analysis.application.mapper.AISummaryMapper;
 import com.disaster.analysis.application.mapper.ProjectMapper;
 import com.disaster.analysis.application.services.AISummaryService;
 import com.disaster.analysis.application.services.DamageClassificationService;
