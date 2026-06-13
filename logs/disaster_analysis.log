@@ -341,3 +341,327 @@ Stack trace:
 [2026-06-13 21:54:38.750] [INFO] Application shutdown complete
 [2026-06-13 21:54:38.775] [INFO] Shutting down application...
 [2026-06-13 21:54:38.776] [INFO] Application shutdown complete
+[2026-06-14 00:45:08.113] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-14 00:45:08.119] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-14 00:45:08.122] [INFO] Starting application with Java version: 25.0.2
+[2026-06-14 00:45:08.128] [INFO] Initializing application...
+[2026-06-14 00:45:08.166] [INFO] Starting application...
+[2026-06-14 00:45:08.745] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-14 00:45:08.747] [INFO] Database startup and verification sequence initiated.
+[2026-06-14 00:45:09.941] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: Login failed for user 'sa'. ClientConnectionId:5f74ebd0-dd80-4a6e-9fe2-8c68d62b95f0
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.TDSTokenHandler.onEOF(tdsparser.java:304)
+  at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:137)
+  at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:42)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.sendLogon(SQLServerConnection.java:6612)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.logon(SQLServerConnection.java:5154)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection$LogonCommand.doExecute(SQLServerConnection.java:5087)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3583)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3172)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3014)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1836)
+  at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1246)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+  at com.disaster.analysis.infrastructure.repository.context.DbContext.getRootConnection(DbContext.java:83)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:32)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:88)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1474)
+
+[2026-06-14 00:45:11.457] [ERROR] Failed to start application - Exception: javafx.fxml.LoadException: 
+/D:/OOP.Project.Nhom2/target/classes/fxml/main.fxml
+
+Stack trace:
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2722)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2700)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Login failed for user 'sa'. ClientConnectionId:53a7e483-4804-4566-8ec5-ef058714cf7c
+  at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:584)
+  at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:571)
+  at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+  at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:80)
+  at com.disaster.analysis.infrastructure.repository.context.DbContext.initConnectionPool(DbContext.java:65)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:89)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1474)
+
+[2026-06-14 00:45:11.472] [INFO] Shutting down application...
+[2026-06-14 00:45:11.473] [INFO] Application shutdown complete
+[2026-06-14 00:45:11.490] [ERROR] Fatal error during application launch - Exception: java.lang.RuntimeException: Exception in Application start method
+Stack trace:
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.launchApplication1(LauncherImpl.java:893)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication$2(LauncherImpl.java:196)
+  at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: javafx.fxml.LoadException: 
+/D:/OOP.Project.Nhom2/target/classes/fxml/main.fxml
+
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2722)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2700)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1474)
+
+[2026-06-14 00:46:09.452] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-14 00:46:09.455] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-14 00:46:09.456] [INFO] Starting application with Java version: 25.0.2
+[2026-06-14 00:46:09.462] [INFO] Initializing application...
+[2026-06-14 00:46:09.495] [INFO] Starting application...
+[2026-06-14 00:46:09.875] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-14 00:46:09.880] [INFO] Database startup and verification sequence initiated.
+[2026-06-14 00:46:10.994] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: Login failed for user 'sa'. ClientConnectionId:2cfd1049-c4f2-4a56-a5f0-df339a514e62
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.TDSTokenHandler.onEOF(tdsparser.java:304)
+  at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:137)
+  at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:42)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.sendLogon(SQLServerConnection.java:6612)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.logon(SQLServerConnection.java:5154)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection$LogonCommand.doExecute(SQLServerConnection.java:5087)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3583)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3172)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3014)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1836)
+  at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1246)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+  at com.disaster.analysis.infrastructure.repository.context.DbContext.getRootConnection(DbContext.java:83)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:32)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:88)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1474)
+
+[2026-06-14 00:46:12.433] [ERROR] Failed to start application - Exception: javafx.fxml.LoadException: 
+/D:/OOP.Project.Nhom2/target/classes/fxml/main.fxml
+
+Stack trace:
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2722)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2700)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Login failed for user 'sa'. ClientConnectionId:42a6c313-ccf7-4430-92a9-c982b23d35c4
+  at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:584)
+  at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:571)
+  at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+  at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:80)
+  at com.disaster.analysis.infrastructure.repository.context.DbContext.initConnectionPool(DbContext.java:65)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:89)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1474)
+
+[2026-06-14 00:46:12.437] [INFO] Shutting down application...
+[2026-06-14 00:46:12.437] [INFO] Application shutdown complete
+[2026-06-14 00:46:12.450] [ERROR] Fatal error during application launch - Exception: java.lang.RuntimeException: Exception in Application start method
+Stack trace:
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.launchApplication1(LauncherImpl.java:893)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication$2(LauncherImpl.java:196)
+  at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: javafx.fxml.LoadException: 
+/D:/OOP.Project.Nhom2/target/classes/fxml/main.fxml
+
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2722)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2700)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1474)
+
+[2026-06-14 00:47:02.958] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-14 00:47:02.959] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-14 00:47:02.960] [INFO] Starting application with Java version: 25.0.2
+[2026-06-14 00:47:02.964] [INFO] Initializing application...
+[2026-06-14 00:47:02.992] [INFO] Starting application...
+[2026-06-14 00:47:03.395] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-14 00:47:03.397] [INFO] Database startup and verification sequence initiated.
+[2026-06-14 00:47:04.431] [ERROR] Critical failure encountered during target database initialization flow! - Exception: com.microsoft.sqlserver.jdbc.SQLServerException: Login failed for user 'sa'. ClientConnectionId:3657b651-cb68-41cc-8dd5-76dc665ce5a3
+Stack trace:
+  at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:259)
+  at com.microsoft.sqlserver.jdbc.TDSTokenHandler.onEOF(tdsparser.java:304)
+  at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:137)
+  at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:42)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.sendLogon(SQLServerConnection.java:6612)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.logon(SQLServerConnection.java:5154)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection$LogonCommand.doExecute(SQLServerConnection.java:5087)
+  at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7675)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4137)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3583)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3172)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3014)
+  at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1836)
+  at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1246)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+  at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+  at com.disaster.analysis.infrastructure.repository.context.DbContext.getRootConnection(DbContext.java:83)
+  at com.disaster.analysis.infrastructure.repository.SqlServerDatabaseInitializerImpl.initialize(SqlServerDatabaseInitializerImpl.java:32)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:88)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1474)
+
+[2026-06-14 00:47:05.825] [ERROR] Failed to start application - Exception: javafx.fxml.LoadException: 
+/D:/OOP.Project.Nhom2/target/classes/fxml/main.fxml
+
+Stack trace:
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2722)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2700)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Login failed for user 'sa'. ClientConnectionId:50041a68-d3e3-4d12-bfb4-e0deec269b43
+  at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:584)
+  at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:571)
+  at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+  at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:80)
+  at com.disaster.analysis.infrastructure.repository.context.DbContext.initConnectionPool(DbContext.java:65)
+  at com.disaster.analysis.config.ApplicationContext.initialize(ApplicationContext.java:89)
+  at com.disaster.analysis.ui.controller.MainController.initialize(MainController.java:27)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1474)
+
+[2026-06-14 00:47:05.831] [INFO] Shutting down application...
+[2026-06-14 00:47:05.832] [INFO] Application shutdown complete
+[2026-06-14 00:47:05.839] [ERROR] Fatal error during application launch - Exception: java.lang.RuntimeException: Exception in Application start method
+Stack trace:
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.launchApplication1(LauncherImpl.java:893)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication$2(LauncherImpl.java:196)
+  at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: javafx.fxml.LoadException: 
+/D:/OOP.Project.Nhom2/target/classes/fxml/main.fxml
+
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2722)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2700)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+  at javafx.fxml@21.0.5/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2531)
+  at com.disaster.analysis.Main.start(Main.java:29)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:839)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:483)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+  at java.base/java.security.AccessController.doPrivileged(AccessController.java:138)
+  at javafx.graphics@21.0.5/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+  at javafx.graphics@21.0.5/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+  at java.base/java.lang.Thread.run(Thread.java:1474)
+
