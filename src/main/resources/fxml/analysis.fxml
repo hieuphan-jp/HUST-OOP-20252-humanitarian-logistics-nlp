@@ -84,6 +84,10 @@
                     </padding>
                     <VBox spacing="15" HBox.hgrow="ALWAYS" styleClass="card-dark">
                         <HBox spacing="10" alignment="CENTER_LEFT">
+                            <ComboBox fx:id="categoryFilterComboBox" promptText="Category" prefWidth="150"
+                                      onAction="#handleCategoryFilterChange"/>
+                            <ComboBox fx:id="contentTypeFilterComboBox" promptText="Type" prefWidth="100"
+                                      onAction="#handleContentTypeFilterChange"/>
                             <Region HBox.hgrow="ALWAYS"/>
                             <Button fx:id="runDamageButton" text="🔍 Run Damage Analysis"
                                     onAction="#handleRunDamageAnalysis" styleClass="btn-warning-orange"/>

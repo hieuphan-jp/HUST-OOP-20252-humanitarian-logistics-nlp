@@ -20,7 +20,6 @@ import com.disaster.analysis.ui.util.DialogUtil;
 import com.disaster.analysis.util.LogUtil;
 import com.disaster.analysis.util.TextParser;
 import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -101,7 +100,6 @@ public class AnalysisController implements Initializable {
     @FXML
     private TextArea summaryTextSentimentArea;
 
-
     // Services
     private SentimentAnalysisService sentimentService;
     private DamageClassificationService damageService;
@@ -112,9 +110,10 @@ public class AnalysisController implements Initializable {
     private ProjectDTO currentProject;
     private AISummaryDTO currentSummary;
     private TimeGranularity currentGranularity = TimeGranularity.DAILY;
+    private DamageCategory currentCategoryFilter = null;
+    private String currentContentTypeFilter = "All"; // "All", "Posts", "Comments"
     private Navigator navigator;
     private ApplicationContext applicationContext;
-
 
 
     public AnalysisController() {
@@ -333,6 +332,7 @@ public class AnalysisController implements Initializable {
             runDamageButton.setText("Run Damage Analysis");
             String result = analysisTask.getValue();
             updateDamageChart();
+            updateSamplePosts();
             DialogUtil.showInformation("Analysis Complete",
                     "Damage classification completed! " + result);
         });
@@ -475,6 +475,122 @@ public class AnalysisController implements Initializable {
         } catch (Exception e) {
             LogUtil.error("Failed to update damage chart", e);
             DialogUtil.showError("Chart Update Failed", "Failed to update damage chart");
+        }
+    }
+
+
+    @FXML
+    private void handleCategoryFilterChange() {
+        String selected = categoryFilterComboBox.getValue();
+
+        if (selected == null) {
+            return;
+        }
+
+        // Map selection to DamageCategory enum
+        if (selected.equals("All Categories")) {
+            currentCategoryFilter = null;
+        } else {
+            for (DamageCategory category : DamageCategory.values()) {
+                if (category.getDisplayName().equals(selected)) {
+                    currentCategoryFilter = category;
+                    break;
+                }
+            }
+        }
+
+        // Update sample posts list
+        updateSamplePosts();
+    }
+
+
+    @FXML
+    private void handleContentTypeFilterChange() {
+        String selected = contentTypeFilterComboBox.getValue();
+
+        if (selected == null) {
+            return;
+        }
+
+        currentContentTypeFilter = selected;
+
+        // Update sample posts list
+        updateSamplePosts();
+    }
+
+
+    private void updateSamplePosts() {
+        if (currentProject == null || currentProject.getId() == null) {
+            return;
+        }
+
+        try {
+            List<String> formattedItems = new ArrayList<>();
+            int postCount = 0;
+            int commentCount = 0;
+
+            // Fetch and format posts if needed
+            if ("All".equals(currentContentTypeFilter) || "Posts".equals(currentContentTypeFilter)) {
+                List<PostDTO> posts;
+
+                if (currentCategoryFilter == null) {
+                    // Show all posts - use ProjectService to get DTOs
+                    posts = applicationContext.getProjectService().getPostsByProjectId(currentProject.getId());
+                } else {
+                    // Show posts for selected category
+                    posts = damageService.getPostsByCategory(currentProject.getId(), currentCategoryFilter);
+                }
+
+                postCount = posts.size();
+
+                // Format posts for display
+                formattedItems.addAll(posts.stream()
+                        .map(this::formatPostForDisplay)
+                        .toList());
+            }
+
+            // Fetch and format comments if needed
+            if ("All".equals(currentContentTypeFilter) || "Comments".equals(currentContentTypeFilter)) {
+                List<CommentDTO> comments;
+
+                if (currentCategoryFilter == null) {
+                    // Show all comments - use ProjectService to get DTOs
+                    comments = applicationContext.getProjectService().getCommentsByProjectId(currentProject.getId());
+                } else {
+                    // Show comments for selected category
+                    comments = damageService.getCommentsByCategory(currentProject.getId(), currentCategoryFilter);
+                }
+
+                commentCount = comments.size();
+
+                // Format comments for display
+                formattedItems.addAll(comments.stream()
+                        .map(this::formatCommentForDisplay)
+                        .toList());
+            }
+
+            // Update ListView
+            // samplePostsListView.setItems(FXCollections.observableArrayList(formattedItems));
+
+            // Update count label
+            String filterText = currentCategoryFilter != null
+                    ? " in " + currentCategoryFilter.getDisplayName()
+                    : "";
+
+            String countText;
+            if ("All".equals(currentContentTypeFilter)) {
+                countText = String.format("(%d posts, %d comments%s)", postCount, commentCount, filterText);
+            } else if ("Posts".equals(currentContentTypeFilter)) {
+                countText = String.format("(%d posts%s)", postCount, filterText);
+            } else {
+                countText = String.format("(%d comments%s)", commentCount, filterText);
+            }
+
+            //samplePostsCountLabel.setText(countText);
+
+        } catch (Exception e) {
+            LogUtil.error("Failed to update sample posts", e);
+            DialogUtil.showError("Update Failed", "Failed to update sample posts list");
         }
     }
 
