@@ -7,40 +7,8 @@
     <list default="true" id="721804f1-5197-47ba-a4c1-2bdbf363e181" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/disaster_analysis.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/disaster_analysis.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/infrastructure/ai/MockAIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/infrastructure/ai/MockAIClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/infrastructure/repository/context/DbContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/infrastructure/repository/context/DbContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/AnalysisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/AnalysisController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/ProjectListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/ui/controller/ProjectListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/util/TextParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/disaster/analysis/util/TextParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/analysis.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/analysis.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/project-list.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/project-list.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/dto/DamageClassificationDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/dto/DamageClassificationDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/dto/SentimentResultDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/dto/SentimentResultDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/AISummaryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/AISummaryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/DamageClassificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/DamageClassificationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/DataCollectionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/DataCollectionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/PreprocessingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/application/services/PreprocessingService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/ai/MockAIClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/ai/MockAIClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/analysis/KeywordDamageClassifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/analysis/KeywordDamageClassifier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/analysis/VietnameseSentimentAnalyzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/analysis/VietnameseSentimentAnalyzer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/export/XlsxExporter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/export/XlsxExporter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/repository/context/DbContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/repository/context/DbContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/social/MockDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/infrastructure/social/MockDataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/AnalysisController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/ProjectListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/controller/ProjectListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/navigation/Navigator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/ui/navigation/Navigator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/disaster/analysis/util/TextParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/disaster/analysis/util/TextParser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/schema.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/analysis.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/analysis.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/project-list.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/project-list.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,61 +55,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="2.163510286289151" />
-      <entry key="MS500" value="4.385429560703578" />
-      <entry key="S2" value="5.541469736569246" />
-      <entry key="S5" value="7.478719633164154" />
-      <entry key="S10" value="13.082922048203558" />
-      <entry key="S30" value="43.76166476420616" />
-      <entry key="S60" value="100.09510002809279" />
-      <entry key="M2" value="187.60216777938626" />
-      <entry key="M5" value="343.10542435672363" />
-      <entry key="M10" value="509.1182976883808" />
-      <entry key="M15" value="629.0331284222093" />
-      <entry key="M30" value="866.9039169545108" />
-      <entry key="H1" value="1127.0594149847057" />
-      <entry key="H2" value="1362.8609355969072" />
-      <entry key="H4" value="1534.8078043652233" />
-      <entry key="D1" value="1721.550513236854" />
-      <entry key="W1" value="1758.6517207221746" />
+      <entry key="MS100" value="1.4807234086501342" />
+      <entry key="MS500" value="2.5106666837523424" />
+      <entry key="S2" value="7.14558814606397" />
+      <entry key="S5" value="18.36410136640629" />
+      <entry key="S10" value="36.06520266622541" />
+      <entry key="S30" value="98.5061372161457" />
+      <entry key="S60" value="150.8362352281738" />
+      <entry key="M2" value="193.64529241545753" />
+      <entry key="M5" value="236.80735306010956" />
+      <entry key="M10" value="323.7832691774477" />
+      <entry key="M15" value="433.0778463847191" />
+      <entry key="M30" value="723.6303964870406" />
+      <entry key="H1" value="1085.492873227181" />
+      <entry key="H2" value="1425.3852577591272" />
+      <entry key="H4" value="1677.4349771941597" />
+      <entry key="D1" value="1954.8915426726116" />
+      <entry key="W1" value="2010.4741964469301" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="6.695219511775052E-204" />
-      <entry key="S10" value="2.5875122244686665E-102" />
-      <entry key="S30" value="1.3728638521325586E-34" />
-      <entry key="S60" value="1.1716927526350331E-17" />
-      <entry key="M2" value="3.4234817622846057E-9" />
-      <entry key="M5" value="4.228344176430404E-4" />
-      <entry key="M10" value="0.024146392675466734" />
-      <entry key="M15" value="0.10592057804873732" />
-      <entry key="M30" value="0.632301127294669" />
-      <entry key="H1" value="2.052471214508704" />
-      <entry key="H2" value="4.129232986885117" />
-      <entry key="H4" value="6.035849432373874" />
-      <entry key="D1" value="8.408838364709721" />
-      <entry key="W1" value="8.912777240086879" />
+      <entry key="S5" value="1.824842910293861E-298" />
+      <entry key="S10" value="1.3508674658506524E-149" />
+      <entry key="S30" value="2.3816114747549874E-50" />
+      <entry key="S60" value="1.5432470862453322E-25" />
+      <entry key="M2" value="3.928971509834057E-13" />
+      <entry key="M5" value="1.122263077737208E-5" />
+      <entry key="M10" value="0.003933819521475336" />
+      <entry key="M15" value="0.03159524958105483" />
+      <entry key="M30" value="0.34533824703256916" />
+      <entry key="H1" value="1.5168318419502933" />
+      <entry key="H2" value="3.5497647227651923" />
+      <entry key="H4" value="5.596332220493236" />
+      <entry key="D1" value="8.303544541023674" />
+      <entry key="W1" value="8.896747575285245" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="2.0586416256636446" />
-      <entry key="MS500" value="4.333189649022262" />
-      <entry key="S2" value="5.5248448408964945" />
-      <entry key="S5" value="7.470346518305147" />
-      <entry key="S10" value="13.076395576842577" />
-      <entry key="S30" value="43.75534629476991" />
-      <entry key="S60" value="100.08811863221578" />
-      <entry key="M2" value="187.5956955671544" />
-      <entry key="M5" value="343.10109470043653" />
-      <entry key="M10" value="509.1387909659304" />
-      <entry key="M15" value="629.135797298068" />
-      <entry key="M30" value="867.5329548277203" />
-      <entry key="H1" value="1129.108016403715" />
-      <entry key="H2" value="1366.986427341486" />
-      <entry key="H4" value="1540.840899536988" />
-      <entry key="D1" value="1729.9587013039338" />
-      <entry key="W1" value="1767.564399133614" />
+      <entry key="MS100" value="1.4263982646958933" />
+      <entry key="MS500" value="2.493050021914867" />
+      <entry key="S2" value="7.132585730745755" />
+      <entry key="S5" value="18.35021368255663" />
+      <entry key="S10" value="36.05126979205776" />
+      <entry key="S30" value="98.49274773484909" />
+      <entry key="S60" value="150.8257602885083" />
+      <entry key="M2" value="193.6384948344545" />
+      <entry key="M5" value="236.80402053558797" />
+      <entry key="M10" value="323.78490268092656" />
+      <entry key="M15" value="433.10731238339014" />
+      <entry key="M30" value="723.9733612776405" />
+      <entry key="H1" value="1087.0065466461713" />
+      <entry key="H2" value="1428.9316562477015" />
+      <entry key="H4" value="1683.0286805205844" />
+      <entry key="D1" value="1963.1944325008199" />
+      <entry key="W1" value="2019.3708435766603" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -232,7 +200,7 @@
       <workItem from="1781109716347" duration="379000" />
       <workItem from="1781195194422" duration="5871000" />
       <workItem from="1781271337090" duration="9373000" />
-      <workItem from="1781338708824" duration="6486000" />
+      <workItem from="1781338708824" duration="7587000" />
     </task>
     <servers />
   </component>

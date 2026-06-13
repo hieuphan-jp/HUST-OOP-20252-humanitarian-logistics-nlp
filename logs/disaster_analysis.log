@@ -2819,3 +2819,48 @@ Caused by: java.lang.RuntimeException: Data fetch error on platform REDDIT: Lỗ
 [2026-06-13 17:08:21.198] [INFO] Application shutdown complete
 [2026-06-13 17:08:21.212] [INFO] Shutting down application...
 [2026-06-13 17:08:21.213] [INFO] Application shutdown complete
+[2026-06-13 17:25:20.444] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 17:25:20.445] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 17:25:20.446] [INFO] Starting application with Java version: 21.0.11
+[2026-06-13 17:25:20.449] [INFO] Initializing application...
+[2026-06-13 17:25:20.467] [INFO] Starting application...
+[2026-06-13 17:25:20.690] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 17:25:20.692] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 17:25:21.778] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 17:25:22.351] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 17:25:22.362] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 17:25:22.364] [WARN] Execution paused: schema.sql not found. Application will boot with an empty database state.
+[2026-06-13 17:25:22.383] [INFO] PreprocessingService initialized.
+[2026-06-13 17:25:22.388] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 17:25:22.636] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 17:25:22.638] [INFO] Initialized API clients for 3 platforms
+[2026-06-13 17:25:23.321] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 17:25:23.324] [INFO] DamageClassificationService initialized.
+[2026-06-13 17:25:23.330] [INFO] ExportService initialized successfully.
+[2026-06-13 17:25:23.331] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 17:25:24.004] [INFO] Application started successfully
+[2026-06-13 17:30:10.711] [INFO] Hệ thống ghi nhật ký (Logging System) đã được khởi động.
+[2026-06-13 17:30:10.713] [INFO] === Disaster Social Media Analysis Application ===
+[2026-06-13 17:30:10.713] [INFO] Starting application with Java version: 21.0.11
+[2026-06-13 17:30:10.717] [INFO] Initializing application...
+[2026-06-13 17:30:10.735] [INFO] Starting application...
+[2026-06-13 17:30:10.986] [INFO] Starting ApplicationContext initialization pipeline...
+[2026-06-13 17:30:10.988] [INFO] Database startup and verification sequence initiated.
+[2026-06-13 17:30:15.292] [INFO] HikariCP Connection Pool initialized successfully.
+[2026-06-13 17:30:16.923] [INFO] Database [Disaster] already exists. Skipping database creation step.
+[2026-06-13 17:30:16.932] [INFO] Reading schema.sql from system resources to verify entity tables...
+[2026-06-13 17:30:16.932] [WARN] Execution paused: schema.sql not found. Application will boot with an empty database state.
+[2026-06-13 17:30:16.948] [INFO] PreprocessingService initialized.
+[2026-06-13 17:30:16.953] [WARN] YouTube API Key missing. Falling back to MockDataSource.
+[2026-06-13 17:30:17.198] [INFO] NewsDataSource initialized with Two-Step Scraping Strategy for 4 sources.
+[2026-06-13 17:30:17.200] [INFO] Initialized API clients for 3 platforms
+[2026-06-13 17:30:17.932] [INFO] SentimentAnalysisService initialized.
+[2026-06-13 17:30:17.935] [INFO] DamageClassificationService initialized.
+[2026-06-13 17:30:17.943] [INFO] ExportService initialized successfully.
+[2026-06-13 17:30:17.944] [INFO] ApplicationContext initialized successfully. All dependencies wired up.
+[2026-06-13 17:30:18.683] [INFO] Application started successfully
+[2026-06-13 17:30:22.984] [INFO] Loaded existing AI summary for project: bualoi
+[2026-06-13 17:31:14.633] [INFO] Shutting down application...
+[2026-06-13 17:31:14.634] [INFO] Application shutdown complete
+[2026-06-13 17:31:14.659] [INFO] Shutting down application...
+[2026-06-13 17:31:14.661] [INFO] Application shutdown complete

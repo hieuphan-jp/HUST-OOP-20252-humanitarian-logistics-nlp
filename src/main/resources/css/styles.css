@@ -355,6 +355,22 @@
 .date-picker-custom {
     -fx-control-inner-background: #1e293b;
 }
+.date-picker-popup .month-year-pane {
+    -fx-background-color: white;
+}
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: black;
+}
+.date-picker-popup .spinner .label {
+    -fx-text-fill: black;
+}
+.date-picker-popup .spinner .button {
+    -fx-background-color: white;
+}
+.date-picker-popup .spinner .button .left-arrow,
+.date-picker-popup .spinner .button .right-arrow {
+    -fx-background-color: #334155;
+}
 
 .progress-bar-custom {
     -fx-accent: #38bdf8;
