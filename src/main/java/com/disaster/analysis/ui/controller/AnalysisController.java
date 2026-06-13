@@ -38,10 +38,14 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import javafx.collections.ObservableList;
+import javafx.util.StringConverter;
 
 public class AnalysisController implements Initializable {
 
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+    private static final String POSITIVE_COLOR = "#10b981";
+    private static final String NEUTRAL_COLOR = "#d9a014";
+    private static final String NEGATIVE_COLOR = "#ef4444";
 
     // Project Info Labels
     @FXML
@@ -176,6 +180,17 @@ public class AnalysisController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         // Initialize time granularity combo box
         timeGranularityComboBox.setItems(FXCollections.observableArrayList(TimeGranularity.values()));
+        timeGranularityComboBox.setConverter(new StringConverter<>() {
+            @Override
+            public String toString(TimeGranularity granularity) {
+                return granularity == null ? "" : formatGranularity(granularity);
+            }
+
+            @Override
+            public TimeGranularity fromString(String value) {
+                return TimeGranularity.valueOf(value.toUpperCase(Locale.ENGLISH));
+            }
+        });
         timeGranularityComboBox.setValue(TimeGranularity.DAILY);
 
         // Initialize category filter combo box with "All Categories" option
@@ -205,6 +220,8 @@ public class AnalysisController implements Initializable {
             summaryTextDamageArea.setEditable(false);
             summaryTextDamageArea.setWrapText(true);
         }
+
+        configureSentimentChartAxes();
 
         timeGranularityComboBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
@@ -367,10 +384,7 @@ public class AnalysisController implements Initializable {
             // Clear existing data
             sentimentChart.getData().clear();
 
-            if (sentimentChart.getXAxis() instanceof CategoryAxis xAxis) {
-                xAxis.setTickLabelsVisible(false);
-                xAxis.setTickMarkVisible(false);
-            }
+            configureSentimentChartAxes();
 
             // Create series for each sentiment type
             XYChart.Series<String, Number> positiveSeries = new XYChart.Series<>();
@@ -410,6 +424,7 @@ public class AnalysisController implements Initializable {
             sentimentChart.getData().add(positiveSeries);
             sentimentChart.getData().add(neutralSeries);
             sentimentChart.getData().add(negativeSeries);
+            applySentimentSeriesColors(positiveSeries, neutralSeries, negativeSeries);
 
             // Update statistics labels
             positiveCountLabel.setText(String.valueOf(totalPositive));
@@ -423,18 +438,44 @@ public class AnalysisController implements Initializable {
     }
 
 
+    private void applySentimentSeriesColors(XYChart.Series<String, Number> positiveSeries,
+                                            XYChart.Series<String, Number> neutralSeries,
+                                            XYChart.Series<String, Number> negativeSeries) {
+        javafx.application.Platform.runLater(() -> {
+            styleLineSeries(positiveSeries, POSITIVE_COLOR);
+            styleLineSeries(neutralSeries, NEUTRAL_COLOR);
+            styleLineSeries(negativeSeries, NEGATIVE_COLOR);
+        });
+    }
+
+
+    private void styleLineSeries(XYChart.Series<String, Number> series, String color) {
+        if (series.getNode() != null) {
+            series.getNode().setStyle("-fx-stroke: " + color + ";");
+        }
+
+        for (XYChart.Data<String, Number> data : series.getData()) {
+            if (data.getNode() != null) {
+                data.getNode().setStyle("-fx-background-color: " + color + ", white;");
+            }
+        }
+    }
+
+
     private void updateDamageChart() {
         if (currentProject == null || currentProject.getId() == null) {
             return;
         }
 
         try {
-            // Get damage category distribution
+            // Get damage category distribution using the currently selected filters.
             Map<DamageCategory, Long> distribution =
-                    damageService.getDamageCategoryDistribution(currentProject.getId());
+                    getFilteredDamageCategoryDistribution(currentProject.getId());
 
             // Clear existing data
             damageChart.getData().clear();
+            damageChart.setBarGap(4);
+            configureDamageChartAxes();
 
             // Create series for damage categories
             XYChart.Series<String, Number> series = new XYChart.Series<>();
@@ -444,14 +485,12 @@ public class AnalysisController implements Initializable {
             List<Map.Entry<DamageCategory, Long>> sortedEntries = distribution.entrySet().stream()
                     .sorted(Map.Entry.<DamageCategory, Long>comparingByValue().reversed())
                     .toList();
+            damageChart.setCategoryGap(24);
             if (damageChart.getXAxis() instanceof CategoryAxis xAxis) {
                 xAxis.getCategories().clear();
 
                 // TẠO DANH SÁCH NHÃN ĐỘC LẬP
-                ObservableList<String> categories = FXCollections.observableArrayList();
-                for (Map.Entry<DamageCategory, Long> entry : sortedEntries) {
-                    categories.add(entry.getKey().getDisplayName());
-                }
+                ObservableList<String> categories = buildDamageAxisCategories(sortedEntries);
 
                 // Ép trục X phải chia đều không gian cho các nhãn này
                 xAxis.getCategories().clear();
@@ -459,7 +498,7 @@ public class AnalysisController implements Initializable {
                 xAxis.invalidateRange(categories);
 
                 damageChart.layout();
-                xAxis.setGapStartAndEnd(false);
+                xAxis.setGapStartAndEnd(true);
             }
 
             // Populate series with data
@@ -476,6 +515,23 @@ public class AnalysisController implements Initializable {
             LogUtil.error("Failed to update damage chart", e);
             DialogUtil.showError("Chart Update Failed", "Failed to update damage chart");
         }
+    }
+
+
+    private ObservableList<String> buildDamageAxisCategories(List<Map.Entry<DamageCategory, Long>> sortedEntries) {
+        ObservableList<String> categories = FXCollections.observableArrayList();
+        for (Map.Entry<DamageCategory, Long> entry : sortedEntries) {
+            categories.add(entry.getKey().getDisplayName());
+        }
+
+        if (categories.size() == 1) {
+            int targetSlots = DamageCategory.values().length;
+            for (int index = 1; index < targetSlots; index++) {
+                categories.add(" ".repeat(index));
+            }
+        }
+
+        return categories;
     }
 
 
@@ -501,6 +557,35 @@ public class AnalysisController implements Initializable {
 
         // Update sample posts list
         updateSamplePosts();
+        updateDamageChart();
+    }
+
+
+    private void configureDamageChartAxes() {
+        if (damageChart.getYAxis() instanceof NumberAxis yAxis) {
+            yAxis.setLabel(getDamageYAxisLabel());
+            yAxis.setMinorTickVisible(false);
+            yAxis.setTickLabelFormatter(new StringConverter<>() {
+                @Override
+                public String toString(Number value) {
+                    return String.valueOf(value.longValue());
+                }
+
+                @Override
+                public Number fromString(String value) {
+                    return Long.parseLong(value);
+                }
+            });
+        }
+    }
+
+
+    private String getDamageYAxisLabel() {
+        return switch (currentContentTypeFilter) {
+            case "Posts" -> "Number of Posts";
+            case "Comments" -> "Number of Comments";
+            default -> "Number of Posts and Comments";
+        };
     }
 
 
@@ -516,6 +601,47 @@ public class AnalysisController implements Initializable {
 
         // Update sample posts list
         updateSamplePosts();
+        updateDamageChart();
+    }
+
+
+    private Map<DamageCategory, Long> getFilteredDamageCategoryDistribution(Long projectId) {
+        Map<DamageCategory, Long> distribution = new EnumMap<>(DamageCategory.class);
+
+        if ("All".equals(currentContentTypeFilter) || "Posts".equals(currentContentTypeFilter)) {
+            List<PostDTO> posts = applicationContext.getProjectService().getPostsByProjectId(projectId);
+            for (PostDTO post : posts) {
+                addDamageCategories(distribution, post.getDamageCategories());
+            }
+        }
+
+        if ("All".equals(currentContentTypeFilter) || "Comments".equals(currentContentTypeFilter)) {
+            List<CommentDTO> comments = applicationContext.getProjectService().getCommentsByProjectId(projectId);
+            for (CommentDTO comment : comments) {
+                addDamageCategories(distribution, comment.getDamageCategories());
+            }
+        }
+
+        if (currentCategoryFilter == null) {
+            return distribution;
+        }
+
+        Map<DamageCategory, Long> filteredDistribution = new EnumMap<>(DamageCategory.class);
+        filteredDistribution.put(currentCategoryFilter, distribution.getOrDefault(currentCategoryFilter, 0L));
+        return filteredDistribution;
+    }
+
+
+    private void addDamageCategories(Map<DamageCategory, Long> distribution, Set<DamageCategory> categories) {
+        if (categories == null || categories.isEmpty()) {
+            return;
+        }
+
+        for (DamageCategory category : categories) {
+            if (currentCategoryFilter == null || currentCategoryFilter == category) {
+                distribution.merge(category, 1L, Long::sum);
+            }
+        }
     }
 
 
@@ -671,10 +797,59 @@ public class AnalysisController implements Initializable {
 
     private DateTimeFormatter getFormatterForGranularity(TimeGranularity granularity) {
         return switch (granularity) {
-            case HOURLY -> DateTimeFormatter.ofPattern("MM-dd HH:00");
-            case DAILY -> DateTimeFormatter.ofPattern("MM-dd");
-            case WEEKLY -> DateTimeFormatter.ofPattern("MM-dd");
-            case MONTHLY -> DateTimeFormatter.ofPattern("yyyy-MM");
+            case HOURLY -> DateTimeFormatter.ofPattern("MMM dd, HH:00", Locale.ENGLISH);
+            case DAILY -> DateTimeFormatter.ofPattern("MMM dd", Locale.ENGLISH);
+            case WEEKLY -> DateTimeFormatter.ofPattern("'Week of' MMM dd", Locale.ENGLISH);
+            case MONTHLY -> DateTimeFormatter.ofPattern("MMM yyyy", Locale.ENGLISH);
+        };
+    }
+
+
+    private void configureSentimentChartAxes() {
+        sentimentChart.setTitle("Sentiment Distribution Over Time");
+
+        if (sentimentChart.getXAxis() instanceof CategoryAxis xAxis) {
+            xAxis.setLabel(getTimeAxisLabel(currentGranularity));
+            xAxis.setTickLabelsVisible(true);
+            xAxis.setTickMarkVisible(true);
+            xAxis.setTickLabelRotation(-35);
+            xAxis.setTickLabelGap(8);
+        }
+
+        if (sentimentChart.getYAxis() instanceof NumberAxis yAxis) {
+            yAxis.setLabel("Number of Posts");
+            yAxis.setMinorTickVisible(false);
+            yAxis.setTickLabelFormatter(new StringConverter<>() {
+                @Override
+                public String toString(Number value) {
+                    return String.valueOf(value.longValue());
+                }
+
+                @Override
+                public Number fromString(String value) {
+                    return Long.parseLong(value);
+                }
+            });
+        }
+    }
+
+
+    private String getTimeAxisLabel(TimeGranularity granularity) {
+        return switch (granularity) {
+            case HOURLY -> "Time Period (Hour)";
+            case DAILY -> "Time Period (Day)";
+            case WEEKLY -> "Time Period (Week)";
+            case MONTHLY -> "Time Period (Month)";
+        };
+    }
+
+
+    private String formatGranularity(TimeGranularity granularity) {
+        return switch (granularity) {
+            case HOURLY -> "Hourly";
+            case DAILY -> "Daily";
+            case WEEKLY -> "Weekly";
+            case MONTHLY -> "Monthly";
         };
     }
 

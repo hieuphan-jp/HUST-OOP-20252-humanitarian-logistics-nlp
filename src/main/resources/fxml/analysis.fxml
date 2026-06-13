@@ -25,9 +25,7 @@
         </children>
     </HBox>
 
-    <SplitPane orientation="VERTICAL" VBox.vgrow="ALWAYS" dividerPositions="0.8" styleClass="split-pane-custom">
-
-        <TabPane fx:id="analysisTabPane" tabClosingPolicy="UNAVAILABLE" styleClass="tab-pane-custom">
+    <TabPane fx:id="analysisTabPane" tabClosingPolicy="UNAVAILABLE" styleClass="tab-pane-custom" VBox.vgrow="ALWAYS">
             <Tab text="Sentiment Analysis">
                 <HBox spacing="20">
                     <padding>
@@ -41,7 +39,7 @@
                             <Button fx:id="runSentimentButton" text="⚡ Run Analysis"
                                     onAction="#handleRunSentimentAnalysis" styleClass="btn-primary-blue"/>
                         </HBox>
-                        <LineChart fx:id="sentimentChart" VBox.vgrow="ALWAYS" animated="true">
+                        <LineChart fx:id="sentimentChart" VBox.vgrow="ALWAYS" animated="true" styleClass="sentiment-chart">
                             <xAxis>
                                 <CategoryAxis side="BOTTOM" tickLabelFill="#94a3b8"/>
                             </xAxis>
@@ -112,17 +110,7 @@
                     </VBox>
                 </HBox>
             </Tab>
-        </TabPane>
-
-        <VBox spacing="8" styleClass="log-box-container">
-            <HBox alignment="CENTER_LEFT">
-                <Label text="ANALYSIS LOGS" styleClass="label-caption-muted"/>
-                <Region HBox.hgrow="ALWAYS"/>
-                <Label text="SYSTEM ACTIVE" styleClass="status-text-green"/>
-            </HBox>
-            <ListView fx:id="analysisLogListView" prefHeight="120" styleClass="list-view-light"/>
-        </VBox>
-    </SplitPane>
+    </TabPane>
 
     <HBox spacing="15" alignment="CENTER_RIGHT" prefHeight="70.0" styleClass="footer-bar">
         <children>

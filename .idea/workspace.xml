@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="721804f1-5197-47ba-a4c1-2bdbf363e181" name="Changes" comment="" />
+    <list default="true" id="721804f1-5197-47ba-a4c1-2bdbf363e181" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/disaster_analysis.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/disaster_analysis.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/styles.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="101" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -22,12 +30,87 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;hoang31710-art&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/hieuphan-jp/OOP.Project.Nhom2&quot;,
+    &quot;accountId&quot;: &quot;245827e0-d5ae-4e10-96dc-c48f734d018c&quot;
+  }
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="alwaysUpdateSnapshots" value="true" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.4807234086501342" />
+      <entry key="MS500" value="2.5106666837523424" />
+      <entry key="S2" value="7.14558814606397" />
+      <entry key="S5" value="18.36410136640629" />
+      <entry key="S10" value="36.06520266622541" />
+      <entry key="S30" value="98.5061372161457" />
+      <entry key="S60" value="150.8362352281738" />
+      <entry key="M2" value="193.64529241545753" />
+      <entry key="M5" value="236.80735306010956" />
+      <entry key="M10" value="323.7832691774477" />
+      <entry key="M15" value="433.0778463847191" />
+      <entry key="M30" value="723.6303964870406" />
+      <entry key="H1" value="1085.492873227181" />
+      <entry key="H2" value="1425.3852577591272" />
+      <entry key="H4" value="1677.4349771941597" />
+      <entry key="D1" value="1954.8915426726116" />
+      <entry key="W1" value="2010.4741964469301" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="1.824842910293861E-298" />
+      <entry key="S10" value="1.3508674658506524E-149" />
+      <entry key="S30" value="2.3816114747549874E-50" />
+      <entry key="S60" value="1.5432470862453322E-25" />
+      <entry key="M2" value="3.928971509834057E-13" />
+      <entry key="M5" value="1.122263077737208E-5" />
+      <entry key="M10" value="0.003933819521475336" />
+      <entry key="M15" value="0.03159524958105483" />
+      <entry key="M30" value="0.34533824703256916" />
+      <entry key="H1" value="1.5168318419502933" />
+      <entry key="H2" value="3.5497647227651923" />
+      <entry key="H4" value="5.596332220493236" />
+      <entry key="D1" value="8.303544541023674" />
+      <entry key="W1" value="8.896747575285245" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.4263982646958933" />
+      <entry key="MS500" value="2.493050021914867" />
+      <entry key="S2" value="7.132585730745755" />
+      <entry key="S5" value="18.35021368255663" />
+      <entry key="S10" value="36.05126979205776" />
+      <entry key="S30" value="98.49274773484909" />
+      <entry key="S60" value="150.8257602885083" />
+      <entry key="M2" value="193.6384948344545" />
+      <entry key="M5" value="236.80402053558797" />
+      <entry key="M10" value="323.78490268092656" />
+      <entry key="M15" value="433.10731238339014" />
+      <entry key="M30" value="723.9733612776405" />
+      <entry key="H1" value="1087.0065466461713" />
+      <entry key="H2" value="1428.9316562477015" />
+      <entry key="H4" value="1683.0286805205844" />
+      <entry key="D1" value="1963.1944325008199" />
+      <entry key="W1" value="2019.3708435766603" />
+    </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2,
@@ -41,27 +124,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.TestViewMain.executor": "Run",
-    "Maven.disaster-social-analysis [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "UI/Hieu",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/OOP.Project.Nhom2/pom.xml",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestViewMain.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.disaster-social-analysis [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;UI2/Hoang&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/hoang/OOP.Project.Nhom2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.disaster.analysis.Main" />
+      <module name="disaster-social-analysis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.disaster.analysis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -90,11 +199,8 @@
       <workItem from="1781108598093" duration="1098000" />
       <workItem from="1781109716347" duration="379000" />
       <workItem from="1781195194422" duration="5871000" />
-      <workItem from="1781201314333" duration="85000" />
-      <workItem from="1781266639037" duration="161000" />
-      <workItem from="1781272323325" duration="5398000" />
-      <workItem from="1781316906788" duration="4753000" />
-      <workItem from="1781328101127" duration="7485000" />
+      <workItem from="1781271337090" duration="9373000" />
+      <workItem from="1781338708824" duration="7587000" />
     </task>
     <servers />
   </component>

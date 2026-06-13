@@ -55,6 +55,7 @@
                     <HBox spacing="15" alignment="CENTER_LEFT">
                         <Button fx:id="startButton" text="▶ Start Collection" onAction="#handleStart" prefHeight="40" prefWidth="160" styleClass="btn-success-green"/>
                         <Button fx:id="stopButton" text="⏹ Stop" onAction="#handleStop" disable="true" prefHeight="40" prefWidth="160" styleClass="btn-danger-red"/>
+                        <Button fx:id="analysisButton" text="Analysis" onAction="#handleAnalysis" prefHeight="40" prefWidth="160" styleClass="btn-primary-blue"/>
                     </HBox>
 
                     <VBox spacing="8">
@@ -70,10 +71,21 @@
                     </VBox>
                 </VBox>
 
+                <VBox spacing="8" styleClass="log-box-container">
+                    <children>
+                        <HBox alignment="CENTER_LEFT">
+                            <Label text="COLLECTION LOGS" styleClass="label-caption-muted"/>
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Label text="LIVE" styleClass="status-text-green"/>
+                        </HBox>
+                        <ListView fx:id="collectionLogListView" prefHeight="120.0" styleClass="list-view-light"/>
+                    </children>
+                </VBox>
+
                 <VBox spacing="10" VBox.vgrow="ALWAYS" styleClass="inner-box-dark">
                     <children>
                         <HBox alignment="CENTER_LEFT">
-                            <Label text="COLLECTED POSTS" styleClass="label-value-white"/>
+                            <Label text="DATA" styleClass="label-value-white"/>
                             <Region HBox.hgrow="ALWAYS" />
                             <Label text="REAL-TIME" styleClass="status-text-red"/>
                         </HBox>

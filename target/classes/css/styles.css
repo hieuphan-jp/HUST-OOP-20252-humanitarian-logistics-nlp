@@ -325,15 +325,51 @@
 }
 
 .combo-box-dark {
-    -fx-background-color: #0f172a;
-    -fx-text-fill: white;
+    -fx-background-color: white;
+    -fx-text-fill: black;
 }
 .combo-box-dark .list-cell {
-    -fx-text-fill: white;
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+.combo-box-dark > .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+.combo-box-dark .arrow {
+    -fx-background-color: #334155;
+}
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+}
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+.combo-box-popup .list-view .list-cell:hover,
+.combo-box-popup .list-view .list-cell:filled:selected {
+    -fx-background-color: #e2e8f0;
+    -fx-text-fill: black;
 }
 
 .date-picker-custom {
     -fx-control-inner-background: #1e293b;
+}
+.date-picker-popup .month-year-pane {
+    -fx-background-color: white;
+}
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: black;
+}
+.date-picker-popup .spinner .label {
+    -fx-text-fill: black;
+}
+.date-picker-popup .spinner .button {
+    -fx-background-color: white;
+}
+.date-picker-popup .spinner .button .left-arrow,
+.date-picker-popup .spinner .button .right-arrow {
+    -fx-background-color: #334155;
 }
 
 .progress-bar-custom {
@@ -392,6 +428,34 @@
 .chart {
     -fx-text-fill: white;
 }
+.chart-title {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-weight: bold;
+}
+.axis-label {
+    -fx-text-fill: #cbd5e1;
+}
+.axis {
+    -fx-tick-label-fill: #94a3b8;
+}
 .chart-axis {
     -fx-tick-label-fill: #94a3b8;
+}
+.sentiment-chart .default-color0.chart-series-line {
+    -fx-stroke: #10b981;
+}
+.sentiment-chart .default-color1.chart-series-line {
+    -fx-stroke: #d9a014;
+}
+.sentiment-chart .default-color2.chart-series-line {
+    -fx-stroke: #ef4444;
+}
+.sentiment-chart .default-color0.chart-line-symbol {
+    -fx-background-color: #10b981, white;
+}
+.sentiment-chart .default-color1.chart-line-symbol {
+    -fx-background-color: #d9a014, white;
+}
+.sentiment-chart .default-color2.chart-line-symbol {
+    -fx-background-color: #ef4444, white;
 }
