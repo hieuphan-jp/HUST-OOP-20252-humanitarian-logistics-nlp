@@ -26,6 +26,7 @@ import javafx.scene.chart.*;
 import javafx.scene.control.*;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
+import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -84,6 +85,9 @@ public class AnalysisController implements Initializable {
 
     @FXML
     private BarChart<String, Number> damageChart;
+
+    @FXML
+    private GridPane damageCountsGrid;
 
     // Action Buttons
 
@@ -155,6 +159,8 @@ public class AnalysisController implements Initializable {
         this.currentProject = applicationContext.getCurrentProject();
         updateProjectInfo();
         loadExistingSummary();
+        updateDamageChart();
+        updateDamageCountsGrid();
     }
 
     @Override
@@ -330,6 +336,7 @@ public class AnalysisController implements Initializable {
             runDamageButton.setText("Run Damage Analysis");
             String result = analysisTask.getValue();
             updateDamageChart();
+            updateDamageCountsGrid();
             updateSamplePosts();
             DialogUtil.showInformation("Analysis Complete",
                     "Damage classification completed! " + result);
@@ -491,6 +498,7 @@ public class AnalysisController implements Initializable {
 
             // Add series to chart
             damageChart.getData().add(series);
+            applyDamageBarTooltips(series, getFilteredDamageCountSummary(currentProject.getId()));
 
         } catch (Exception e) {
             LogUtil.error("Failed to update damage chart", e);
@@ -539,6 +547,7 @@ public class AnalysisController implements Initializable {
         // Update sample posts list
         updateSamplePosts();
         updateDamageChart();
+        updateDamageCountsGrid();
     }
 
 
@@ -583,6 +592,7 @@ public class AnalysisController implements Initializable {
         // Update sample posts list
         updateSamplePosts();
         updateDamageChart();
+        updateDamageCountsGrid();
     }
 
 
@@ -622,6 +632,133 @@ public class AnalysisController implements Initializable {
             if (currentCategoryFilter == null || currentCategoryFilter == category) {
                 distribution.merge(category, 1L, Long::sum);
             }
+        }
+    }
+
+
+    private void applyDamageBarTooltips(XYChart.Series<String, Number> series, DamageCountSummary counts) {
+        javafx.application.Platform.runLater(() -> {
+            for (XYChart.Data<String, Number> data : series.getData()) {
+                DamageCategory category = findDamageCategoryByDisplayName(data.getXValue());
+                if (category == null || data.getNode() == null) {
+                    continue;
+                }
+
+                long postCount = counts.postCounts().getOrDefault(category, 0L);
+                long commentCount = counts.commentCounts().getOrDefault(category, 0L);
+                long totalCount = postCount + commentCount;
+
+                Tooltip.install(data.getNode(), new Tooltip(String.format(
+                        "%s%nTotal: %d%nPosts: %d%nComments: %d",
+                        category.getDisplayName(),
+                        totalCount,
+                        postCount,
+                        commentCount
+                )));
+            }
+        });
+    }
+
+
+    private DamageCategory findDamageCategoryByDisplayName(String displayName) {
+        for (DamageCategory category : DamageCategory.values()) {
+            if (category.getDisplayName().equals(displayName)) {
+                return category;
+            }
+        }
+        return null;
+    }
+
+
+    private void updateDamageCountsGrid() {
+        if (damageCountsGrid == null || currentProject == null || currentProject.getId() == null) {
+            return;
+        }
+
+        try {
+            DamageCountSummary counts = getFilteredDamageCountSummary(currentProject.getId());
+            List<DamageCategory> categories = Arrays.stream(DamageCategory.values())
+                    .filter(category -> currentCategoryFilter == null || currentCategoryFilter == category)
+                    .sorted(Comparator.comparingLong((DamageCategory category) -> counts.totalFor(category)).reversed())
+                    .toList();
+
+            damageCountsGrid.getChildren().clear();
+            damageCountsGrid.add(createDamageCountLabel("Category", "stat-title"), 0, 0);
+            damageCountsGrid.add(createDamageCountLabel("Total", "stat-title"), 1, 0);
+            damageCountsGrid.add(createDamageCountLabel("Posts", "stat-title"), 2, 0);
+            damageCountsGrid.add(createDamageCountLabel("Comments", "stat-title"), 3, 0);
+
+            int row = 1;
+            for (DamageCategory category : categories) {
+                long postCount = counts.postCounts().getOrDefault(category, 0L);
+                long commentCount = counts.commentCounts().getOrDefault(category, 0L);
+                long totalCount = postCount + commentCount;
+
+                damageCountsGrid.add(createDamageCountLabel(category.getDisplayName(), "label-value-white"), 0, row);
+                damageCountsGrid.add(createDamageCountLabel(String.valueOf(totalCount), "stat-val-total"), 1, row);
+                damageCountsGrid.add(createDamageCountLabel(String.valueOf(postCount), "label-value-cyan"), 2, row);
+                damageCountsGrid.add(createDamageCountLabel(String.valueOf(commentCount), "label-value-cyan"), 3, row);
+                row++;
+            }
+        } catch (Exception e) {
+            LogUtil.error("Failed to update damage count summary", e);
+            DialogUtil.showError("Update Failed", "Failed to update damage count summary");
+        }
+    }
+
+
+    private Label createDamageCountLabel(String text, String styleClass) {
+        Label label = new Label(text);
+        label.getStyleClass().add(styleClass);
+        label.setMaxWidth(Double.MAX_VALUE);
+        return label;
+    }
+
+
+    private DamageCountSummary getFilteredDamageCountSummary(Long projectId) {
+        Map<DamageCategory, Long> postCounts = new EnumMap<>(DamageCategory.class);
+        Map<DamageCategory, Long> commentCounts = new EnumMap<>(DamageCategory.class);
+
+        for (DamageCategory category : DamageCategory.values()) {
+            postCounts.put(category, 0L);
+            commentCounts.put(category, 0L);
+        }
+
+        if ("All".equals(currentContentTypeFilter) || "Posts".equals(currentContentTypeFilter)) {
+            List<PostDTO> posts = applicationContext.getProjectService().getPostsByProjectId(projectId);
+            for (PostDTO post : posts) {
+                addDamageCategoriesForCounts(postCounts, post.getDamageCategories());
+            }
+        }
+
+        if ("All".equals(currentContentTypeFilter) || "Comments".equals(currentContentTypeFilter)) {
+            List<CommentDTO> comments = applicationContext.getProjectService().getCommentsByProjectId(projectId);
+            for (CommentDTO comment : comments) {
+                addDamageCategoriesForCounts(commentCounts, comment.getDamageCategories());
+            }
+        }
+
+        return new DamageCountSummary(postCounts, commentCounts);
+    }
+
+
+    private void addDamageCategoriesForCounts(Map<DamageCategory, Long> counts, Set<DamageCategory> categories) {
+        if (categories == null || categories.isEmpty()) {
+            return;
+        }
+
+        for (DamageCategory category : categories) {
+            if (currentCategoryFilter == null || currentCategoryFilter == category) {
+                counts.merge(category, 1L, Long::sum);
+            }
+        }
+    }
+
+
+    private record DamageCountSummary(Map<DamageCategory, Long> postCounts,
+                                      Map<DamageCategory, Long> commentCounts) {
+        long totalFor(DamageCategory category) {
+            return postCounts.getOrDefault(category, 0L) + commentCounts.getOrDefault(category, 0L);
         }
     }
 
